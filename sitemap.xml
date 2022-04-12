@@ -20,6 +20,13 @@
     </url>
   
     <url>
+      <loc>https://docs.netapp.com/ko-kr/cloud-manager-cloud-volumes-ontap/concept-client-protocols.html</loc>
+      
+      <lastmod>2022-04-12T17:52:24+00:00</lastmod>
+      
+    </url>
+  
+    <url>
       <loc>https://docs.netapp.com/ko-kr/cloud-manager-cloud-volumes-ontap/concept-cvo-aiq-digital-advisor.html</loc>
       
       <lastmod>2022-04-01T20:57:14+00:00</lastmod>
@@ -204,7 +211,7 @@
     <url>
       <loc>https://docs.netapp.com/ko-kr/cloud-manager-cloud-volumes-ontap//search.html</loc>
       
-      <lastmod>2022-04-11T20:34:01+00:00</lastmod>
+      <lastmod>2022-04-12T17:52:42+00:00</lastmod>
       
     </url>
   
@@ -295,7 +302,7 @@
     <url>
       <loc>https://docs.netapp.com/ko-kr/cloud-manager-cloud-volumes-ontap/task-create-volumes.html</loc>
       
-      <lastmod>2022-04-06T14:15:09+00:00</lastmod>
+      <lastmod>2022-04-12T17:52:24+00:00</lastmod>
       
     </url>
   
@@ -316,21 +323,21 @@
     <url>
       <loc>https://docs.netapp.com/ko-kr/cloud-manager-cloud-volumes-ontap/task-deploying-gcp.html</loc>
       
-      <lastmod>2022-04-06T16:59:02+00:00</lastmod>
+      <lastmod>2022-04-12T17:52:24+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/ko-kr/cloud-manager-cloud-volumes-ontap/task-deploying-otc-aws.html</loc>
       
-      <lastmod>2022-04-06T16:59:02+00:00</lastmod>
+      <lastmod>2022-04-12T17:52:24+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/ko-kr/cloud-manager-cloud-volumes-ontap/task-deploying-otc-azure.html</loc>
       
-      <lastmod>2022-04-06T16:59:02+00:00</lastmod>
+      <lastmod>2022-04-12T17:52:24+00:00</lastmod>
       
     </url>
   

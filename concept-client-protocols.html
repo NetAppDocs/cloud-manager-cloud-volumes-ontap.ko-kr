@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html lang="ko">
   <head class="at-element-marker">
-  <title>AutoSupport 설정을 확인합니다 | NetApp Documentation</title>
+  <title>클라이언트 프로토콜 | NetApp Documentation</title>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
   <meta http-equiv="language" content="en">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta property="og:title" content="AutoSupport 설정을 확인합니다 | NetApp Documentation" />
+  <meta property="og:title" content="클라이언트 프로토콜 | NetApp Documentation" />
 	<meta property="og:type" content="website" />
-	<meta property="og:url" content="https://docs.netapp.com/ko-kr/cloud-manager-cloud-volumes-ontap/task-verify-autosupport.html" />
-	<meta property="og:description" content="AutoSupport은 능동적으로 시스템 상태를 모니터링하고 NetApp 기술 지원 팀에 메시지를 보냅니다. 기본적으로 AutoSupport는 각 노드에서 HTTPS 전송 프로토콜을 사용하여 기술 지원 부서에 메시지를 보내도록 설정됩니다." />
+	<meta property="og:url" content="https://docs.netapp.com/ko-kr/cloud-manager-cloud-volumes-ontap/concept-client-protocols.html" />
+	<meta property="og:description" content="Cloud Volumes ONTAP는 iSCSI, NFS, SMB 및 S3 클라이언트 프로토콜을 지원합니다." />
   <meta property="og:image" content="https://docs.netapp.com/ko-kr/cloud-manager-cloud-volumes-ontap/images/logo-tophat-social.png" />
   <meta property="og:image:alt" content="NetApp Logo" />
   <meta name="format-detection" content="telephone=no">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
-  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="AutoSupport은 능동적으로 시스템 상태를 모니터링하고 NetApp 기술 지원 팀에 메시지를 보냅니다. 기본적으로 AutoSupport는 각 노드에서 HTTPS 전송 프로토콜을 사용하여 기술 지원 부서에 메시지를 보내도록 설정됩니다.">
-  <meta name="keywords" content=" autosupport, set up autosupport, test autosupport, asup, test asup"><!-- Icons -->
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="Cloud Volumes ONTAP는 iSCSI, NFS, SMB 및 S3 클라이언트 프로토콜을 지원합니다.">
+  <meta name="keywords" content=" client protocols, client version, smb version, nfs version, protocol versions, s3, smb, nfs, iscsi, cifs"><!-- Icons -->
   <link rel="icon" href="/ko-kr/cloud-manager-cloud-volumes-ontap/images/favicon.ico" type="image/x-icon">
 
   <!-- RSS Feed --><link rel="alternate" type="application/rss+xml" title="NetApp Documentation" href="/ko-kr/cloud-manager-cloud-volumes-ontap/feed.xml"><!-- CSS Definitions: NetApp CSS should be defined after generic css -->
@@ -169,7 +169,7 @@
   
   <!-- Start Page Toolbar -->
   
-  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/issues/new?body=Page%3A%20[AutoSupport 설정을 확인합니다](https://docs.netapp.com/ko-kr/cloud-manager-cloud-volumes-ontap/task-verify-autosupport.html)" class="page-nav-contribute-link" role="button"><img src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/discuss-sm.svg" class="github-icon" />문서 변경 요청</a><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/blob/main/task-verify-autosupport.adoc" class="page-nav-contribute-link" role="button"><img src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/edit-sm.svg" class="github-icon" />이 페이지 편집</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/article-sm.svg" class="github-icon" />기여하는 방법 자세히 알아보기</a></div>
+  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/issues/new?body=Page%3A%20[클라이언트 프로토콜](https://docs.netapp.com/ko-kr/cloud-manager-cloud-volumes-ontap/concept-client-protocols.html)" class="page-nav-contribute-link" role="button"><img src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/discuss-sm.svg" class="github-icon" />문서 변경 요청</a><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/blob/main/concept-client-protocols.adoc" class="page-nav-contribute-link" role="button"><img src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/edit-sm.svg" class="github-icon" />이 페이지 편집</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/article-sm.svg" class="github-icon" />기여하는 방법 자세히 알아보기</a></div>
     <div class="page-nav-container">
       <nav class="page-nav-fixed">
         <div class="page-nav-title">이 페이지의 내용</div>
@@ -292,13 +292,13 @@
           <ul class="n-menu__list">
             <li class="n-menu__list-column">
               <ul class="n-menu__list"><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/ko-kr/cloud-manager-cloud-volumes-ontap/task-verify-autosupport.html" class="n-menu__header-text"><span translate="no" class="notranslate">한국어</span></a>
+                  <a href="https://docs.netapp.com/ko-kr/cloud-manager-cloud-volumes-ontap/concept-client-protocols.html" class="n-menu__header-text"><span translate="no" class="notranslate">한국어</span></a>
                 </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-verify-autosupport.html" class="n-menu__header-text"><span translate="no" class="notranslate">English</span></a>
+                  <a href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-client-protocols.html" class="n-menu__header-text"><span translate="no" class="notranslate">English</span></a>
                 </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/ja-jp/cloud-manager-cloud-volumes-ontap/task-verify-autosupport.html" class="n-menu__header-text"><span translate="no" class="notranslate">日本語</span></a>
+                  <a href="https://docs.netapp.com/ja-jp/cloud-manager-cloud-volumes-ontap/concept-client-protocols.html" class="n-menu__header-text"><span translate="no" class="notranslate">日本語</span></a>
                 </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/zh-cn/cloud-manager-cloud-volumes-ontap/task-verify-autosupport.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
+                  <a href="https://docs.netapp.com/zh-cn/cloud-manager-cloud-volumes-ontap/concept-client-protocols.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
                 </li></ul>
             </li>
           </ul>
@@ -908,15 +908,6 @@
             시스템 상태 및 이벤트입니다
           </a>
           
-    <ul class="subfolders" style="display:none;"><li class="active pdf-hide">
-  <a target="_blank" href="/ko-kr/cloud-manager-cloud-volumes-ontap/pdfs/pages/task-verify-autosupport.pdf" >
-    <img src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/pdf.png" width="16" height="16"/>
-    PDF of this page
-  </a>
-</li>
-
-</ul>
-  
 
 
 
@@ -971,6 +962,15 @@
             스토리지
           </a>
           
+    <ul class="subfolders" style="display:none;"><li class="active pdf-hide">
+  <a target="_blank" href="/ko-kr/cloud-manager-cloud-volumes-ontap/pdfs/pages/concept-client-protocols.pdf" >
+    <img src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/pdf.png" width="16" height="16"/>
+    PDF of this page
+  </a>
+</li>
+
+</ul>
+  
 
 
 
@@ -1288,7 +1288,7 @@
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> 시스템 상태 및 이벤트입니다</div>
       </a>
-      <ul><li class="  active "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/task-verify-autosupport.html">
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/task-verify-autosupport.html">
         AutoSupport 설정을 확인합니다
       </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/task-configure-ems.html">
         EMS를 설정한다
@@ -1298,7 +1298,7 @@
       <ul><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> 스토리지</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/concept-client-protocols.html">
+      <ul><li class="  active "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/concept-client-protocols.html">
         클라이언트 프로토콜
       </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/concept-storage.html">
         디스크와 애그리게이트
@@ -1402,44 +1402,67 @@
     </div>
   </span>
 </div><div class="n-doc__component-detail-heading-wrap">
-  <h1 class="n-doc__component-detail-heading">AutoSupport 설정을 확인합니다</h1>
+  <h1 class="n-doc__component-detail-heading">클라이언트 프로토콜</h1>
 </div>
 
 
 <p class="page-details">
   
     
-    <time datetime="2022-04-01 20:57:14 +0000">04/01/2022</time>
+    <time datetime="2022-04-12 17:52:24 +0000">04/12/2022</time>
     
   
 
 
 </p>
 
+<div id="preamble">
+<div class="sectionbody">
 <div class="paragraph lead">
-<p>AutoSupport은 능동적으로 시스템 상태를 모니터링하고 NetApp 기술 지원 팀에 메시지를 보냅니다. 기본적으로 AutoSupport는 각 노드에서 HTTPS 전송 프로토콜을 사용하여 기술 지원 부서에 메시지를 보내도록 설정됩니다. AutoSupport에서 이러한 메시지를 보낼 수 있는지 확인하는 것이 가장 좋습니다.</p>
+<p>Cloud Volumes ONTAP는 iSCSI, NFS, SMB 및 S3 클라이언트 프로토콜을 지원합니다.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="iscsi">iSCSI</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>iSCSI는 표준 이더넷 네트워크에서 실행할 수 있는 블록 프로토콜입니다. 대부분의 클라이언트 운영 체제는 표준 이더넷 포트를 통해 실행되는 소프트웨어 이니시에이터를 제공합니다.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="nfs-를-참조하십시오">NFS 를 참조하십시오</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>NFS는 UNIX 및 Linux 시스템을 위한 기존 파일 액세스 프로토콜입니다. 클라이언트는 NFSv3, NFSv4 및 NFSv4.1 프로토콜을 사용하여 ONTAP 볼륨의 파일에 액세스할 수 있습니다. UNIX 스타일 사용 권한, NTFS 스타일 사용 권한 또는 이 두 가지를 혼합하여 파일 액세스를 제어할 수 있습니다.</p>
 </div>
 <div class="paragraph">
-<p>인스턴스를 시작하기 전에 Cloud Manager 계정 관리자가 프록시 서버를 Cloud Manager에 추가한 경우 Cloud Volumes ONTAP은 해당 프록시 서버를 AutoSupport 메시지에 사용하도록 구성됩니다.</p>
+<p>클라이언트는 NFS 및 SMB 프로토콜을 모두 사용하여 동일한 파일에 액세스할 수 있습니다.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="중소기업">중소기업</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>SMB는 Windows 시스템을 위한 기존 파일 액세스 프로토콜입니다. 클라이언트는 SMB 2.0, SMB 2.1, SMB 3.0 및 SMB 3.1.1 프로토콜을 사용하여 ONTAP 볼륨의 파일에 액세스할 수 있습니다. NFS와 마찬가지로 사용 권한 스타일의 조합이 지원됩니다.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="s3">S3</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Cloud Volumes ONTAP은 S3를 Microsoft Azure의 스케일아웃 스토리지 옵션으로 지원합니다. S3 프로토콜 지원을 통해 SVM의 버킷에 포함된 오브젝트에 대한 S3 클라이언트 액세스를 구성할 수 있습니다.</p>
 </div>
 <div class="paragraph">
-<p>유일하게 필요한 구성 단계는 Cloud Volumes ONTAP가 NAT 인스턴스 또는 환경의 프록시 서비스를 통해 아웃바운드 인터넷 연결을 가지도록 하는 것입니다. 자세한 내용은 해당 클라우드 공급자의 네트워킹 요구 사항을 참조하십시오.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="reference-networking-aws.html">"AWS 네트워킹 요구사항"</a></p>
-</li>
-<li>
-<p><a href="reference-networking-azure.html">"Azure 네트워킹 요구사항"</a></p>
-</li>
-<li>
-<p><a href="reference-networking-gcp.html">"Google Cloud 네트워킹 요구 사항"</a></p>
-</li>
-</ul>
+<p>현재 AWS나 Google Cloud에서는 S3 프로토콜이 Cloud Volumes ONTAP에서 지원되지 않습니다.</p>
 </div>
 <div class="paragraph">
-<p>아웃바운드 인터넷 액세스가 가능한지 확인한 후 AutoSupport를 테스트하여 메시지를 보낼 수 있는지 확인할 수 있습니다. 자세한 지침은 을 참조하십시오 <a href="https://docs.netapp.com/us-en/ontap/system-admin/setup-autosupport-task.html" target="_blank" rel="noopener">"ONTAP 문서: AutoSupport 설정"</a>.</p>
+<p><a href="https://docs.netapp.com/us-en/ontap/object-storage-management/index.html" target="_blank" rel="noopener">"ONTAP에서 S3 오브젝트 스토리지 서비스를 구성 및 관리하는 방법에 대해 알아보십시오"</a>.</p>
+</div>
+</div>
 </div>
 
     </article>
