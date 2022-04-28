@@ -1409,7 +1409,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-04-14 17:30:59 +0000">04/14/2022</time>
+    <time datetime="2022-04-28 18:13:22 +0000">04/28/2022</time>
     
   
 
@@ -1422,12 +1422,16 @@
 <li><a href="#지원되는-스토리지-vm-수입니다">지원되는 스토리지 VM 수입니다</a></li>
 <li><a href="#azure에서-ip-주소를-할당합니다">Azure에서 IP 주소를 할당합니다</a>
 <ul class="sectlevel2">
-<li><a href="#단일-노드">단일 노드</a></li>
-<li><a href="#iscsi를-사용하는-ha-쌍">iSCSI를 사용하는 HA 쌍</a></li>
-<li><a href="#nfssmb를-사용하는-ha-쌍">NFS/SMB를 사용하는 HA 쌍</a></li>
+<li><a href="#단일-노드-시스템">단일 노드 시스템</a></li>
+<li><a href="#ha-쌍">HA 쌍</a></li>
 </ul>
 </li>
-<li><a href="#스토리지-vm-및-lif-생성">스토리지 VM 및 LIF 생성</a></li>
+<li><a href="#스토리지-vm-및-lif-생성">스토리지 VM 및 LIF 생성</a>
+<ul class="sectlevel2">
+<li><a href="#단일-노드-시스템-2">단일 노드 시스템</a></li>
+<li><a href="#ha-쌍-2">HA 쌍</a></li>
+</ul>
+</li>
 </ul>
 </div>
 <div id="preamble">
@@ -1444,7 +1448,7 @@
 <h2 id="지원되는-스토리지-vm-수입니다">지원되는 스토리지 VM 수입니다</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Azure에서 여러 스토리지 VM이 Cloud Volumes ONTAP BYOL 방식으로 지원되며 9.9.0 릴리즈부터 애드온 라이센스가 제공됩니다. 로 이동합니다 <a href="https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/index.html" target="_blank" rel="noopener">"Cloud Volumes ONTAP 릴리즈 노트"</a> 사용 중인 Cloud Volumes ONTAP 버전에 대해 지원되는 스토리지 VM 수를 확인하려면 다음을 수행합니다.</p>
+<p>9.9.0 릴리즈부터 특정 Cloud Volumes ONTAP 구성에서 여러 스토리지 VM이 지원됩니다. 로 이동합니다 <a href="https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/index.html" target="_blank" rel="noopener">"Cloud Volumes ONTAP 릴리즈 노트"</a> 사용 중인 Cloud Volumes ONTAP 버전에 대해 지원되는 스토리지 VM 수를 확인하려면 다음을 수행합니다.</p>
 </div>
 <div class="paragraph">
 <p>다른 모든 Cloud Volumes ONTAP 구성에서는 재해 복구에 사용되는 1개의 데이터 서비스 스토리지 VM과 1개의 대상 스토리지 VM을 지원합니다. 소스 스토리지 VM에 중단이 발생할 경우 데이터 액세스를 위해 대상 스토리지 VM을 활성화할 수 있습니다.</p>
@@ -1455,15 +1459,76 @@
 <h2 id="azure에서-ip-주소를-할당합니다">Azure에서 IP 주소를 할당합니다</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>아래 구성 단계를 따르십시오. 단일 노드 시스템, iSCSI를 사용하는 HA 쌍 또는 NFS/SMB를 사용하는 HA 쌍</p>
+<p>스토리지 VM을 생성하고 LIF를 할당하기 전에 Azure에서 IP 주소를 할당해야 합니다.</p>
 </div>
 <div class="sect2">
-<h3 id="단일-노드">단일 노드</h3>
+<h3 id="단일-노드-시스템">단일 노드 시스템</h3>
 <div class="paragraph">
-<p>스토리지 VM을 생성하고 LIF를 할당하기 전에 Azure에서 nic0에 IP 주소를 할당해야 합니다.</p>
+<p>스토리지 VM을 생성하고 LIF를 할당하기 전에 Azure에서 nic0에 IP 주소를 할당해야 합니다. 필요한 IP 주소 수는 스토리지 프로토콜에 따라 다릅니다.</p>
 </div>
+<div class="exampleblock tabbed-block">
+<div class="content">
+<div class="openblock">
+<div class="title">iSCSI</div>
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>iSCSI 데이터 LIF 액세스를 위한 1개의 IP 주소입니다</p>
+</li>
+<li>
+<p>스토리지 VM(SVM) 관리 LIF의 선택적 IP 주소입니다</p>
 <div class="paragraph">
-<p>데이터 LIF 액세스를 위한 IP 주소와 스토리지 VM(SVM) 관리 LIF를 위한 선택적 IP 주소를 생성해야 합니다. 이 관리 LIF는 SnapCenter과 같은 관리 툴에 연결할 수 있습니다.</p>
+<p>이 관리 LIF는 SnapCenter과 같은 관리 툴에 연결할 수 있습니다.</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="openblock">
+<div class="title">NFS 를 참조하십시오</div>
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>NAS 데이터 LIF 액세스를 위한 단일 IP 주소</p>
+</li>
+<li>
+<p>스토리지 VM(SVM) 관리 LIF의 선택적 IP 주소입니다</p>
+<div class="paragraph">
+<p>이 관리 LIF는 SnapCenter과 같은 관리 툴에 연결할 수 있습니다.</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="openblock">
+<div class="title">중소기업</div>
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>NAS 데이터 LIF 액세스를 위한 단일 IP 주소</p>
+</li>
+<li>
+<p>iSCSI LIF를 통한 DNS 및 SMB 통신을 위한 단일 IP 주소입니다</p>
+<div class="paragraph">
+<p>iSCSI LIF는 페일오버 시 마이그레이션되지 않으므로 이 용도로 사용됩니다.</p>
+</div>
+</li>
+<li>
+<p>스토리지 VM(SVM) 관리 LIF의 선택적 IP 주소입니다</p>
+<div class="paragraph">
+<p>이 관리 LIF는 SnapCenter과 같은 관리 툴에 연결할 수 있습니다.</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div class="olist arabic">
 <div class="title">단계</div>
@@ -1496,7 +1561,10 @@
 </div>
 </li>
 <li>
-<p>SVM 관리 LIF를 생성하려면 노드 1에서 이 단계를 반복합니다.</p>
+<p>SMB를 사용하는 경우 다음 단계를 반복하여 DNS 및 SMB 통신을 위한 추가 IP 주소를 생성합니다.</p>
+</li>
+<li>
+<p>SVM 관리 LIF를 생성하려면 이 단계를 반복하여 추가 IP 주소를 생성합니다.</p>
 </li>
 </ol>
 </div>
@@ -1505,12 +1573,36 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="iscsi를-사용하는-ha-쌍">iSCSI를 사용하는 HA 쌍</h3>
+<h3 id="ha-쌍">HA 쌍</h3>
+<div class="paragraph">
+<p>HA 쌍에 대한 IP 주소를 할당하는 방법은 사용 중인 스토리지 프로토콜에 따라 다릅니다.</p>
+</div>
+<div class="exampleblock tabbed-block">
+<div class="content">
+<div class="openblock">
+<div class="title">iSCSI</div>
+<div class="content">
 <div class="paragraph">
 <p>스토리지 VM을 생성하고 LIF를 할당하기 전에 Azure의 nic0에 iSCSI IP 주소를 할당해야 합니다. iSCSI는 페일오버에 ALUA를 사용하므로 iSCSI용 IPS는 로드 밸런서가 아니라 nic0에 할당됩니다.</p>
 </div>
 <div class="paragraph">
-<p>노드 1에서 데이터 LIF 액세스를 위한 IP 주소, 노드 2에서 데이터 LIF 액세스를 위한 또 다른 IP 주소, SVM(스토리지 VM) 관리 LIF를 위한 또 다른 선택적 IP 주소를 생성해야 합니다. 이 관리 LIF는 SnapCenter과 같은 관리 툴에 연결할 수 있습니다.</p>
+<p>다음 IP 주소를 만들어야 합니다.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>노드 1에서 iSCSI 데이터 LIF 액세스를 위한 단일 IP 주소</p>
+</li>
+<li>
+<p>노드 2에서 iSCSI 데이터 LIF 액세스를 위한 단일 IP 주소</p>
+</li>
+<li>
+<p>스토리지 VM(SVM) 관리 LIF의 선택적 IP 주소입니다</p>
+<div class="paragraph">
+<p>이 관리 LIF는 SnapCenter과 같은 관리 툴에 연결할 수 있습니다.</p>
+</div>
+</li>
+</ul>
 </div>
 <div class="olist arabic">
 <div class="title">단계</div>
@@ -1550,14 +1642,32 @@
 </li>
 </ol>
 </div>
-<div class="paragraph">
-<p>방금 만든 개인 IP 주소를 복사합니다. 새 스토리지 VM에 대한 LIF를 생성할 때 이러한 IP 주소를 지정해야 합니다.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="nfssmb를-사용하는-ha-쌍">NFS/SMB를 사용하는 HA 쌍</h3>
+<div class="openblock">
+<div class="title">NFS 를 참조하십시오</div>
+<div class="content">
 <div class="paragraph">
-<p>NFS 및 SMB 데이터에 사용하는 IP 주소는 로드 밸런싱 장치에 할당되어 페일오버 이벤트가 발생할 경우 IP 주소가 다른 노드로 마이그레이션될 수 있습니다.</p>
+<p>NFS에 사용하는 IP 주소는 로드 밸런싱 장치에 할당되어 페일오버 이벤트가 발생할 경우 IP 주소가 다른 노드로 마이그레이션될 수 있습니다.</p>
+</div>
+<div class="paragraph">
+<p>다음 IP 주소를 만들어야 합니다.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>노드 1에서 NAS 데이터 LIF 액세스를 위한 단일 IP 주소</p>
+</li>
+<li>
+<p>노드 2에서 NAS 데이터 LIF 액세스를 위한 단일 IP 주소</p>
+</li>
+<li>
+<p>스토리지 VM(SVM) 관리 LIF의 선택적 IP 주소입니다</p>
+<div class="paragraph">
+<p>이 관리 LIF는 SnapCenter과 같은 관리 툴에 연결할 수 있습니다.</p>
+</div>
+</li>
+</ul>
 </div>
 <div class="olist arabic">
 <div class="title">단계</div>
@@ -1569,7 +1679,7 @@
 <p>HA 쌍에 대한 로드 밸런싱 장치의 이름을 클릭합니다.</p>
 </li>
 <li>
-<p>노드 1에서 데이터 LIF 액세스를 위한 프런트엔드 IP 구성을 하나 생성하고, 노드 2에서 데이터 LIF 액세스를 위한 또 다른 프런트엔드 IP를 생성합니다(HA 쌍만 해당). 스토리지 VM(SVM) 관리 LIF를 위한 또 다른 선택적 프런트엔드 IP를 생성합니다.</p>
+<p>노드 1에서 데이터 LIF 액세스를 위한 프런트엔드 IP 구성을 하나 생성하고, 노드 2에서 데이터 LIF 액세스를 위한 또 다른 프런트엔드 IP를 생성하고, 스토리지 VM(SVM) 관리 LIF를 위한 또 다른 선택적 프런트엔드 IP를 생성합니다.</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
@@ -1659,10 +1769,158 @@
 </ol>
 </div>
 </li>
+<li>
+<p>Cloud Volumes ONTAP에 대한 네트워크 보안 그룹 규칙을 통해 로드 밸런서가 위의 4단계에서 만든 상태 탐침에 대한 TCP 탐침을 보낼 수 있는지 확인합니다. 이 작업은 기본적으로 허용됩니다.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="openblock">
+<div class="title">중소기업</div>
+<div class="content">
+<div class="paragraph">
+<p>SMB 데이터에 사용하는 IP 주소는 로드 밸런서에 할당되어 페일오버 이벤트가 발생할 경우 IP 주소가 다른 노드로 마이그레이션될 수 있습니다.</p>
+</div>
+<div class="paragraph">
+<p>다음 IP 주소를 만들어야 합니다.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>노드 1에서 NAS 데이터 LIF 액세스를 위한 단일 IP 주소</p>
+</li>
+<li>
+<p>노드 2에서 NAS 데이터 LIF 액세스를 위한 단일 IP 주소</p>
+</li>
+<li>
+<p>노드 1의 iSCSI LIF에 대한 1개의 IP 주소입니다</p>
+</li>
+<li>
+<p>노드 2의 iSCSI LIF에 대한 1개의 IP 주소입니다</p>
+<div class="paragraph">
+<p>iSCSI LIF는 DNS 및 SMB 통신에 필요합니다. iSCSI LIF는 페일오버 시 마이그레이션되지 않으므로 이 용도로 사용됩니다.</p>
+</div>
+</li>
+<li>
+<p>스토리지 VM(SVM) 관리 LIF의 선택적 IP 주소입니다</p>
+<div class="paragraph">
+<p>이 관리 LIF는 SnapCenter과 같은 관리 툴에 연결할 수 있습니다.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">단계</div>
+<ol class="arabic">
+<li>
+<p>Azure 포털에서 * 로드 밸런서 * 서비스를 엽니다.</p>
+</li>
+<li>
+<p>HA 쌍에 대한 로드 밸런싱 장치의 이름을 클릭합니다.</p>
+</li>
+<li>
+<p>필요한 프런트엔드 IP 구성 수 생성:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Settings * 에서 * Frontend IP configuration * 을 클릭합니다.</p>
+</li>
+<li>
+<p>추가 * 를 클릭합니다.</p>
+</li>
+<li>
+<p>프런트엔드 IP의 이름을 입력하고 Cloud Volumes ONTAP HA 쌍의 서브넷을 선택한 다음 * Dynamic * 을 선택된 상태로 둡니다.</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_azure_frontend_ip.gif" alt="이름과 서브넷이 선택된 Azure 포털에서 프런트엔드 IP 주소를 추가하는 스크린샷"></span></p>
+</div>
+</li>
+<li>
+<p>방금 만든 프런트엔드 IP 구성의 이름을 클릭하고 * Assignment * 를 * Static * 으로 변경하고 * Save * 를 클릭합니다.</p>
+<div class="paragraph">
+<p>정적 IP 주소를 사용하면 IP 주소가 변경되지 않으므로 정적 IP 주소를 사용하는 것이 가장 좋습니다. 이렇게 하면 응용 프로그램이 불필요하게 중단되는 것을 방지할 수 있습니다.</p>
+</div>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>방금 생성한 각 프런트엔드 IP에 대해 상태 탐침을 추가합니다.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>부하 분산 장치의 * 설정 * 에서 * 상태 프로브 * 를 클릭합니다.</p>
+</li>
+<li>
+<p>추가 * 를 클릭합니다.</p>
+</li>
+<li>
+<p>상태 프로브의 이름을 입력하고 63005에서 65000 사이의 포트 번호를 입력합니다. 다른 필드의 기본값을 유지합니다.</p>
+<div class="paragraph">
+<p>포트 번호는 63005에서 65000 사이여야 합니다. 예를 들어 상태 프로브를 3개 생성하는 경우 포트 번호 63005, 63006 및 63007을 사용하는 프로브를 입력할 수 있습니다.</p>
+</div>
+</li>
 </ol>
 </div>
 <div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_azure_health_probe.gif" alt="이름과 포트가 입력된 Azure 포털에서 상태 프로브를 추가하는 스크린샷"></span></p>
+</div>
+</li>
+<li>
+<p>각 프런트엔드 IP에 대한 새 로드 밸런싱 규칙을 생성합니다.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>부하 분산 장치의 * 설정 * 아래에서 * 로드 밸런싱 규칙 * 을 클릭합니다.</p>
+</li>
+<li>
+<p>추가 * 를 클릭하고 필요한 정보를 입력합니다.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>* 이름 *: 규칙의 이름을 입력합니다.</p>
+</li>
+<li>
+<p>* IP 버전 *: * IPv4 * 를 선택합니다.</p>
+</li>
+<li>
+<p>* 프런트엔드 IP 주소 *: 방금 생성한 프런트엔드 IP 주소 중 하나를 선택합니다.</p>
+</li>
+<li>
+<p>* HA 포트 *: 이 옵션을 활성화합니다.</p>
+</li>
+<li>
+<p>* 백엔드 풀 *: 이미 선택된 기본 백엔드 풀을 유지합니다.</p>
+</li>
+<li>
+<p>* 상태 프로브 *: 선택한 프런트엔드 IP에 대해 생성한 상태 프로브를 선택합니다.</p>
+</li>
+<li>
+<p>* 세션 지속성 *: * 없음 * 을 선택합니다.</p>
+</li>
+<li>
+<p>* Floating IP *: * Enabled * 를 선택합니다.</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_azure_lb_rule.gif" alt="Azure 포털에서 위에 표시된 필드를 사용하여 로드 밸런싱 규칙을 추가하는 스크린샷"></span></p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</li>
+<li>
 <p>Cloud Volumes ONTAP에 대한 네트워크 보안 그룹 규칙을 통해 로드 밸런서가 위의 4단계에서 만든 상태 탐침에 대한 TCP 탐침을 보낼 수 있는지 확인합니다. 이 작업은 기본적으로 허용됩니다.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>방금 만든 개인 IP 주소를 복사합니다. 새 스토리지 VM에 대한 LIF를 생성할 때 이러한 IP 주소를 지정해야 합니다.</p>
 </div>
 </div>
 </div>
@@ -1671,10 +1929,268 @@
 <h2 id="스토리지-vm-및-lif-생성">스토리지 VM 및 LIF 생성</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>다음 단계에서는 단일 노드 시스템 또는 HA 쌍에 새 스토리지 VM을 생성합니다. 노드 1의 데이터 LIF 액세스, 노드 2의 데이터 LIF 액세스를 위한 또 다른 IP 주소(HA 쌍만 해당), 스토리지 VM(SVM) 관리 LIF를 위한 또 다른 선택적 IP 주소 등에 한 IP 주소가 필요합니다. 이 관리 LIF는 SnapCenter과 같은 관리 툴에 연결할 수 있습니다.</p>
+<p>Azure에서 IP 주소를 할당한 후에는 단일 노드 시스템 또는 HA 쌍 에 새 스토리지 VM을 생성할 수 있습니다.</p>
+</div>
+<div class="sect2">
+<h3 id="단일-노드-시스템-2">단일 노드 시스템</h3>
+<div class="paragraph">
+<p>단일 노드 시스템에서 스토리지 VM 및 LIF를 생성하는 방법은 사용 중인 스토리지 프로토콜에 따라 다릅니다.</p>
+</div>
+<div class="exampleblock tabbed-block">
+<div class="content">
+<div class="openblock">
+<div class="title">iSCSI</div>
+<div class="content">
+<div class="paragraph">
+<p>필요한 LIF와 함께 새 스토리지 VM을 생성하려면 다음 단계를 따르십시오.</p>
+</div>
+<div class="olist arabic">
+<div class="title">단계</div>
+<ol class="arabic">
+<li>
+<p>스토리지 VM을 생성하고 스토리지 VM으로 가는 경로를 생성합니다.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-cli" data-lang="cli">vserver create -vserver &lt;svm-name&gt; -subtype default -rootvolume &lt;root-volume-name&gt; -rootvolume-security-style unix</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-cli" data-lang="cli">network route create -destination 0.0.0.0/0 -vserver &lt;svm-name&gt; -gateway &lt;ip-of-gateway-server&gt;</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>데이터 LIF 생성:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-cli" data-lang="cli">network interface create -vserver &lt;svm-name&gt; -home-port e0a -address &lt;iscsi-ip-address&gt; -lif &lt;lif-name&gt; -home-node &lt;name-of-node1&gt; -data-protocol iscsi</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>선택 사항: 스토리지 VM 관리 LIF를 생성합니다.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-cli" data-lang="cli">network interface create -vserver &lt;svm-name&gt; -lif &lt;lif-name&gt; -role data -data-protocol none -address &lt;svm-mgmt-ip-address&gt; -netmask-length &lt;length&gt; -home-node node1 -status-admin up -failover-policy system-defined -firewall-policy mgmt -home-port e0a -auto-revert false -failover-group Default</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>스토리지 VM에 하나 이상의 애그리게이트를 할당합니다.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-cli" data-lang="cli">vserver add-aggregates -vserver svm_2 -aggregates aggr1,aggr2</code></pre>
+</div>
 </div>
 <div class="paragraph">
-<p>아래 명령을 스토리지 VM의 데이터 액세스 프로토콜과 일치하는 NAS 또는 iSCSI 명령을 사용하십시오.</p>
+<p>스토리지 VM에서 볼륨을 생성하기 전에 새 스토리지 VM이 적어도 하나의 애그리게이트에 액세스해야 하기 때문에 이 단계가 필요합니다.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="openblock">
+<div class="title">NFS 를 참조하십시오</div>
+<div class="content">
+<div class="paragraph">
+<p>필요한 LIF와 함께 새 스토리지 VM을 생성하려면 다음 단계를 따르십시오.</p>
+</div>
+<div class="olist arabic">
+<div class="title">단계</div>
+<ol class="arabic">
+<li>
+<p>스토리지 VM을 생성하고 스토리지 VM으로 가는 경로를 생성합니다.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-cli" data-lang="cli">vserver create -vserver &lt;svm-name&gt; -subtype default -rootvolume &lt;root-volume-name&gt; -rootvolume-security-style unix</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-cli" data-lang="cli">network route create -destination 0.0.0.0/0 -vserver &lt;svm-name&gt; -gateway &lt;ip-of-gateway-server&gt;</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>데이터 LIF 생성:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-cli" data-lang="cli">network interface create -vserver &lt;svm-name&gt; -lif &lt;lif-name&gt; -role data -data-protocol cifs,nfs -address &lt;nfs--ip-address&gt; -netmask-length &lt;length&gt; -home-node &lt;name-of-node1&gt; -status-admin up -failover-policy disabled -firewall-policy data -home-port e0a -auto-revert true -failover-group Default</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>선택 사항: 스토리지 VM 관리 LIF를 생성합니다.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-cli" data-lang="cli">network interface create -vserver &lt;svm-name&gt; -lif &lt;lif-name&gt; -role data -data-protocol none -address &lt;svm-mgmt-ip-address&gt; -netmask-length &lt;length&gt; -home-node node1 -status-admin up -failover-policy system-defined -firewall-policy mgmt -home-port e0a -auto-revert false -failover-group Default</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>스토리지 VM에 하나 이상의 애그리게이트를 할당합니다.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-cli" data-lang="cli">vserver add-aggregates -vserver svm_2 -aggregates aggr1,aggr2</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>스토리지 VM에서 볼륨을 생성하기 전에 새 스토리지 VM이 적어도 하나의 애그리게이트에 액세스해야 하기 때문에 이 단계가 필요합니다.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="openblock">
+<div class="title">중소기업</div>
+<div class="content">
+<div class="paragraph">
+<p>필요한 LIF와 함께 새 스토리지 VM을 생성하려면 다음 단계를 따르십시오.</p>
+</div>
+<div class="olist arabic">
+<div class="title">단계</div>
+<ol class="arabic">
+<li>
+<p>스토리지 VM을 생성하고 스토리지 VM으로 가는 경로를 생성합니다.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-cli" data-lang="cli">vserver create -vserver &lt;svm-name&gt; -subtype default -rootvolume &lt;root-volume-name&gt; -rootvolume-security-style unix</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-cli" data-lang="cli">network route create -destination 0.0.0.0/0 -vserver &lt;svm-name&gt; -gateway &lt;ip-of-gateway-server&gt;</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>데이터 LIF 생성:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-cli" data-lang="cli">network interface create -vserver &lt;svm-name&gt; -lif &lt;lif-name&gt; -role data -data-protocol cifs,nfs -address &lt;nfs--ip-address&gt; -netmask-length &lt;length&gt; -home-node &lt;name-of-node1&gt; -status-admin up -failover-policy disabled -firewall-policy data -home-port e0a -auto-revert true -failover-group Default</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>DNS 및 SMB 통신을 제공하는 데 필요한 iSCSI LIF를 생성합니다.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-cli" data-lang="cli">network interface create -vserver &lt;svm-name&gt; -home-port e0a -address &lt;iscsi-ip-address&gt; -lif &lt;lif-name&gt; -home-node &lt;name-of-node1&gt; -data-protocol iscsi</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>선택 사항: 스토리지 VM 관리 LIF를 생성합니다.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-cli" data-lang="cli">network interface create -vserver &lt;svm-name&gt; -lif &lt;lif-name&gt; -role data -data-protocol none -address &lt;svm-mgmt-ip-address&gt; -netmask-length &lt;length&gt; -home-node node1 -status-admin up -failover-policy system-defined -firewall-policy mgmt -home-port e0a -auto-revert false -failover-group Default</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>스토리지 VM에 하나 이상의 애그리게이트를 할당합니다.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-cli" data-lang="cli">vserver add-aggregates -vserver svm_2 -aggregates aggr1,aggr2</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>스토리지 VM에서 볼륨을 생성하기 전에 새 스토리지 VM이 적어도 하나의 애그리게이트에 액세스해야 하기 때문에 이 단계가 필요합니다.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="ha-쌍-2">HA 쌍</h3>
+<div class="paragraph">
+<p>HA 쌍에서 스토리지 VM 및 LIF를 생성하는 방법은 사용 중인 스토리지 프로토콜에 따라 다릅니다.</p>
+</div>
+<div class="exampleblock tabbed-block">
+<div class="content">
+<div class="openblock">
+<div class="title">iSCSI</div>
+<div class="content">
+<div class="paragraph">
+<p>필요한 LIF와 함께 새 스토리지 VM을 생성하려면 다음 단계를 따르십시오.</p>
+</div>
+<div class="olist arabic">
+<div class="title">단계</div>
+<ol class="arabic">
+<li>
+<p>스토리지 VM을 생성하고 스토리지 VM으로 가는 경로를 생성합니다.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-cli" data-lang="cli">vserver create -vserver &lt;svm-name&gt; -subtype default -rootvolume &lt;root-volume-name&gt; -rootvolume-security-style unix</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-cli" data-lang="cli">network route create -destination 0.0.0.0/0 -vserver &lt;svm-name&gt; -gateway &lt;ip-of-gateway-server&gt;</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>데이터 LIF 생성:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>다음 명령을 사용하여 노드 1에 iSCSI LIF를 생성합니다.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-cli" data-lang="cli">network interface create -vserver &lt;svm-name&gt; -home-port e0a -address &lt;iscsi-ip-address&gt; -lif &lt;lif-name&gt; -home-node &lt;name-of-node1&gt; -data-protocol iscsi</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>다음 명령을 사용하여 노드 2에 iSCSI LIF를 생성합니다.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-cli" data-lang="cli">network interface create -vserver &lt;svm-name&gt; -home-port e0a -address &lt;iscsi-ip-address&gt; -lif &lt;lif-name&gt; -home-node &lt;name-of-node2&gt; -data-protocol iscsi</code></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>선택 사항: 노드 1에 스토리지 VM 관리 LIF를 생성합니다.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-cli" data-lang="cli">network interface create -vserver &lt;svm-name&gt; -lif &lt;lif-name&gt; -role data -data-protocol none -address &lt;svm-mgmt-ip-address&gt; -netmask-length &lt;length&gt; -home-node node1 -status-admin up -failover-policy system-defined -firewall-policy mgmt -home-port e0a -auto-revert false -failover-group Default</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>이 관리 LIF는 SnapCenter과 같은 관리 툴에 연결할 수 있습니다.</p>
+</div>
+</li>
+<li>
+<p>스토리지 VM에 하나 이상의 애그리게이트를 할당합니다.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-cli" data-lang="cli">vserver add-aggregates -vserver svm_2 -aggregates aggr1,aggr2</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>스토리지 VM에서 볼륨을 생성하기 전에 새 스토리지 VM이 적어도 하나의 애그리게이트에 액세스해야 하기 때문에 이 단계가 필요합니다.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="openblock">
+<div class="title">NFS 를 참조하십시오</div>
+<div class="content">
+<div class="paragraph">
+<p>필요한 LIF와 함께 새 스토리지 VM을 생성하려면 다음 단계를 따르십시오.</p>
 </div>
 <div class="olist arabic">
 <div class="title">단계</div>
@@ -1703,18 +2219,93 @@
 <pre class="highlight"><code class="language-cli" data-lang="cli">network interface create -vserver &lt;svm-name&gt; -lif &lt;lif-name&gt; -role data -data-protocol cifs,nfs -address &lt;nfs--ip-address&gt; -netmask-length &lt;length&gt; -home-node &lt;name-of-node1&gt; -status-admin up -failover-policy system-defined -firewall-policy data -home-port e0a -auto-revert true -failover-group Default -probe-port &lt;port-number-for-azure-health-probe1&gt;</code></pre>
 </div>
 </div>
-<div class="paragraph">
-<p>단일 노드 시스템인 경우 -failover-policy 매개 변수의 값을 _disabled_로 변경해야 합니다.</p>
-</div>
 </li>
 <li>
-<p>다음 명령을 사용하여 노드 2에 NAS LIF를 생성합니다(HA 쌍만 해당).</p>
+<p>다음 명령을 사용하여 노드 2에 NAS LIF를 생성합니다.</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-cli" data-lang="cli">network interface create -vserver &lt;svm-name&gt; -lif &lt;lif-name&gt; -role data -data-protocol cifs,nfs -address &lt;nfs-cifs-ip-address&gt; -netmask-length &lt;length&gt; -home-node &lt;name-of-node2&gt; -status-admin up -failover-policy system-defined -firewall-policy data -home-port e0a -auto-revert true -failover-group Default -probe-port &lt;port-number-for-azure-health-probe2&gt;</code></pre>
 </div>
 </div>
 </li>
+</ol>
+</div>
+</li>
+<li>
+<p>선택 사항: 노드 1에 스토리지 VM 관리 LIF를 생성합니다.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-cli" data-lang="cli">network interface create -vserver &lt;svm-name&gt; -lif &lt;lif-name&gt; -role data -data-protocol none -address &lt;svm-mgmt-ip-address&gt; -netmask-length &lt;length&gt; -home-node node1 -status-admin up -failover-policy system-defined -firewall-policy mgmt -home-port e0a -auto-revert false -failover-group Default -probe-port &lt;port-number-for-azure-health-probe3&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>이 관리 LIF는 SnapCenter과 같은 관리 툴에 연결할 수 있습니다.</p>
+</div>
+</li>
+<li>
+<p>스토리지 VM에 하나 이상의 애그리게이트를 할당합니다.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-cli" data-lang="cli">vserver add-aggregates -vserver svm_2 -aggregates aggr1,aggr2</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>스토리지 VM에서 볼륨을 생성하기 전에 새 스토리지 VM이 적어도 하나의 애그리게이트에 액세스해야 하기 때문에 이 단계가 필요합니다.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="openblock">
+<div class="title">중소기업</div>
+<div class="content">
+<div class="paragraph">
+<p>필요한 LIF와 함께 새 스토리지 VM을 생성하려면 다음 단계를 따르십시오.</p>
+</div>
+<div class="olist arabic">
+<div class="title">단계</div>
+<ol class="arabic">
+<li>
+<p>스토리지 VM을 생성하고 스토리지 VM으로 가는 경로를 생성합니다.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-cli" data-lang="cli">vserver create -vserver &lt;svm-name&gt; -subtype default -rootvolume &lt;root-volume-name&gt; -rootvolume-security-style unix</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-cli" data-lang="cli">network route create -destination 0.0.0.0/0 -vserver &lt;svm-name&gt; -gateway &lt;ip-of-gateway-server&gt;</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>NAS 데이터 LIF 생성:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>다음 명령을 사용하여 노드 1에 NAS LIF를 생성합니다.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-cli" data-lang="cli">network interface create -vserver &lt;svm-name&gt; -lif &lt;lif-name&gt; -role data -data-protocol cifs,nfs -address &lt;nfs--ip-address&gt; -netmask-length &lt;length&gt; -home-node &lt;name-of-node1&gt; -status-admin up -failover-policy system-defined -firewall-policy data -home-port e0a -auto-revert true -failover-group Default -probe-port &lt;port-number-for-azure-health-probe1&gt;</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>다음 명령을 사용하여 노드 2에 NAS LIF를 생성합니다.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-cli" data-lang="cli">network interface create -vserver &lt;svm-name&gt; -lif &lt;lif-name&gt; -role data -data-protocol cifs,nfs -address &lt;nfs-cifs-ip-address&gt; -netmask-length &lt;length&gt; -home-node &lt;name-of-node2&gt; -status-admin up -failover-policy system-defined -firewall-policy data -home-port e0a -auto-revert true -failover-group Default -probe-port &lt;port-number-for-azure-health-probe2&gt;</code></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>iSCSI LIF를 생성하여 DNS 및 SMB 통신 제공:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
 <li>
 <p>다음 명령을 사용하여 노드 1에 iSCSI LIF를 생성합니다.</p>
 <div class="listingblock">
@@ -1724,7 +2315,7 @@
 </div>
 </li>
 <li>
-<p>다음 명령을 사용하여 노드 2에 iSCSI LIF를 생성합니다(HA 쌍만 해당).</p>
+<p>다음 명령을 사용하여 노드 2에 iSCSI LIF를 생성합니다.</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-cli" data-lang="cli">network interface create -vserver &lt;svm-name&gt; -home-port e0a -address &lt;iscsi-ip-address&gt; -lif &lt;lif-name&gt; -home-node &lt;name-of-node2&gt; -data-protocol iscsi</code></pre>
@@ -1741,6 +2332,9 @@
 <pre class="highlight"><code class="language-cli" data-lang="cli">network interface create -vserver &lt;svm-name&gt; -lif &lt;lif-name&gt; -role data -data-protocol none -address &lt;svm-mgmt-ip-address&gt; -netmask-length &lt;length&gt; -home-node node1 -status-admin up -failover-policy system-defined -firewall-policy mgmt -home-port e0a -auto-revert false -failover-group Default -probe-port &lt;port-number-for-azure-health-probe3&gt;</code></pre>
 </div>
 </div>
+<div class="paragraph">
+<p>이 관리 LIF는 SnapCenter과 같은 관리 툴에 연결할 수 있습니다.</p>
+</div>
 </li>
 <li>
 <p>스토리지 VM에 하나 이상의 애그리게이트를 할당합니다.</p>
@@ -1755,8 +2349,13 @@
 </li>
 </ol>
 </div>
+</div>
+</div>
+</div>
+</div>
 <div class="paragraph">
 <p>HA 쌍에서 스토리지 VM을 생성하면 해당 SVM에서 스토리지를 프로비저닝하기 전에 12시간을 기다리는 것이 좋습니다. Cloud Volumes ONTAP 9.10.1 릴리즈부터 Cloud Manager가 12시간 간격으로 HA 쌍의 로드 밸런서에 대한 설정을 검색합니다. 새로운 SVM이 있을 경우 Cloud Manager에서 짧은 계획되지 않은 페일오버를 제공하는 설정을 지원합니다.</p>
+</div>
 </div>
 </div>
 </div>
