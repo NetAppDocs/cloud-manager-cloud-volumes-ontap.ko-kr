@@ -643,8 +643,6 @@
 
 
 
-
-
           
         </li>
       </ul>
@@ -1211,8 +1209,6 @@
         LUN을 호스트에 연결합니다
       </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/task-accelerate-data-access.html">
         FlexCache을 통해 데이터에 더 빠르게 액세스
-      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/task-connecting-kubernetes.html">
-        ONTAP를 영구 스토리지로 사용합니다
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> 통합 관리</div>
       </a>
@@ -1409,7 +1405,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-04-27 16:11:23 +0000">04/27/2022</time>
+    <time datetime="2022-05-03 00:03:41 +0000">05/03/2022</time>
     
   
 
@@ -1423,6 +1419,136 @@
 </div>
 <div class="paragraph">
 <p>이 페이지에 설명된 향상된 기능은 Cloud Volumes ONTAP 관리를 지원하는 Cloud Manager 기능에만 적용됩니다. Cloud Volumes ONTAP 소프트웨어 자체의 새로운 기능에 대해 알아보려면 <a href="https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/index.html" target="_blank" rel="noopener">"Cloud Volumes ONTAP 릴리즈 노트 로 이동합니다"</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="2022년-5월-2일">2022년 5월 2일</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>다음 변경 사항은 커넥터의 3.9.18 릴리스에 도입되었습니다.</p>
+</div>
+<div class="sect2">
+<h3 id="cloud-volumes-ontap-9-11-0">Cloud Volumes ONTAP 9.11.0</h3>
+<div class="paragraph">
+<p>이제 Cloud Manager에서 Cloud Volumes ONTAP 9.11.0을 배포 및 관리할 수 있습니다.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes" target="_blank" rel="noopener">"이 Cloud Volumes ONTAP 릴리스에 포함된 새로운 기능에 대해 자세히 알아보십시오"</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="중재자-업그레이드-개선">중재자 업그레이드 개선</h3>
+<div class="paragraph">
+<p>Cloud Manager에서 HA 쌍의 중재자를 업그레이드할 때 이 중재자가 부팅 디스크를 삭제하기 전에 새 중재자 이미지를 사용할 수 있는지 검증합니다. 이 변경 사항은 업그레이드 프로세스가 실패할 경우 중재자가 계속해서 성공적으로 작동할 수 있도록 합니다.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="k8s-탭이-제거되었습니다">K8s 탭이 제거되었습니다</h3>
+<div class="paragraph">
+<p>K8s 탭은 이전 버전에서 사용되지 않으며 이제 제거되었습니다. Kubernetes를 Cloud Volumes ONTAP와 함께 사용하려면 고급 데이터 관리를 위한 작업 환경으로 관리 Kubernetes 클러스터를 Canvas에 추가할 수 있습니다.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://docs.netapp.com/us-en/cloud-manager-kubernetes/concept-kubernetes.html" target="_blank" rel="noopener">"Cloud Manager의 Kubernetes 데이터 관리에 대해 자세히 알아보십시오"</a></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="azure에서-연간-계약">Azure에서 연간 계약</h3>
+<div class="paragraph">
+<p>이제 Essentials 및 Professional 패키지는 Azure에서 연간 계약을 통해 제공됩니다. NetApp 세일즈 담당자에게 문의하여 연간 계약을 구매할 수 있습니다. 이 계약은 Azure 마켓플레이스에서 프라이빗 오퍼로 제공됩니다.</p>
+</div>
+<div class="paragraph">
+<p>NetApp이 프라이빗 오퍼를 공유하면 작업 환경을 생성하는 동안 Azure 마켓플레이스에서 구독할 때 연간 계획을 선택할 수 있습니다.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-licensing.html">"라이센스에 대해 자세히 알아보십시오"</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="s3-빙하-즉시-검색">S3 빙하 즉시 검색</h3>
+<div class="paragraph">
+<p>이제 Amazon S3 Glacier Instant Retrieval 저장소 클래스에 계층화된 데이터를 저장할 수 있습니다.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-tiering.html#changing-the-storage-class-for-tiered-data">"계층화된 데이터에 대한 스토리지 클래스를 변경하는 방법에 대해 알아보십시오"</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="connector에-새로운-aws-권한이-필요합니다">Connector에 새로운 AWS 권한이 필요합니다</h3>
+<div class="paragraph">
+<p>이제 AZ(단일 가용성 영역)에 HA 쌍을 구축할 때 AWS 분산 배치 그룹을 생성하려면 다음 권한이 필요합니다.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-json" data-lang="json">"ec2:DescribePlacementGroups",
+"iam:GetRolePolicy",</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>이제 Cloud Manager에서 배치 그룹을 만드는 방법을 최적화하려면 이러한 권한이 필요합니다.</p>
+</div>
+<div class="paragraph">
+<p>Cloud Manager에 추가한 각 AWS 자격 증명 세트에 이러한 권한을 제공해야 합니다. 에서 최신 사용 권한 목록을 찾을 수 있습니다 <a href="https://mysupport.netapp.com/site/info/cloud-manager-policies" target="_blank" rel="noopener">"Cloud Manager 정책 페이지"</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="새로운-google-cloud-지역-지원">새로운 Google Cloud 지역 지원</h3>
+<div class="paragraph">
+<p>Cloud Volumes ONTAP는 이제 9.10.1 릴리스부터 다음 Google 클라우드 영역에서 지원됩니다.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>델리(아시아 - 남쪽 2)</p>
+</li>
+<li>
+<p>멜번(호주 - 수테스토2)</p>
+</li>
+<li>
+<p>Milan (Europe-west8) - 단일 노드만 해당</p>
+</li>
+<li>
+<p>산티아고(사우스메리카-west1) - 단일 노드만 해당</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><a href="https://cloud.netapp.com/cloud-volumes-global-regions" target="_blank" rel="noopener">"Cloud Volumes ONTAP에 대해 지원되는 전체 영역 목록을 봅니다"</a></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="google-cloud에서-n2-standard-16을-지원합니다">Google Cloud에서 n2-standard-16을 지원합니다</h3>
+<div class="paragraph">
+<p>이제 Google Cloud의 Cloud Volumes ONTAP에서 9.10.1 릴리즈부터 n2-standard-16 머신 유형이 지원됩니다.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-gcp.html" target="_blank" rel="noopener">"Google Cloud에서 Cloud Volumes ONTAP에 지원되는 구성을 봅니다"</a></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="google-cloud-방화벽-정책의-개선-사항">Google Cloud 방화벽 정책의 개선 사항</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Google Cloud에서 Cloud Volumes ONTAP HA 쌍을 생성하면 Cloud Manager가 VPC에 기존 방화벽 정책을 모두 표시합니다.</p>
+<div class="paragraph">
+<p>이전에는 Cloud Manager에서 타겟 태그가 없는 VPC-1, VPC-2 또는 VPC-3에 정책을 표시하지 않았습니다.</p>
+</div>
+</li>
+<li>
+<p>Google Cloud에서 Cloud Volumes ONTAP 단일 노드 시스템을 생성할 때, 이제 선택한 VPC 전용(권장) 또는 모든 VPC 내의 트래픽을 허용하도록 사전 정의된 방화벽 정책을 선택할 수 있습니다.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="google-cloud-서비스-계정-개선">Google Cloud 서비스 계정 개선</h3>
+<div class="paragraph">
+<p>Cloud Volumes ONTAP에서 사용할 Google Cloud 서비스 계정을 선택하면 Cloud Manager에서 이제 각 서비스 계정과 연결된 이메일 주소를 표시합니다. 이메일 주소를 보면 동일한 이름을 공유하는 서비스 계정을 쉽게 구별할 수 있습니다.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/main/media/screenshot-google-cloud-service-account.png" alt="서비스 계정 필드의 스크린샷"></span></p>
+</div>
 </div>
 </div>
 </div>
@@ -1450,8 +1576,11 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="2022년-2월-27일커넥터-3-9-16">2022년 2월 27일(커넥터 3.9.16)</h2>
+<h2 id="2022년-2월-27일">2022년 2월 27일</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>다음 변경 사항은 커넥터의 3.9.16 릴리스에 도입되었습니다.</p>
+</div>
 <div class="sect2">
 <h3 id="볼륨-마법사를-다시-설계했습니다">볼륨 마법사를 다시 설계했습니다</h3>
 <div class="paragraph">
@@ -1514,8 +1643,11 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="2022년-1월-30일커넥터-3-9-15">2022년 1월 30일(커넥터 3.9.15)</h2>
+<h2 id="2022년-1월-30일">2022년 1월 30일</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>다음 변경 사항은 커넥터의 3.9.15 릴리스에 도입되었습니다.</p>
+</div>
 <div class="sect2">
 <h3 id="재설계된-라이선스-선택">재설계된 라이선스 선택</h3>
 <div class="paragraph">
@@ -1546,8 +1678,11 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="2022년-1월-2일커넥터-3-9-14">2022년 1월 2일(커넥터 3.9.14)</h2>
+<h2 id="2022년-1월-2일">2022년 1월 2일</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>다음 변경 사항은 커넥터의 3.9.14 릴리스에 도입되었습니다.</p>
+</div>
 <div class="sect2">
 <h3 id="추가-vm-유형-지원">추가 VM 유형 지원</h3>
 <div class="paragraph">
@@ -1622,8 +1757,11 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="2021년-11월-28일커넥터-3-9-13">2021년 11월 28일(커넥터 3.9.13)</h2>
+<h2 id="2021년-11월-28일">2021년 11월 28일</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>다음 변경 사항은 커넥터의 3.9.13 릴리스에 도입되었습니다.</p>
+</div>
 <div class="sect2">
 <h3 id="cloud-volumes-ontap-9-10-1">Cloud Volumes ONTAP 9.10.1</h3>
 <div class="paragraph">
@@ -1673,8 +1811,11 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="2021년-10월-4일커넥터-3-9-11">2021년 10월 4일(커넥터 3.9.11)</h2>
+<h2 id="2021년-10월-4일">2021년 10월 4일</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>Connector의 3.9.11 릴리스에는 다음과 같은 변경 사항이 도입되었습니다.</p>
+</div>
 <div class="sect2">
 <h3 id="cloud-volumes-ontap-9-10-0">Cloud Volumes ONTAP 9.10.0</h3>
 <div class="paragraph">
@@ -1693,8 +1834,11 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="2021년-9월-2일커넥터-3-9-10">2021년 9월 2일(커넥터 3.9.10)</h2>
+<h2 id="2021년-9월-2일">2021년 9월 2일</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>다음 변경 사항은 커넥터의 3.9.10 릴리스에 도입되었습니다.</p>
+</div>
 <div class="sect2">
 <h3 id="azure에서-고객이-관리하는-암호화-키">Azure에서 고객이 관리하는 암호화 키</h3>
 <div class="paragraph">
@@ -1717,8 +1861,11 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="2021년-7월-7일커넥터-3-9-8">2021년 7월 7일(커넥터 3.9.8)</h2>
+<h2 id="2021년-7월-7일">2021년 7월 7일</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>커넥터 3.9.8 릴리스에는 다음과 같은 변경 사항이 도입되었습니다.</p>
+</div>
 <div class="sect2">
 <h3 id="새로운-충전-방법">새로운 충전 방법</h3>
 <div class="paragraph">
@@ -1822,8 +1969,11 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="2021년-5월-30일커넥터-3-9-7">2021년 5월 30일(커넥터 3.9.7)</h2>
+<h2 id="2021년-5월-30일">2021년 5월 30일</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>커넥터 3.9.7 릴리스에는 다음과 같은 변경 사항이 도입되었습니다.</p>
+</div>
 <div class="sect2">
 <h3 id="aws의-새로운-프로페셔널-패키지">AWS의 새로운 프로페셔널 패키지</h3>
 <div class="paragraph">
@@ -1894,8 +2044,11 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="2021년-4월-11일커넥터-3-9-5">2021년 4월 11일(커넥터 3.9.5)</h2>
+<h2 id="2021년-4월-11일">2021년 4월 11일</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>커넥터의 3.9.5 릴리스와 함께 다음과 같은 변경 사항이 도입되었습니다.</p>
+</div>
 <div class="sect2">
 <h3 id="논리적-공간-보고">논리적 공간 보고</h3>
 <div class="paragraph">
@@ -1929,8 +2082,11 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="2021년-3월-8일커넥터-3-9-4">2021년 3월 8일(커넥터 3.9.4)</h2>
+<h2 id="2021년-3월-8일">2021년 3월 8일</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>다음 변경 사항은 커넥터의 3.9.4 릴리스에 도입되었습니다.</p>
+</div>
 <div class="sect2">
 <h3 id="cloud-volumes-ontap-9-9-0">Cloud Volumes ONTAP 9.9.0</h3>
 <div class="paragraph">
@@ -1988,8 +2144,11 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="2021년-1월-4일커넥터-3-9-2">2021년 1월 4일(커넥터 3.9.2)</h2>
+<h2 id="2021년-1월-4일">2021년 1월 4일</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>다음 변경 사항은 커넥터의 3.9.2 릴리스에 도입되었습니다.</p>
+</div>
 <div class="sect2">
 <h3 id="aws-아웃포스트">AWS 아웃포스트</h3>
 <div class="paragraph">
@@ -2073,8 +2232,11 @@ GCP 제한으로 인해 디스크만 사용할 경우 최대 시스템 용량은
 </div>
 </div>
 <div class="sect1">
-<h2 id="2020년-11월-3일커넥터-3-9-0">2020년 11월 3일(커넥터 3.9.0)</h2>
+<h2 id="2020년-11월-3일">2020년 11월 3일</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>다음 변경 사항은 Connector의 3.9.0 릴리스에 도입되었습니다.</p>
+</div>
 <div class="sect2">
 <h3 id="cloud-volumes-ontap용-azure-프라이빗-링크">Cloud Volumes ONTAP용 Azure 프라이빗 링크</h3>
 <div class="paragraph">
