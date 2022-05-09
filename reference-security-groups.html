@@ -169,7 +169,39 @@
   
   <!-- Start Page Toolbar -->
   
-  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/issues/new?body=Page%3A%20[AWS의 보안 그룹 규칙](https://docs.netapp.com/ko-kr/cloud-manager-cloud-volumes-ontap/reference-security-groups.html)" class="page-nav-contribute-link" role="button"><img src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/discuss-sm.svg" class="github-icon" />문서 변경 요청</a><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/blob/main/reference-security-groups.adoc" class="page-nav-contribute-link" role="button"><img src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/edit-sm.svg" class="github-icon" />이 페이지 편집</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/article-sm.svg" class="github-icon" />기여하는 방법 자세히 알아보기</a></div>
+  <div class="page-nav-toolbar">
+<div id="flavor-dropdown" class="custom-dropdown" data-url="/ko-kr/cloud-manager-cloud-volumes-ontap/reference-security-groups.html">
+  
+  <div class="custom-dropdown-select unselected" title="모든 클라우드 공급자">
+    <label>클라우드 공급자</label>
+    <span>모든 클라우드 공급자</span>
+    <img src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/filter.svg" class="custom-icon" alt="" />
+  </div>
+  
+
+  <ul class="custom-dropdown-menu">
+    
+    
+    <li data-value="aws" data-url="/ko-kr/cloud-manager-cloud-volumes-ontap/aws/reference-security-groups.html">
+      <img alt="" src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/aws-ico.svg" onerror="this.src='/ko-kr/cloud-manager-cloud-volumes-ontap/images/blank-ico.png'" class="custom-icon" />Amazon Web Services에서 직접 지원합니다
+    </li>
+    
+    
+    
+    <li data-value="gcp" data-url="/ko-kr/cloud-manager-cloud-volumes-ontap/gcp">
+      <img alt="" src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/gcp-ico.svg" onerror="this.src='/ko-kr/cloud-manager-cloud-volumes-ontap/images/blank-ico.png'" class="custom-icon" />Google 클라우드
+    </li>
+    
+    
+    
+    <li data-value="azure" data-url="/ko-kr/cloud-manager-cloud-volumes-ontap/azure">
+      <img alt="" src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/azure-ico.svg" onerror="this.src='/ko-kr/cloud-manager-cloud-volumes-ontap/images/blank-ico.png'" class="custom-icon" />Microsoft Azure를 참조하십시오
+    </li>
+    
+    
+  </ul>
+</div>
+<div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/issues/new?body=Page%3A%20[AWS의 보안 그룹 규칙](https://docs.netapp.com/ko-kr/cloud-manager-cloud-volumes-ontap/reference-security-groups.html)" class="page-nav-contribute-link" role="button"><img src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/discuss-sm.svg" class="github-icon" />문서 변경 요청</a><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/blob/main/reference-security-groups.adoc" class="page-nav-contribute-link" role="button"><img src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/edit-sm.svg" class="github-icon" />이 페이지 편집</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/article-sm.svg" class="github-icon" />기여하는 방법 자세히 알아보기</a></div>
     <div class="page-nav-container">
       <nav class="page-nav-fixed">
         <div class="page-nav-title">이 페이지의 내용</div>
@@ -1407,7 +1439,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-04-14 17:30:59 +0000">04/14/2022</time>
+    <time datetime="2022-05-09 15:44:41 +0000">05/09/2022</time>
     
   
 
@@ -2051,10 +2083,13 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="ha-중재자-내부-보안-그룹의-규칙">HA 중재자 내부 보안 그룹의 규칙</h2>
+<h2 id="ha-구성-내부-보안-그룹에-대한-규칙입니다">HA 구성 내부 보안 그룹에 대한 규칙입니다</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Cloud Volumes ONTAP HA 중재자를 위해 미리 정의된 내부 보안 그룹에는 다음 규칙이 포함됩니다. Cloud Manager는 항상 이 보안 그룹을 생성합니다. 자신의 을(를) 사용할 수 있는 옵션이 없습니다.</p>
+<p>Cloud Volumes ONTAP HA 구성에 대해 미리 정의된 내부 보안 그룹에는 다음 규칙이 포함됩니다. 이 보안 그룹은 HA 노드와 중재자 및 노드 간의 통신을 지원합니다.</p>
+</div>
+<div class="paragraph">
+<p>Cloud Manager는 항상 이 보안 그룹을 생성합니다. 자신의 을(를) 사용할 수 있는 옵션이 없습니다.</p>
 </div>
 <div class="sect2">
 <h3 id="인바운드-규칙-3">인바운드 규칙</h3>

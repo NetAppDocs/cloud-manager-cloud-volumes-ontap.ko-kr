@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="ko">
   <head class="at-element-marker">
-  <title>Google Cloud Platform의 고가용성 쌍 | NetApp Documentation</title>
+  <title>Google Cloud의 고가용성 쌍 | NetApp Documentation</title>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
   <meta http-equiv="language" content="en">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta property="og:title" content="Google Cloud Platform의 고가용성 쌍 | NetApp Documentation" />
+  <meta property="og:title" content="Google Cloud의 고가용성 쌍 | NetApp Documentation" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://docs.netapp.com/ko-kr/cloud-manager-cloud-volumes-ontap/concept-ha-google-cloud.html" />
-	<meta property="og:description" content="Cloud Volumes ONTAP 고가용성 구성은 무중단 운영과 내결함성을 제공합니다. Google Cloud Platform에서는 두 노드 간에 데이터가 동기식으로 미러링됩니다." />
+	<meta property="og:description" content="Cloud Volumes ONTAP 고가용성 구성은 무중단 운영과 내결함성을 제공합니다. Google Cloud에서는 두 노드 간에 데이터를 동기식으로 미러링합니다." />
   <meta property="og:image" content="https://docs.netapp.com/ko-kr/cloud-manager-cloud-volumes-ontap/images/logo-tophat-social.png" />
   <meta property="og:image:alt" content="NetApp Logo" />
   <meta name="format-detection" content="telephone=no">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
-  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="Cloud Volumes ONTAP 고가용성 구성은 무중단 운영과 내결함성을 제공합니다. Google Cloud Platform에서는 두 노드 간에 데이터가 동기식으로 미러링됩니다.">
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="Cloud Volumes ONTAP 고가용성 구성은 무중단 운영과 내결함성을 제공합니다. Google Cloud에서는 두 노드 간에 데이터를 동기식으로 미러링합니다.">
   <meta name="keywords" content=" high availability, HA, mediator, concepts, understanding, overview, takeover, giveback, rpo, rto, nondisruptive, ha pairs, node, nodes, synchronous, resync, recovery point objective, recovery time objective, failover, mount, remount, failure, data access, access, ip address, performance, gcp, gcp ha, google cloud ha, ha in google cloud"><!-- Icons -->
   <link rel="icon" href="/ko-kr/cloud-manager-cloud-volumes-ontap/images/favicon.ico" type="image/x-icon">
 
@@ -169,7 +169,39 @@
   
   <!-- Start Page Toolbar -->
   
-  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/issues/new?body=Page%3A%20[Google Cloud Platform의 고가용성 쌍](https://docs.netapp.com/ko-kr/cloud-manager-cloud-volumes-ontap/concept-ha-google-cloud.html)" class="page-nav-contribute-link" role="button"><img src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/discuss-sm.svg" class="github-icon" />문서 변경 요청</a><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/blob/main/concept-ha-google-cloud.adoc" class="page-nav-contribute-link" role="button"><img src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/edit-sm.svg" class="github-icon" />이 페이지 편집</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/article-sm.svg" class="github-icon" />기여하는 방법 자세히 알아보기</a></div>
+  <div class="page-nav-toolbar">
+<div id="flavor-dropdown" class="custom-dropdown" data-url="/ko-kr/cloud-manager-cloud-volumes-ontap/concept-ha-google-cloud.html">
+  
+  <div class="custom-dropdown-select unselected" title="모든 클라우드 공급자">
+    <label>클라우드 공급자</label>
+    <span>모든 클라우드 공급자</span>
+    <img src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/filter.svg" class="custom-icon" alt="" />
+  </div>
+  
+
+  <ul class="custom-dropdown-menu">
+    
+    
+    <li data-value="aws" data-url="/ko-kr/cloud-manager-cloud-volumes-ontap/aws">
+      <img alt="" src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/aws-ico.svg" onerror="this.src='/ko-kr/cloud-manager-cloud-volumes-ontap/images/blank-ico.png'" class="custom-icon" />Amazon Web Services에서 직접 지원합니다
+    </li>
+    
+    
+    
+    <li data-value="gcp" data-url="/ko-kr/cloud-manager-cloud-volumes-ontap/gcp/concept-ha-google-cloud.html">
+      <img alt="" src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/gcp-ico.svg" onerror="this.src='/ko-kr/cloud-manager-cloud-volumes-ontap/images/blank-ico.png'" class="custom-icon" />Google 클라우드
+    </li>
+    
+    
+    
+    <li data-value="azure" data-url="/ko-kr/cloud-manager-cloud-volumes-ontap/azure">
+      <img alt="" src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/azure-ico.svg" onerror="this.src='/ko-kr/cloud-manager-cloud-volumes-ontap/images/blank-ico.png'" class="custom-icon" />Microsoft Azure를 참조하십시오
+    </li>
+    
+    
+  </ul>
+</div>
+<div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/issues/new?body=Page%3A%20[Google Cloud의 고가용성 쌍](https://docs.netapp.com/ko-kr/cloud-manager-cloud-volumes-ontap/concept-ha-google-cloud.html)" class="page-nav-contribute-link" role="button"><img src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/discuss-sm.svg" class="github-icon" />문서 변경 요청</a><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/blob/main/concept-ha-google-cloud.adoc" class="page-nav-contribute-link" role="button"><img src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/edit-sm.svg" class="github-icon" />이 페이지 편집</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/article-sm.svg" class="github-icon" />기여하는 방법 자세히 알아보기</a></div>
     <div class="page-nav-container">
       <nav class="page-nav-fixed">
         <div class="page-nav-title">이 페이지의 내용</div>
@@ -1400,14 +1432,14 @@
     </div>
   </span>
 </div><div class="n-doc__component-detail-heading-wrap">
-  <h1 class="n-doc__component-detail-heading">Google Cloud Platform의 고가용성 쌍</h1>
+  <h1 class="n-doc__component-detail-heading">Google Cloud의 고가용성 쌍</h1>
 </div>
 
 
 <p class="page-details">
   
     
-    <time datetime="2022-04-14 17:30:59 +0000">04/14/2022</time>
+    <time datetime="2022-05-09 15:44:41 +0000">05/09/2022</time>
     
   
 
@@ -1417,7 +1449,7 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph lead">
-<p>Cloud Volumes ONTAP HA(고가용성) 구성은 무중단 운영 및 내결함성을 제공합니다. Google Cloud Platform에서는 두 노드 간에 데이터가 동기식으로 미러링됩니다.</p>
+<p>Cloud Volumes ONTAP HA(고가용성) 구성은 무중단 운영 및 내결함성을 제공합니다. Google Cloud에서는 두 노드 간에 데이터를 동기식으로 미러링합니다.</p>
 </div>
 </div>
 </div>
@@ -1425,7 +1457,7 @@
 <h2 id="ha-구성-요소">HA 구성 요소</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>GCP의 Cloud Volumes ONTAP HA 구성에는 다음과 같은 구성요소가 포함됩니다.</p>
+<p>Google Cloud의 Cloud Volumes ONTAP HA 구성에는 다음과 같은 구성요소가 포함됩니다.</p>
 </div>
 <div class="ulist">
 <ul>

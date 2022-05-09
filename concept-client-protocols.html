@@ -169,7 +169,39 @@
   
   <!-- Start Page Toolbar -->
   
-  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/issues/new?body=Page%3A%20[클라이언트 프로토콜](https://docs.netapp.com/ko-kr/cloud-manager-cloud-volumes-ontap/concept-client-protocols.html)" class="page-nav-contribute-link" role="button"><img src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/discuss-sm.svg" class="github-icon" />문서 변경 요청</a><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/blob/main/concept-client-protocols.adoc" class="page-nav-contribute-link" role="button"><img src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/edit-sm.svg" class="github-icon" />이 페이지 편집</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/article-sm.svg" class="github-icon" />기여하는 방법 자세히 알아보기</a></div>
+  <div class="page-nav-toolbar">
+<div id="flavor-dropdown" class="custom-dropdown" data-url="/ko-kr/cloud-manager-cloud-volumes-ontap/concept-client-protocols.html">
+  
+  <div class="custom-dropdown-select unselected" title="모든 클라우드 공급자">
+    <label>클라우드 공급자</label>
+    <span>모든 클라우드 공급자</span>
+    <img src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/filter.svg" class="custom-icon" alt="" />
+  </div>
+  
+
+  <ul class="custom-dropdown-menu">
+    
+    
+    <li data-value="aws" data-url="/ko-kr/cloud-manager-cloud-volumes-ontap/aws/concept-client-protocols.html">
+      <img alt="" src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/aws-ico.svg" onerror="this.src='/ko-kr/cloud-manager-cloud-volumes-ontap/images/blank-ico.png'" class="custom-icon" />Amazon Web Services에서 직접 지원합니다
+    </li>
+    
+    
+    
+    <li data-value="gcp" data-url="/ko-kr/cloud-manager-cloud-volumes-ontap/gcp/concept-client-protocols.html">
+      <img alt="" src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/gcp-ico.svg" onerror="this.src='/ko-kr/cloud-manager-cloud-volumes-ontap/images/blank-ico.png'" class="custom-icon" />Google 클라우드
+    </li>
+    
+    
+    
+    <li data-value="azure" data-url="/ko-kr/cloud-manager-cloud-volumes-ontap/azure/concept-client-protocols.html">
+      <img alt="" src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/azure-ico.svg" onerror="this.src='/ko-kr/cloud-manager-cloud-volumes-ontap/images/blank-ico.png'" class="custom-icon" />Microsoft Azure를 참조하십시오
+    </li>
+    
+    
+  </ul>
+</div>
+<div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/issues/new?body=Page%3A%20[클라이언트 프로토콜](https://docs.netapp.com/ko-kr/cloud-manager-cloud-volumes-ontap/concept-client-protocols.html)" class="page-nav-contribute-link" role="button"><img src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/discuss-sm.svg" class="github-icon" />문서 변경 요청</a><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/blob/main/concept-client-protocols.adoc" class="page-nav-contribute-link" role="button"><img src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/edit-sm.svg" class="github-icon" />이 페이지 편집</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/article-sm.svg" class="github-icon" />기여하는 방법 자세히 알아보기</a></div>
     <div class="page-nav-container">
       <nav class="page-nav-fixed">
         <div class="page-nav-title">이 페이지의 내용</div>
@@ -1407,7 +1439,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-04-14 17:30:59 +0000">04/14/2022</time>
+    <time datetime="2022-05-09 15:44:41 +0000">05/09/2022</time>
     
   
 
@@ -1453,9 +1485,6 @@
 <div class="sectionbody">
 <div class="paragraph">
 <p>Cloud Volumes ONTAP은 S3를 Microsoft Azure의 스케일아웃 스토리지 옵션으로 지원합니다. S3 프로토콜 지원을 통해 SVM의 버킷에 포함된 오브젝트에 대한 S3 클라이언트 액세스를 구성할 수 있습니다.</p>
-</div>
-<div class="paragraph">
-<p>현재 AWS나 Google Cloud에서는 S3 프로토콜이 Cloud Volumes ONTAP에서 지원되지 않습니다.</p>
 </div>
 <div class="paragraph">
 <p><a href="https://docs.netapp.com/us-en/ontap/object-storage-management/index.html" target="_blank" rel="noopener">"ONTAP에서 S3 오브젝트 스토리지 서비스를 구성 및 관리하는 방법에 대해 알아보십시오"</a>.</p>

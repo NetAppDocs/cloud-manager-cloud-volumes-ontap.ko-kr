@@ -17,7 +17,7 @@
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
   <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="Cloud Volumes ONTAP는 데이터 암호화를 지원하고 바이러스 및 랜섬웨어에 대한 보호를 제공합니다.">
-  <meta name="keywords" content=" security, encryption, antivirus, concepts, key managers, safenet, kms, keys, vscan, encrypt, aws, key management service, cmk, customer master key, data at rest, data-at-rest, netapp storage encryption, certificate signing request, csr, certificate, ca certificate, virus, scan, virus scan, certificate authority, netapp volume encryption, nve, volume encryption, key management server, ransomware, fpolicy, snapshots"><!-- Icons -->
+  <meta name="keywords" content=" security, encryption, antivirus, concepts, key managers, safenet, kms, keys, vscan, encrypt, key management service, cmk, customer master key, data at rest, data-at-rest, netapp storage encryption, certificate signing request, csr, certificate, ca certificate, virus, scan, virus scan, certificate authority, netapp volume encryption, nve, volume encryption, key management server, ransomware, fpolicy, snapshots"><!-- Icons -->
   <link rel="icon" href="/ko-kr/cloud-manager-cloud-volumes-ontap/images/favicon.ico" type="image/x-icon">
 
   <!-- RSS Feed --><link rel="alternate" type="application/rss+xml" title="NetApp Documentation" href="/ko-kr/cloud-manager-cloud-volumes-ontap/feed.xml"><!-- CSS Definitions: NetApp CSS should be defined after generic css -->
@@ -169,7 +169,39 @@
   
   <!-- Start Page Toolbar -->
   
-  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/issues/new?body=Page%3A%20[보안](https://docs.netapp.com/ko-kr/cloud-manager-cloud-volumes-ontap/concept-security.html)" class="page-nav-contribute-link" role="button"><img src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/discuss-sm.svg" class="github-icon" />문서 변경 요청</a><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/blob/main/concept-security.adoc" class="page-nav-contribute-link" role="button"><img src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/edit-sm.svg" class="github-icon" />이 페이지 편집</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/article-sm.svg" class="github-icon" />기여하는 방법 자세히 알아보기</a></div>
+  <div class="page-nav-toolbar">
+<div id="flavor-dropdown" class="custom-dropdown" data-url="/ko-kr/cloud-manager-cloud-volumes-ontap/concept-security.html">
+  
+  <div class="custom-dropdown-select unselected" title="모든 클라우드 공급자">
+    <label>클라우드 공급자</label>
+    <span>모든 클라우드 공급자</span>
+    <img src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/filter.svg" class="custom-icon" alt="" />
+  </div>
+  
+
+  <ul class="custom-dropdown-menu">
+    
+    
+    <li data-value="aws" data-url="/ko-kr/cloud-manager-cloud-volumes-ontap/aws/concept-security.html">
+      <img alt="" src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/aws-ico.svg" onerror="this.src='/ko-kr/cloud-manager-cloud-volumes-ontap/images/blank-ico.png'" class="custom-icon" />Amazon Web Services에서 직접 지원합니다
+    </li>
+    
+    
+    
+    <li data-value="gcp" data-url="/ko-kr/cloud-manager-cloud-volumes-ontap/gcp/concept-security.html">
+      <img alt="" src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/gcp-ico.svg" onerror="this.src='/ko-kr/cloud-manager-cloud-volumes-ontap/images/blank-ico.png'" class="custom-icon" />Google 클라우드
+    </li>
+    
+    
+    
+    <li data-value="azure" data-url="/ko-kr/cloud-manager-cloud-volumes-ontap/azure/concept-security.html">
+      <img alt="" src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/azure-ico.svg" onerror="this.src='/ko-kr/cloud-manager-cloud-volumes-ontap/images/blank-ico.png'" class="custom-icon" />Microsoft Azure를 참조하십시오
+    </li>
+    
+    
+  </ul>
+</div>
+<div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/issues/new?body=Page%3A%20[보안](https://docs.netapp.com/ko-kr/cloud-manager-cloud-volumes-ontap/concept-security.html)" class="page-nav-contribute-link" role="button"><img src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/discuss-sm.svg" class="github-icon" />문서 변경 요청</a><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/blob/main/concept-security.adoc" class="page-nav-contribute-link" role="button"><img src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/edit-sm.svg" class="github-icon" />이 페이지 편집</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/article-sm.svg" class="github-icon" />기여하는 방법 자세히 알아보기</a></div>
     <div class="page-nav-container">
       <nav class="page-nav-fixed">
         <div class="page-nav-title">이 페이지의 내용</div>
@@ -1407,7 +1439,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-04-14 17:30:59 +0000">04/14/2022</time>
+    <time datetime="2022-05-09 15:44:41 +0000">05/09/2022</time>
     
   
 
@@ -1444,7 +1476,7 @@
 </ul>
 </div>
 <div class="paragraph">
-<p>NetApp 암호화 솔루션을 AWS, Azure 또는 GCP의 네이티브 암호화와 함께 사용할 수 있으며, 하이퍼바이저 레벨에서 데이터를 암호화할 수 있습니다. 이렇게 하면 매우 민감한 데이터에 필요할 수 있는 이중 암호화가 제공됩니다. 암호화된 데이터에 액세스할 때 하이퍼바이저 수준에서 한 번(클라우드 공급자의 키 사용) 암호화되지 않은 다음 다시 NetApp 암호화 솔루션(외부 키 관리자의 키 사용)을 사용합니다.</p>
+<p>클라우드 공급자의 기본 암호화와 함께 NetApp 암호화 솔루션을 사용할 수 있으며, 하이퍼바이저 레벨에서 데이터를 암호화할 수 있습니다. 이렇게 하면 매우 민감한 데이터에 필요할 수 있는 이중 암호화가 제공됩니다. 암호화된 데이터에 액세스할 때 하이퍼바이저 수준에서 한 번(클라우드 공급자의 키 사용) 암호화되지 않은 다음 다시 NetApp 암호화 솔루션(외부 키 관리자의 키 사용)을 사용합니다.</p>
 </div>
 <div class="sect2">
 <h3 id="netapp-암호화-솔루션nve-및-nae">NetApp 암호화 솔루션(NVE 및 NAE)</h3>
@@ -1462,7 +1494,7 @@
 </ul>
 </div>
 <div class="paragraph">
-<p>NVE와 NAE는 모두 외부 키 관리자로 지원됩니다. NVE를 사용하는 경우 AKV(Azure Key Vault) 또는 Google Cloud 키 관리 서비스를 사용하여 ONTAP 암호화 키를 보호할 수 있습니다.</p>
+<p>NVE와 NAE는 모두 외부 키 관리자로 지원됩니다.</p>
 </div>
 <div class="paragraph">
 <p>새 애그리게이트에는 외부 키 관리자를 설정한 후 기본적으로 NAE(NetApp Aggregate Encryption)가 활성화되어 있습니다. NAE 애그리게이트에 속하지 않는 새로운 볼륨은 기본적으로 NetApp Volume Encryption(NVE)이 활성화되어 있습니다(예: 외부 키 관리자를 설정하기 전에 생성된 기존 애그리게이트가 있는 경우).</p>

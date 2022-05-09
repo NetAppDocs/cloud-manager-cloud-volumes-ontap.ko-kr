@@ -169,7 +169,39 @@
   
   <!-- Start Page Toolbar -->
   
-  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/issues/new?body=Page%3A%20[Cloud Volumes ONTAP 라이센스](https://docs.netapp.com/ko-kr/cloud-manager-cloud-volumes-ontap/concept-licensing.html)" class="page-nav-contribute-link" role="button"><img src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/discuss-sm.svg" class="github-icon" />문서 변경 요청</a><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/blob/main/concept-licensing.adoc" class="page-nav-contribute-link" role="button"><img src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/edit-sm.svg" class="github-icon" />이 페이지 편집</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/article-sm.svg" class="github-icon" />기여하는 방법 자세히 알아보기</a></div>
+  <div class="page-nav-toolbar">
+<div id="flavor-dropdown" class="custom-dropdown" data-url="/ko-kr/cloud-manager-cloud-volumes-ontap/concept-licensing.html">
+  
+  <div class="custom-dropdown-select unselected" title="모든 클라우드 공급자">
+    <label>클라우드 공급자</label>
+    <span>모든 클라우드 공급자</span>
+    <img src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/filter.svg" class="custom-icon" alt="" />
+  </div>
+  
+
+  <ul class="custom-dropdown-menu">
+    
+    
+    <li data-value="aws" data-url="/ko-kr/cloud-manager-cloud-volumes-ontap/aws/concept-licensing.html">
+      <img alt="" src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/aws-ico.svg" onerror="this.src='/ko-kr/cloud-manager-cloud-volumes-ontap/images/blank-ico.png'" class="custom-icon" />Amazon Web Services에서 직접 지원합니다
+    </li>
+    
+    
+    
+    <li data-value="gcp" data-url="/ko-kr/cloud-manager-cloud-volumes-ontap/gcp/concept-licensing.html">
+      <img alt="" src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/gcp-ico.svg" onerror="this.src='/ko-kr/cloud-manager-cloud-volumes-ontap/images/blank-ico.png'" class="custom-icon" />Google 클라우드
+    </li>
+    
+    
+    
+    <li data-value="azure" data-url="/ko-kr/cloud-manager-cloud-volumes-ontap/azure/concept-licensing.html">
+      <img alt="" src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/azure-ico.svg" onerror="this.src='/ko-kr/cloud-manager-cloud-volumes-ontap/images/blank-ico.png'" class="custom-icon" />Microsoft Azure를 참조하십시오
+    </li>
+    
+    
+  </ul>
+</div>
+<div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/issues/new?body=Page%3A%20[Cloud Volumes ONTAP 라이센스](https://docs.netapp.com/ko-kr/cloud-manager-cloud-volumes-ontap/concept-licensing.html)" class="page-nav-contribute-link" role="button"><img src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/discuss-sm.svg" class="github-icon" />문서 변경 요청</a><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/blob/main/concept-licensing.adoc" class="page-nav-contribute-link" role="button"><img src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/edit-sm.svg" class="github-icon" />이 페이지 편집</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/article-sm.svg" class="github-icon" />기여하는 방법 자세히 알아보기</a></div>
     <div class="page-nav-container">
       <nav class="page-nav-fixed">
         <div class="page-nav-title">이 페이지의 내용</div>
@@ -1407,7 +1439,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-05-03 00:03:41 +0000">05/03/2022</time>
+    <time datetime="2022-05-09 15:44:41 +0000">05/09/2022</time>
     
   
 
@@ -1582,10 +1614,9 @@
 </li>
 <li>
 <p>클라우드 공급자 마켓플레이스로부터 연간 계약을 체결합니다.</p>
-<div class="ulist">
-<ul>
+</li>
 <li>
-<p>AWS에서는 AWS 마켓플레이스의 퍼블릭 오퍼에서 연간 계약을 이용할 수 있습니다. Cloud Volumes ONTAP 작업 환경을 구축할 때 Cloud Manager에서 구독을 신청하라는 메시지를 표시합니다.</p>
+<p>AWS에서는 AWS 마켓플레이스의 퍼블릭 오퍼에서 연간 계약을 이용할 수 있습니다. Cloud Volumes ONTAP 작업 환경을 배포할 때 Cloud Manager에서 세부 정보 및 자격 증명 페이지를 구독하라는 메시지를 표시합니다.</p>
 </li>
 <li>
 <p>Azure에서는 NetApp 세일즈 담당자와 협력하여 연간 계약을 구입해야 합니다. 이 계약은 Azure 마켓플레이스에서 프라이빗 오퍼로 제공됩니다.</p>
@@ -1597,9 +1628,6 @@
 <p>Google Cloud에서는 NetApp 세일즈 담당자와 협력하여 연간 계약을 구입해야 합니다. 이 계약은 Google Cloud Marketplace에서 프라이빗 오퍼로 제공됩니다.</p>
 <div class="paragraph">
 <p>NetApp이 프라이빗 오퍼를 공유하면 근무 환경을 생성하는 동안 Google Cloud Marketplace에서 가입할 때 연간 계획을 선택할 수 있습니다.</p>
-</div>
-</li>
-</ul>
 </div>
 </li>
 </ul>
@@ -1640,19 +1668,13 @@
 <div class="sect2">
 <h3 id="무료-평가판">무료 평가판</h3>
 <div class="paragraph">
-<p>클라우드 공급자 마켓플레이스의 용량제 구독을 통해 30일 무료 평가판을 사용할 수 있습니다. 무료 평가판은 Cloud Volumes ONTAP 및 클라우드 백업을 포함하며 시장 목록에 등록할 때 시작됩니다.</p>
+<p>클라우드 공급자 마켓플레이스의 용량제 구독을 통해 30일 무료 평가판을 사용할 수 있습니다. 무료 평가판에 Cloud Volumes ONTAP 및 클라우드 백업이 포함되어 있습니다. 이 평가판은 사용자가 마켓플레이스의 서비스에 가입할 때 시작됩니다.</p>
 </div>
 <div class="paragraph">
-<p>인스턴스에 대해 시간별 소프트웨어 라이센스 비용이 발생하지 않지만, 클라우드 공급자의 인프라 비용은 계속 적용됩니다.</p>
+<p>인스턴스 또는 용량 제한은 없습니다. 원하는 만큼 Cloud Volumes ONTAP 시스템을 구축하고 30일 동안 무료로 필요한 용량을 할당할 수 있습니다. 무료 평가판은 30일 후에 자동으로 유료 시간별 구독으로 변환됩니다.</p>
 </div>
 <div class="paragraph">
-<p>무료 평가판은 만료 시 유료 시간별 구독으로 자동 변환됩니다. 시간 제한 내에 인스턴스를 종료하는 경우, 배포한 다음 인스턴스가 무료 평가판의 일부가 아닙니다(30일 이내에 배포된 경우에도).</p>
-</div>
-<div class="paragraph">
-<p>지급인 계정에 첫 번째 Cloud Volumes ONTAP 시스템을 만들어 Cloud Manager에서 Cloud Volumes ONTAP 30일 무료 평가판을 시작할 수 있습니다.</p>
-</div>
-<div class="paragraph">
-<p>클라우드 공급자를 통해 선불 종량제 평가판을 받을 수 있으며 어떤 방법으로도 확장할 수 없습니다.</p>
+<p>Cloud Volumes ONTAP에는 시간당 소프트웨어 라이센스 비용이 부과되지 않지만, 클라우드 공급자의 인프라 비용이 여전히 적용됩니다.</p>
 </div>
 </div>
 <div class="sect2">
@@ -1714,12 +1736,16 @@
 <ul>
 <li>
 <p><a href="task-deploying-otc-aws.html">"AWS에서 Cloud Volumes ONTAP 실행"</a></p>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p><a href="task-deploying-otc-azure.html">"Azure에서 Cloud Volumes ONTAP 실행"</a></p>
 </li>
 <li>
 <p><a href="task-deploying-gcp.html">"Google Cloud에서 Cloud Volumes ONTAP 실행"</a></p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
@@ -1775,12 +1801,16 @@
 <ul>
 <li>
 <p><a href="task-deploying-otc-aws.html">"AWS에서 Cloud Volumes ONTAP 실행"</a></p>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p><a href="task-deploying-otc-azure.html">"Azure에서 Cloud Volumes ONTAP 실행"</a></p>
 </li>
 <li>
 <p><a href="task-deploying-gcp.html">"Google Cloud에서 Cloud Volumes ONTAP 실행"</a></p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>

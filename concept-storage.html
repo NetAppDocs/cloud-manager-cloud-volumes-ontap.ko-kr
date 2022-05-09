@@ -17,7 +17,7 @@
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
   <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="Cloud Volumes ONTAP에서 클라우드 스토리지를 사용하는 방법을 이해하면 스토리지 비용을 이해하는 데 도움이 됩니다.">
-  <meta name="keywords" content=" storage, capacity, volumes, aggregates, raw capacity, usable capacity, aws, azure"><!-- Icons -->
+  <meta name="keywords" content=" storage, capacity, volumes, aggregates, raw capacity, usable capacity"><!-- Icons -->
   <link rel="icon" href="/ko-kr/cloud-manager-cloud-volumes-ontap/images/favicon.ico" type="image/x-icon">
 
   <!-- RSS Feed --><link rel="alternate" type="application/rss+xml" title="NetApp Documentation" href="/ko-kr/cloud-manager-cloud-volumes-ontap/feed.xml"><!-- CSS Definitions: NetApp CSS should be defined after generic css -->
@@ -169,7 +169,39 @@
   
   <!-- Start Page Toolbar -->
   
-  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/issues/new?body=Page%3A%20[디스크와 애그리게이트](https://docs.netapp.com/ko-kr/cloud-manager-cloud-volumes-ontap/concept-storage.html)" class="page-nav-contribute-link" role="button"><img src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/discuss-sm.svg" class="github-icon" />문서 변경 요청</a><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/blob/main/concept-storage.adoc" class="page-nav-contribute-link" role="button"><img src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/edit-sm.svg" class="github-icon" />이 페이지 편집</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/article-sm.svg" class="github-icon" />기여하는 방법 자세히 알아보기</a></div>
+  <div class="page-nav-toolbar">
+<div id="flavor-dropdown" class="custom-dropdown" data-url="/ko-kr/cloud-manager-cloud-volumes-ontap/concept-storage.html">
+  
+  <div class="custom-dropdown-select unselected" title="모든 클라우드 공급자">
+    <label>클라우드 공급자</label>
+    <span>모든 클라우드 공급자</span>
+    <img src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/filter.svg" class="custom-icon" alt="" />
+  </div>
+  
+
+  <ul class="custom-dropdown-menu">
+    
+    
+    <li data-value="aws" data-url="/ko-kr/cloud-manager-cloud-volumes-ontap/aws/concept-storage.html">
+      <img alt="" src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/aws-ico.svg" onerror="this.src='/ko-kr/cloud-manager-cloud-volumes-ontap/images/blank-ico.png'" class="custom-icon" />Amazon Web Services에서 직접 지원합니다
+    </li>
+    
+    
+    
+    <li data-value="gcp" data-url="/ko-kr/cloud-manager-cloud-volumes-ontap/gcp/concept-storage.html">
+      <img alt="" src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/gcp-ico.svg" onerror="this.src='/ko-kr/cloud-manager-cloud-volumes-ontap/images/blank-ico.png'" class="custom-icon" />Google 클라우드
+    </li>
+    
+    
+    
+    <li data-value="azure" data-url="/ko-kr/cloud-manager-cloud-volumes-ontap/azure/concept-storage.html">
+      <img alt="" src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/azure-ico.svg" onerror="this.src='/ko-kr/cloud-manager-cloud-volumes-ontap/images/blank-ico.png'" class="custom-icon" />Microsoft Azure를 참조하십시오
+    </li>
+    
+    
+  </ul>
+</div>
+<div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/issues/new?body=Page%3A%20[디스크와 애그리게이트](https://docs.netapp.com/ko-kr/cloud-manager-cloud-volumes-ontap/concept-storage.html)" class="page-nav-contribute-link" role="button"><img src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/discuss-sm.svg" class="github-icon" />문서 변경 요청</a><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/blob/main/concept-storage.adoc" class="page-nav-contribute-link" role="button"><img src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/edit-sm.svg" class="github-icon" />이 페이지 편집</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/article-sm.svg" class="github-icon" />기여하는 방법 자세히 알아보기</a></div>
     <div class="page-nav-container">
       <nav class="page-nav-fixed">
         <div class="page-nav-title">이 페이지의 내용</div>
@@ -1407,7 +1439,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-04-14 17:30:59 +0000">04/14/2022</time>
+    <time datetime="2022-05-09 15:44:41 +0000">05/09/2022</time>
     
   
 
@@ -1580,10 +1612,10 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="gcp-스토리지">GCP 스토리지</h2>
+<h2 id="google-cloud-스토리지">Google Cloud 스토리지</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>GCP에서 애그리게이트에는 동일한 크기의 디스크를 최대 6개까지 포함할 수 있습니다. 최대 디스크 크기는 64TiB입니다.</p>
+<p>Google Cloud에서는 aggregate에 동일한 크기의 디스크를 최대 6개까지 포함할 수 있습니다. 최대 디스크 크기는 64TiB입니다.</p>
 </div>
 <div class="paragraph">
 <p>디스크 유형은 _ Zonal SSD 영구 디스크 _, _ 균형 조정 영구 디스크 _ 또는 _ Zonal 표준 영구 디스크 _ 일 수 있습니다. 영구 디스크를 Google Storage 버킷과 에 페어링할 수 있습니다 <a href="concept-data-tiering.html">"비활성 데이터를 저비용 오브젝트 스토리지로 계층화합니다"</a>.</p>
@@ -1594,10 +1626,10 @@
 <p>관련 링크 *</p>
 </li>
 <li>
-<p><a href="https://cloud.google.com/compute/docs/disks/" target="_blank" rel="noopener">"Google Cloud Platform 설명서: 스토리지 옵션"</a></p>
+<p><a href="https://cloud.google.com/compute/docs/disks/" target="_blank" rel="noopener">"Google Cloud 설명서: 스토리지 옵션"</a></p>
 </li>
 <li>
-<p><a href="https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-limits-gcp.html" target="_blank" rel="noopener">"GCP의 Cloud Volumes ONTAP에 대한 스토리지 제한을 검토합니다"</a></p>
+<p><a href="https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-limits-gcp.html" target="_blank" rel="noopener">"Google Cloud의 Cloud Volumes ONTAP에 대한 스토리지 제한사항을 검토하십시오"</a></p>
 </li>
 </ul>
 </div>

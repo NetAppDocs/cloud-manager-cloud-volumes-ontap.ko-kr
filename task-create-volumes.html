@@ -169,7 +169,39 @@
   
   <!-- Start Page Toolbar -->
   
-  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/issues/new?body=Page%3A%20[FlexVol 볼륨을 생성합니다](https://docs.netapp.com/ko-kr/cloud-manager-cloud-volumes-ontap/task-create-volumes.html)" class="page-nav-contribute-link" role="button"><img src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/discuss-sm.svg" class="github-icon" />문서 변경 요청</a><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/blob/main/task-create-volumes.adoc" class="page-nav-contribute-link" role="button"><img src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/edit-sm.svg" class="github-icon" />이 페이지 편집</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/article-sm.svg" class="github-icon" />기여하는 방법 자세히 알아보기</a></div>
+  <div class="page-nav-toolbar">
+<div id="flavor-dropdown" class="custom-dropdown" data-url="/ko-kr/cloud-manager-cloud-volumes-ontap/task-create-volumes.html">
+  
+  <div class="custom-dropdown-select unselected" title="모든 클라우드 공급자">
+    <label>클라우드 공급자</label>
+    <span>모든 클라우드 공급자</span>
+    <img src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/filter.svg" class="custom-icon" alt="" />
+  </div>
+  
+
+  <ul class="custom-dropdown-menu">
+    
+    
+    <li data-value="aws" data-url="/ko-kr/cloud-manager-cloud-volumes-ontap/aws/task-create-volumes.html">
+      <img alt="" src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/aws-ico.svg" onerror="this.src='/ko-kr/cloud-manager-cloud-volumes-ontap/images/blank-ico.png'" class="custom-icon" />Amazon Web Services에서 직접 지원합니다
+    </li>
+    
+    
+    
+    <li data-value="gcp" data-url="/ko-kr/cloud-manager-cloud-volumes-ontap/gcp/task-create-volumes.html">
+      <img alt="" src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/gcp-ico.svg" onerror="this.src='/ko-kr/cloud-manager-cloud-volumes-ontap/images/blank-ico.png'" class="custom-icon" />Google 클라우드
+    </li>
+    
+    
+    
+    <li data-value="azure" data-url="/ko-kr/cloud-manager-cloud-volumes-ontap/azure/task-create-volumes.html">
+      <img alt="" src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/azure-ico.svg" onerror="this.src='/ko-kr/cloud-manager-cloud-volumes-ontap/images/blank-ico.png'" class="custom-icon" />Microsoft Azure를 참조하십시오
+    </li>
+    
+    
+  </ul>
+</div>
+<div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/issues/new?body=Page%3A%20[FlexVol 볼륨을 생성합니다](https://docs.netapp.com/ko-kr/cloud-manager-cloud-volumes-ontap/task-create-volumes.html)" class="page-nav-contribute-link" role="button"><img src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/discuss-sm.svg" class="github-icon" />문서 변경 요청</a><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/blob/main/task-create-volumes.adoc" class="page-nav-contribute-link" role="button"><img src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/edit-sm.svg" class="github-icon" />이 페이지 편집</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/article-sm.svg" class="github-icon" />기여하는 방법 자세히 알아보기</a></div>
     <div class="page-nav-container">
       <nav class="page-nav-fixed">
         <div class="page-nav-title">이 페이지의 내용</div>
@@ -1407,7 +1439,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-04-21 15:28:52 +0000">04/21/2022</time>
+    <time datetime="2022-05-09 15:44:41 +0000">05/09/2022</time>
     
   
 
@@ -1556,6 +1588,9 @@
 <div class="paragraph">
 <p>다음 섹션에서는 지침이 필요한 필드에 대해 설명합니다. 설명은 프로토콜별로 구성되어 있습니다.</p>
 </div>
+</li>
+</ol>
+</div>
 <div class="exampleblock tabbed-block">
 <div class="content">
 <div class="openblock">
@@ -1592,11 +1627,11 @@
 </div>
 </div>
 </div>
+<div class="openblock">
+<div class="content">
 <div class="paragraph">
 <p>Google Managed Active Directory를 구성하는 경우 기본적으로 169.254.169.254 IP 주소를 사용하여 AD에 액세스할 수 있습니다.</p>
 </div>
-<div class="openblock">
-<div class="content">
 <div class="dlist">
 <dl>
 <dt class="hdlist1">연결할 Active Directory 도메인입니다</dt>
@@ -1614,11 +1649,6 @@
 <dt class="hdlist1">조직 구성 단위</dt>
 <dd>
 <p>CIFS 서버와 연결할 AD 도메인 내의 조직 단위입니다. 기본값은 CN=Computers입니다.</p>
-</dd>
-</dl>
-</div>
-</div>
-</div>
 <div class="ulist">
 <ul>
 <li>
@@ -1632,10 +1662,7 @@
 </li>
 </ul>
 </div>
-<div class="openblock">
-<div class="content">
-<div class="dlist">
-<dl>
+</dd>
 <dt class="hdlist1">DNS 도메인</dt>
 <dd>
 <p>SVM(Cloud Volumes ONTAP 스토리지 가상 머신)용 DNS 도메인 대부분의 경우 도메인은 AD 도메인과 동일합니다.</p>
@@ -1679,21 +1706,29 @@
 </div>
 </div>
 </div>
-</li>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
 <li>
 <p>* 디스크 유형 *: 성능 요구 사항 및 비용 요구 사항에 따라 볼륨의 기본 디스크 유형을 선택합니다.</p>
 <div class="ulist">
 <ul>
 <li>
 <p><a href="task-planning-your-config.html#sizing-your-system-in-aws">"AWS에서 시스템 사이징"</a></p>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p><a href="task-planning-your-config-azure.html#sizing-your-system-in-azure">"Azure에서 시스템 사이징"</a></p>
 </li>
 <li>
-<p><a href="task-planning-your-config-gcp.html#sizing-your-system-in-gcp">"GCP에서 시스템 사이징"</a></p>
+<p><a href="task-planning-your-config-gcp.html#sizing-your-system-in-gcp">"Google Cloud에서 시스템 크기 조정"</a></p>
 </li>
 </ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ol>
 </div>
 </li>
 <li>
@@ -1720,9 +1755,6 @@
 </li>
 <li>
 <p>* Review * (검토 *): 볼륨에 대한 세부 정보를 검토한 다음 * Add * (추가 *)를 클릭합니다.</p>
-</li>
-</ol>
-</div>
 </li>
 </ol>
 </div>

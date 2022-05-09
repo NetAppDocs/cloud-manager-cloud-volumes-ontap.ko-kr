@@ -169,7 +169,39 @@
   
   <!-- Start Page Toolbar -->
   
-  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/issues/new?body=Page%3A%20[Cloud Volumes ONTAP의 기본 구성입니다](https://docs.netapp.com/ko-kr/cloud-manager-cloud-volumes-ontap/reference-default-configs.html)" class="page-nav-contribute-link" role="button"><img src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/discuss-sm.svg" class="github-icon" />문서 변경 요청</a><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/blob/main/reference-default-configs.adoc" class="page-nav-contribute-link" role="button"><img src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/edit-sm.svg" class="github-icon" />이 페이지 편집</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/article-sm.svg" class="github-icon" />기여하는 방법 자세히 알아보기</a></div>
+  <div class="page-nav-toolbar">
+<div id="flavor-dropdown" class="custom-dropdown" data-url="/ko-kr/cloud-manager-cloud-volumes-ontap/reference-default-configs.html">
+  
+  <div class="custom-dropdown-select unselected" title="모든 클라우드 공급자">
+    <label>클라우드 공급자</label>
+    <span>모든 클라우드 공급자</span>
+    <img src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/filter.svg" class="custom-icon" alt="" />
+  </div>
+  
+
+  <ul class="custom-dropdown-menu">
+    
+    
+    <li data-value="aws" data-url="/ko-kr/cloud-manager-cloud-volumes-ontap/aws/reference-default-configs.html">
+      <img alt="" src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/aws-ico.svg" onerror="this.src='/ko-kr/cloud-manager-cloud-volumes-ontap/images/blank-ico.png'" class="custom-icon" />Amazon Web Services에서 직접 지원합니다
+    </li>
+    
+    
+    
+    <li data-value="gcp" data-url="/ko-kr/cloud-manager-cloud-volumes-ontap/gcp/reference-default-configs.html">
+      <img alt="" src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/gcp-ico.svg" onerror="this.src='/ko-kr/cloud-manager-cloud-volumes-ontap/images/blank-ico.png'" class="custom-icon" />Google 클라우드
+    </li>
+    
+    
+    
+    <li data-value="azure" data-url="/ko-kr/cloud-manager-cloud-volumes-ontap/azure/reference-default-configs.html">
+      <img alt="" src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/azure-ico.svg" onerror="this.src='/ko-kr/cloud-manager-cloud-volumes-ontap/images/blank-ico.png'" class="custom-icon" />Microsoft Azure를 참조하십시오
+    </li>
+    
+    
+  </ul>
+</div>
+<div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/issues/new?body=Page%3A%20[Cloud Volumes ONTAP의 기본 구성입니다](https://docs.netapp.com/ko-kr/cloud-manager-cloud-volumes-ontap/reference-default-configs.html)" class="page-nav-contribute-link" role="button"><img src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/discuss-sm.svg" class="github-icon" />문서 변경 요청</a><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/blob/main/reference-default-configs.adoc" class="page-nav-contribute-link" role="button"><img src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/edit-sm.svg" class="github-icon" />이 페이지 편집</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/article-sm.svg" class="github-icon" />기여하는 방법 자세히 알아보기</a></div>
     <div class="page-nav-container">
       <nav class="page-nav-fixed">
         <div class="page-nav-title">이 페이지의 내용</div>
@@ -1407,7 +1439,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-04-14 17:30:59 +0000">04/14/2022</time>
+    <time datetime="2022-05-09 15:44:41 +0000">05/09/2022</time>
     
   
 
@@ -1422,13 +1454,10 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="기본값">기본값</h2>
+<h2 id="기본-설정">기본 설정</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
-<li>
-<p>Cloud Volumes ONTAP는 단일 노드 시스템으로, AWS, Azure 및 GCP에서 HA 쌍으로 제공됩니다.</p>
-</li>
 <li>
 <p>Cloud Volumes ONTAP를 구축할 때 Cloud Manager가 단일 데이터 서비스 스토리지 VM을 생성합니다. 일부 구성은 추가 스토리지 VM을 지원합니다. <a href="task-managing-svms.html">"스토리지 VM 관리에 대해 자세히 알아보십시오"</a>.</p>
 <div class="paragraph">
@@ -1479,12 +1508,28 @@
 <li>
 <p>인터클러스터 LIF</p>
 </li>
-<li>
-<p>Azure 및 GCP의 HA 시스템, AWS의 단일 노드 시스템 및 여러 AWS Availability Zone의 HA 시스템에서 SVM 관리 LIF를 사용할 수 있습니다</p>
+</ul>
+</div>
 </li>
 <li>
-<p>노드 관리 LIF(GCP에서 이 LIF는 인터클러스터 LIF와 결합됨)</p>
+<p>Azure의 HA 시스템에서 SVM 관리 LIF</p>
 </li>
+<li>
+<p>Google Cloud의 HA 시스템에서 SVM 관리 LIF</p>
+</li>
+<li>
+<p>AWS의 단일 노드 시스템에서 SVM 관리 LIF를 관리합니다</p>
+</li>
+<li>
+<p>노드 관리 LIF</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Google Cloud의 경우 이 LIF가 인터클러스터 LIF와 결합됩니다.</p>
+</div>
+<div class="ulist">
+<ul>
 <li>
 <p>iSCSI 데이터 LIF</p>
 </li>
@@ -1497,15 +1542,13 @@
 <img src="/us-en/cloud-manager-cloud-volumes-ontap/images/note.svg" alt="참고">
 </td>
 <td class="content">
-EC2 요구사항으로 인해 LIF 페일오버가 Cloud Volumes ONTAP에 대해 기본적으로 비활성화되어 있습니다. LIF를 다른 포트로 마이그레이션하면 IP 주소와 인스턴스 네트워크 인터페이스 간의 외부 매핑이 분리되므로 LIF에 액세스할 수 없습니다.
+클라우드 공급자의 요구사항으로 인해 LIF 페일오버가 Cloud Volumes ONTAP에 대해 기본적으로 비활성화되어 있습니다. LIF를 다른 포트로 마이그레이션하면 IP 주소와 인스턴스 네트워크 인터페이스 간의 외부 매핑이 분리되므로 LIF에 액세스할 수 없습니다.
 </td>
 </tr>
 </table>
 </div>
-</li>
-</ul>
-</div>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p>Cloud Volumes ONTAP는 HTTPS를 사용하여 구성 백업을 커넥터로 보냅니다.</p>
 <div class="paragraph">
@@ -1516,6 +1559,9 @@ EC2 요구사항으로 인해 LIF 페일오버가 Cloud Volumes ONTAP에 대해 
 <p>Cloud Manager에서는 다른 관리 툴(예: System Manager 또는 CLI)과 몇 가지 볼륨 특성을 다르게 설정합니다.</p>
 <div class="paragraph">
 <p>다음 표에는 Cloud Manager가 기본값과 다르게 설정하는 볼륨 특성이 나열되어 있습니다.</p>
+</div>
+</li>
+</ul>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -1566,7 +1612,8 @@ EC2 요구사항으로 인해 LIF 페일오버가 Cloud Volumes ONTAP에 대해 
 </tbody>
 </table>
 <div class="paragraph">
-<p>이러한 속성에 대한 자세한 내용은 _volume create_man 페이지를 참조하십시오.</p>
+<p>+<br>
+이러한 속성에 대한 자세한 내용은 _volume create_man 페이지를 참조하십시오.</p>
 </div>
 </li>
 </ul>
@@ -1604,6 +1651,9 @@ EC2 요구사항으로 인해 LIF 페일오버가 Cloud Volumes ONTAP에 대해 
 </li>
 <li>
 <p>HA 쌍의 경우 중재자 인스턴스를 위한 하나의 EBS 볼륨, 약 8GiB입니다</p>
+</li>
+<li>
+<p>KMS(키 관리 서비스)를 사용하여 AWS에서 데이터 암호화를 설정하면 Cloud Volumes ONTAP의 부팅 및 루트 디스크도 암호화됩니다. 여기에는 HA 쌍의 중재자 인스턴스를 위한 부팅 디스크가 포함됩니다. 디스크는 작업 환경을 생성할 때 선택한 CMK를 사용하여 암호화됩니다.</p>
 </li>
 </ul>
 </div>
@@ -1649,6 +1699,9 @@ AWS에서 NVRAM은 부팅 디스크에 있습니다.
 <li>
 <p>각 부팅 디스크 및 루트 디스크에 대해 Azure 스냅샷 1개</p>
 </li>
+<li>
+<p>부팅 및 루트 디스크는 기본적으로 암호화됩니다.</p>
+</li>
 </ul>
 </div>
 </div>
@@ -1671,6 +1724,9 @@ AWS에서 NVRAM은 부팅 디스크에 있습니다.
 <li>
 <p>각 부팅 디스크 및 루트 디스크에 대해 Azure 스냅샷 1개</p>
 </li>
+<li>
+<p>부팅 및 루트 디스크는 기본적으로 암호화됩니다.</p>
+</li>
 </ul>
 </div>
 </div>
@@ -1692,6 +1748,9 @@ AWS에서 NVRAM은 부팅 디스크에 있습니다.
 </li>
 <li>
 <p>부팅 및 루트 데이터용 스냅샷입니다</p>
+</li>
+<li>
+<p>부팅 및 루트 디스크는 기본적으로 암호화됩니다.</p>
 </li>
 </ul>
 </div>
@@ -1717,6 +1776,9 @@ AWS에서 NVRAM은 부팅 디스크에 있습니다.
 </li>
 <li>
 <p>부팅 및 루트 데이터용 스냅샷입니다</p>
+</li>
+<li>
+<p>부팅 및 루트 디스크는 기본적으로 암호화됩니다.</p>
 </li>
 </ul>
 </div>
@@ -1744,15 +1806,6 @@ AWS에서 NVRAM은 부팅 디스크에 있습니다.
 <p>데이터 볼륨은 aggr1에도 상주합니다.</p>
 </li>
 </ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="암호화">암호화</h3>
-<div class="paragraph">
-<p>Azure 및 Google Cloud Platform에서 부트 및 루트 디스크는 항상 암호화되므로 이러한 클라우드 공급자는 기본적으로 암호화를 사용합니다.</p>
-</div>
-<div class="paragraph">
-<p>KMS(키 관리 서비스)를 사용하여 AWS에서 데이터 암호화를 설정하면 Cloud Volumes ONTAP의 부팅 및 루트 디스크도 암호화됩니다. 여기에는 HA 쌍의 중재자 인스턴스를 위한 부팅 디스크가 포함됩니다. 디스크는 작업 환경을 생성할 때 선택한 CMK를 사용하여 암호화됩니다.</p>
 </div>
 </div>
 </div>
