@@ -1439,7 +1439,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-05-09 15:44:41 +0000">05/09/2022</time>
+    <time datetime="2022-05-11 22:59:31 +0000">05/11/2022</time>
     
   
 
@@ -1484,46 +1484,56 @@ FabricPool(데이터 계층화)를 사용하기 위해 기능 라이센스를 �
 <p>성능 계층은 범용 SSD(GP3 또는 GP2) 또는 프로비저닝된 IOPS SSD(io1)일 수 있습니다.</p>
 <div class="openblock">
 <div class="content">
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<img src="/us-en/cloud-manager-cloud-volumes-ontap/images/note.svg" alt="참고">
-</td>
-<td class="content">
-처리량 최적화 HDD(st1)를 사용하는 경우에는 데이터를 오브젝트 스토리지에 계층화하지 않는 것이 좋습니다.
-</td>
-</tr>
-</table>
+<div class="paragraph">
+<p>처리량 최적화 HDD(st1)를 사용하는 경우에는 데이터를 오브젝트 스토리지에 계층화하지 않는 것이 좋습니다.</p>
 </div>
 </div>
 </div>
 </dd>
 <dt class="hdlist1">용량 계층</dt>
 <dd>
-<p>Cloud Volumes ONTAP 시스템은 _Standard_storage 클래스를 사용하여 비활성 데이터를 단일 S3 버킷에 계층화합니다. 표준은 여러 가용성 영역에 걸쳐 자주 액세스하는 데이터에 적합합니다.</p>
+<p>Cloud Volumes ONTAP 시스템은 비활성 데이터를 단일 S3 버킷에 계층화합니다.</p>
 <div class="openblock">
 <div class="content">
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<img src="/us-en/cloud-manager-cloud-volumes-ontap/images/note.svg" alt="참고">
-</td>
-<td class="content">
-Cloud Manager에서 각 작업 환경에 대해 단일 S3 버킷을 생성하고 이를 Fabric-pool-_cluster unique identifier_로 지정합니다. 각 볼륨에 대해 다른 S3 버킷이 생성되지 않습니다.
-</td>
-</tr>
-</table>
+<div class="paragraph">
+<p>Cloud Manager에서 각 작업 환경에 대해 단일 S3 버킷을 생성하고 이를 Fabric-pool-_cluster unique identifier_로 지정합니다. 각 볼륨에 대해 다른 S3 버킷이 생성되지 않습니다.</p>
+</div>
+<div class="paragraph">
+<p>Cloud Manager에서 S3 버킷을 생성할 때 사용되는 기본 설정은 다음과 같습니다.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>스토리지 클래스: 표준</p>
+</li>
+<li>
+<p>기본 암호화: 사용 안 함</p>
+</li>
+<li>
+<p>공용 액세스 차단: 모든 공용 액세스를 차단합니다</p>
+</li>
+<li>
+<p>객체 소유권: ACL이 설정되었습니다</p>
+</li>
+<li>
+<p>버킷 버전 관리: 비활성화됨</p>
+</li>
+<li>
+<p>개체 잠금: 사용 안 함</p>
+</li>
+</ul>
 </div>
 </div>
 </div>
 </dd>
 <dt class="hdlist1">스토리지 클래스</dt>
 <dd>
-<p>AWS의 계층형 데이터에 대한 기본 스토리지 클래스는 <em>Standard_입니다. 비활성 데이터에 액세스할 계획이 없는 경우 스토리지 클래스를 _Intelligent Tiering</em>, <em>One-Zone Infrequent Access</em>, <em>Standard - Infrequent Access</em> 또는 <em>S3 Glacier Instant Retrieval</em> 중 하나로 변경하여 저장소 비용을 줄일 수 있습니다. 스토리지 클래스를 변경하면 비활성 데이터가 표준 스토리지 클래스에서 시작되어 30일 후에 액세스하지 않는 경우 선택한 스토리지 클래스로 전환됩니다.</p>
+<p>AWS의 계층형 데이터에 대한 기본 스토리지 클래스는 _Standard_입니다. 표준은 여러 가용성 영역에 걸쳐 자주 액세스하는 데이터에 적합합니다.</p>
 <div class="openblock">
 <div class="content">
+<div class="paragraph">
+<p>비활성 데이터에 액세스할 계획이 없는 경우 스토리지 클래스를 <em>Intelligent Tiering</em>, <em>One-Zone Infrequent Access</em>, <em>Standard - Infrequent Access</em> 또는 <em>S3 Glacier Instant Retrieval</em> 중 하나로 변경하여 저장소 비용을 줄일 수 있습니다. 스토리지 클래스를 변경하면 비활성 데이터가 표준 스토리지 클래스에서 시작되어 30일 후에 액세스하지 않는 경우 선택한 스토리지 클래스로 전환됩니다.</p>
+</div>
 <div class="paragraph">
 <p>데이터에 액세스하는 경우 액세스 비용이 더 높아지므로 스토리지 클래스를 변경하기 전에 이 점을 고려해야 합니다. <a href="https://aws.amazon.com/s3/storage-classes" target="_blank" rel="noopener">"Amazon S3 스토리지 클래스에 대해 자세히 알아보십시오"</a>.</p>
 </div>
@@ -1554,29 +1564,54 @@ Cloud Manager에서 각 작업 환경에 대해 단일 S3 버킷을 생성하고
 </dd>
 <dt class="hdlist1">용량 계층</dt>
 <dd>
-<p>Cloud Volumes ONTAP 시스템은 Azure_hot_storage 계층을 사용하여 비활성 데이터를 단일 Blob 컨테이너에 계층화합니다. 핫 계층은 자주 액세스하는 데이터에 적합합니다.</p>
+<p>Cloud Volumes ONTAP 시스템은 비활성 데이터를 단일 Blob 컨테이너에 계층화합니다.</p>
 <div class="openblock">
 <div class="content">
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<img src="/us-en/cloud-manager-cloud-volumes-ontap/images/note.svg" alt="참고">
-</td>
-<td class="content">
-Cloud Manager에서 각 Cloud Volumes ONTAP 작업 환경에 대한 단일 컨테이너로 새 스토리지 계정을 생성할 수 있습니다. 스토리지 계정의 이름은 임의로 지정됩니다. 각 볼륨에 대해 다른 컨테이너가 생성되지 않습니다.
-</td>
-</tr>
-</table>
+<div class="paragraph">
+<p>Cloud Manager에서 각 Cloud Volumes ONTAP 작업 환경의 컨테이너로 새 스토리지 계정을 생성할 수 있습니다. 스토리지 계정의 이름은 임의로 지정됩니다. 각 볼륨에 대해 다른 컨테이너가 생성되지 않습니다.</p>
+</div>
+<div class="paragraph">
+<p>Cloud Manager에서 다음 설정으로 스토리지 계정을 생성합니다.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>액세스 계층: 핫</p>
+</li>
+<li>
+<p>성능: 표준</p>
+</li>
+<li>
+<p>이중화: LRS(Locally-Redundant Storage)</p>
+</li>
+<li>
+<p>계정:StorageV2(범용 v2)</p>
+</li>
+<li>
+<p>REST API 작업을 위한 보안 전송 필요: 사용</p>
+</li>
+<li>
+<p>스토리지 계정 키 액세스: 사용</p>
+</li>
+<li>
+<p>최소 TLS 버전: 버전 1.2</p>
+</li>
+<li>
+<p>인프라 암호화: 사용 안 함</p>
+</li>
+</ul>
 </div>
 </div>
 </div>
 </dd>
 <dt class="hdlist1">스토리지 액세스 계층</dt>
 <dd>
-<p>Azure의 계층화된 데이터에 대한 기본 스토리지 액세스 계층은 _hot_tier입니다. 비활성 데이터에 액세스할 계획이 없는 경우 _cool_storage 계층으로 변경하여 스토리지 비용을 절감할 수 있습니다. 스토리지 계층을 변경하면 비활성 데이터가 핫 스토리지 계층에서 시작되어 30일 후에 데이터에 액세스하지 않는 경우 냉각 스토리지 계층으로 전환됩니다.</p>
+<p>Azure의 계층화된 데이터에 대한 기본 스토리지 액세스 계층은 _hot_tier입니다. 핫 계층은 자주 액세스하는 데이터에 적합합니다.</p>
 <div class="openblock">
 <div class="content">
+<div class="paragraph">
+<p>비활성 데이터에 액세스할 계획이 없는 경우 _cool_storage 계층으로 변경하여 스토리지 비용을 절감할 수 있습니다. 스토리지 계층을 변경하면 비활성 데이터가 핫 스토리지 계층에서 시작되어 30일 후에 데이터에 액세스하지 않는 경우 냉각 스토리지 계층으로 전환됩니다.</p>
+</div>
 <div class="paragraph">
 <p>데이터에 액세스하는 경우 액세스 비용이 더 높아지므로 스토리지 계층을 변경하기 전에 이 점을 고려해야 합니다. <a href="https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blob-storage-tiers" target="_blank" rel="noopener">"Azure Blob 스토리지 액세스 계층에 대해 자세히 알아보십시오"</a>.</p>
 </div>
@@ -1607,20 +1642,36 @@ Cloud Manager에서 각 Cloud Volumes ONTAP 작업 환경에 대한 단일 컨�
 </dd>
 <dt class="hdlist1">용량 계층</dt>
 <dd>
-<p>Cloud Volumes ONTAP 시스템은 _Regional_storage 클래스를 사용하여 비활성 데이터를 단일 Google Cloud 스토리지 버킷에 계층화합니다.</p>
+<p>Cloud Volumes ONTAP 시스템은 단일 Google 클라우드 스토리지 버킷에 비활성 데이터를 계층화합니다.</p>
 <div class="openblock">
 <div class="content">
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<img src="/us-en/cloud-manager-cloud-volumes-ontap/images/note.svg" alt="참고">
-</td>
-<td class="content">
-Cloud Manager에서 각 작업 환경에 대해 단일 버킷을 생성하고 이를 Fabric-pool-_cluster unique identifier_로 지정합니다. 각 볼륨에 대해 다른 버킷이 생성되지 않습니다.
-</td>
-</tr>
-</table>
+<div class="paragraph">
+<p>Cloud Manager에서 각 작업 환경에 대한 버킷을 생성하여 fabric-pool-_cluster unique identifier_로 지정합니다. 각 볼륨에 대해 다른 버킷이 생성되지 않습니다.</p>
+</div>
+<div class="paragraph">
+<p>Cloud Manager에서 버킷을 생성할 때 사용하는 기본 설정은 다음과 같습니다.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>위치 유형: 지역</p>
+</li>
+<li>
+<p>스토리지 클래스: 표준</p>
+</li>
+<li>
+<p>공용 액세스: 개체 ACL의 영향을 받습니다</p>
+</li>
+<li>
+<p>액세스 제어: 미세</p>
+</li>
+<li>
+<p>보호: 없음</p>
+</li>
+<li>
+<p>데이터 암호화: Google에서 관리하는 키입니다</p>
+</li>
+</ul>
 </div>
 </div>
 </div>

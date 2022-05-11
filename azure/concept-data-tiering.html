@@ -1385,7 +1385,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-05-09 15:44:41 +0000">05/09/2022</time>
+    <time datetime="2022-05-11 22:59:31 +0000">05/11/2022</time>
     
   
 
@@ -1431,29 +1431,54 @@ FabricPool(데이터 계층화)를 사용하기 위해 기능 라이센스를 �
 </dd>
 <dt class="hdlist1">용량 계층</dt>
 <dd>
-<p>Cloud Volumes ONTAP 시스템은 Azure_hot_storage 계층을 사용하여 비활성 데이터를 단일 Blob 컨테이너에 계층화합니다. 핫 계층은 자주 액세스하는 데이터에 적합합니다.</p>
+<p>Cloud Volumes ONTAP 시스템은 비활성 데이터를 단일 Blob 컨테이너에 계층화합니다.</p>
 <div class="openblock">
 <div class="content">
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<img src="/us-en/cloud-manager-cloud-volumes-ontap/images/note.svg" alt="참고">
-</td>
-<td class="content">
-Cloud Manager에서 각 Cloud Volumes ONTAP 작업 환경에 대한 단일 컨테이너로 새 스토리지 계정을 생성할 수 있습니다. 스토리지 계정의 이름은 임의로 지정됩니다. 각 볼륨에 대해 다른 컨테이너가 생성되지 않습니다.
-</td>
-</tr>
-</table>
+<div class="paragraph">
+<p>Cloud Manager에서 각 Cloud Volumes ONTAP 작업 환경의 컨테이너로 새 스토리지 계정을 생성할 수 있습니다. 스토리지 계정의 이름은 임의로 지정됩니다. 각 볼륨에 대해 다른 컨테이너가 생성되지 않습니다.</p>
+</div>
+<div class="paragraph">
+<p>Cloud Manager에서 다음 설정으로 스토리지 계정을 생성합니다.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>액세스 계층: 핫</p>
+</li>
+<li>
+<p>성능: 표준</p>
+</li>
+<li>
+<p>이중화: LRS(Locally-Redundant Storage)</p>
+</li>
+<li>
+<p>계정:StorageV2(범용 v2)</p>
+</li>
+<li>
+<p>REST API 작업을 위한 보안 전송 필요: 사용</p>
+</li>
+<li>
+<p>스토리지 계정 키 액세스: 사용</p>
+</li>
+<li>
+<p>최소 TLS 버전: 버전 1.2</p>
+</li>
+<li>
+<p>인프라 암호화: 사용 안 함</p>
+</li>
+</ul>
 </div>
 </div>
 </div>
 </dd>
 <dt class="hdlist1">스토리지 액세스 계층</dt>
 <dd>
-<p>Azure의 계층화된 데이터에 대한 기본 스토리지 액세스 계층은 _hot_tier입니다. 비활성 데이터에 액세스할 계획이 없는 경우 _cool_storage 계층으로 변경하여 스토리지 비용을 절감할 수 있습니다. 스토리지 계층을 변경하면 비활성 데이터가 핫 스토리지 계층에서 시작되어 30일 후에 데이터에 액세스하지 않는 경우 냉각 스토리지 계층으로 전환됩니다.</p>
+<p>Azure의 계층화된 데이터에 대한 기본 스토리지 액세스 계층은 _hot_tier입니다. 핫 계층은 자주 액세스하는 데이터에 적합합니다.</p>
 <div class="openblock">
 <div class="content">
+<div class="paragraph">
+<p>비활성 데이터에 액세스할 계획이 없는 경우 _cool_storage 계층으로 변경하여 스토리지 비용을 절감할 수 있습니다. 스토리지 계층을 변경하면 비활성 데이터가 핫 스토리지 계층에서 시작되어 30일 후에 데이터에 액세스하지 않는 경우 냉각 스토리지 계층으로 전환됩니다.</p>
+</div>
 <div class="paragraph">
 <p>데이터에 액세스하는 경우 액세스 비용이 더 높아지므로 스토리지 계층을 변경하기 전에 이 점을 고려해야 합니다. <a href="https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blob-storage-tiers" target="_blank" rel="noopener">"Azure Blob 스토리지 액세스 계층에 대해 자세히 알아보십시오"</a>.</p>
 </div>

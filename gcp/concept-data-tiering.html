@@ -1383,7 +1383,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-05-09 15:44:41 +0000">05/09/2022</time>
+    <time datetime="2022-05-11 22:59:31 +0000">05/11/2022</time>
     
   
 
@@ -1429,20 +1429,36 @@ FabricPool(데이터 계층화)를 사용하기 위해 기능 라이센스를 �
 </dd>
 <dt class="hdlist1">용량 계층</dt>
 <dd>
-<p>Cloud Volumes ONTAP 시스템은 _Regional_storage 클래스를 사용하여 비활성 데이터를 단일 Google Cloud 스토리지 버킷에 계층화합니다.</p>
+<p>Cloud Volumes ONTAP 시스템은 단일 Google 클라우드 스토리지 버킷에 비활성 데이터를 계층화합니다.</p>
 <div class="openblock">
 <div class="content">
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<img src="/us-en/cloud-manager-cloud-volumes-ontap/images/note.svg" alt="참고">
-</td>
-<td class="content">
-Cloud Manager에서 각 작업 환경에 대해 단일 버킷을 생성하고 이를 Fabric-pool-_cluster unique identifier_로 지정합니다. 각 볼륨에 대해 다른 버킷이 생성되지 않습니다.
-</td>
-</tr>
-</table>
+<div class="paragraph">
+<p>Cloud Manager에서 각 작업 환경에 대한 버킷을 생성하여 fabric-pool-_cluster unique identifier_로 지정합니다. 각 볼륨에 대해 다른 버킷이 생성되지 않습니다.</p>
+</div>
+<div class="paragraph">
+<p>Cloud Manager에서 버킷을 생성할 때 사용하는 기본 설정은 다음과 같습니다.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>위치 유형: 지역</p>
+</li>
+<li>
+<p>스토리지 클래스: 표준</p>
+</li>
+<li>
+<p>공용 액세스: 개체 ACL의 영향을 받습니다</p>
+</li>
+<li>
+<p>액세스 제어: 미세</p>
+</li>
+<li>
+<p>보호: 없음</p>
+</li>
+<li>
+<p>데이터 암호화: Google에서 관리하는 키입니다</p>
+</li>
+</ul>
 </div>
 </div>
 </div>
