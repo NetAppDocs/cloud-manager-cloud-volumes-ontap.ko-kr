@@ -85,7 +85,7 @@
     <url>
       <loc>https://docs.netapp.com/ko-kr/cloud-manager-cloud-volumes-ontap/concept-licensing.html</loc>
       
-      <lastmod>2022-05-09T15:44:41+00:00</lastmod>
+      <lastmod>2022-05-16T17:05:15+00:00</lastmod>
       
     </url>
   
@@ -211,7 +211,7 @@
     <url>
       <loc>https://docs.netapp.com/ko-kr/cloud-manager-cloud-volumes-ontap//search.html</loc>
       
-      <lastmod>2022-05-12T16:45:35+00:00</lastmod>
+      <lastmod>2022-05-16T17:05:36+00:00</lastmod>
       
     </url>
   
@@ -316,21 +316,21 @@
     <url>
       <loc>https://docs.netapp.com/ko-kr/cloud-manager-cloud-volumes-ontap/task-deploying-gcp.html</loc>
       
-      <lastmod>2022-05-03T00:03:41+00:00</lastmod>
+      <lastmod>2022-05-16T17:05:15+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/ko-kr/cloud-manager-cloud-volumes-ontap/task-deploying-otc-aws.html</loc>
       
-      <lastmod>2022-04-14T17:30:59+00:00</lastmod>
+      <lastmod>2022-05-16T17:05:15+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/ko-kr/cloud-manager-cloud-volumes-ontap/task-deploying-otc-azure.html</loc>
       
-      <lastmod>2022-04-14T17:30:59+00:00</lastmod>
+      <lastmod>2022-05-16T17:05:15+00:00</lastmod>
       
     </url>
   
@@ -470,21 +470,21 @@
     <url>
       <loc>https://docs.netapp.com/ko-kr/cloud-manager-cloud-volumes-ontap/task-planning-your-config-azure.html</loc>
       
-      <lastmod>2022-04-14T17:30:59+00:00</lastmod>
+      <lastmod>2022-05-16T17:05:15+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/ko-kr/cloud-manager-cloud-volumes-ontap/task-planning-your-config-gcp.html</loc>
       
-      <lastmod>2022-04-14T17:30:59+00:00</lastmod>
+      <lastmod>2022-05-16T17:05:15+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/ko-kr/cloud-manager-cloud-volumes-ontap/task-planning-your-config.html</loc>
       
-      <lastmod>2022-04-14T17:30:59+00:00</lastmod>
+      <lastmod>2022-05-16T17:05:15+00:00</lastmod>
       
     </url>
   
@@ -512,7 +512,28 @@
     <url>
       <loc>https://docs.netapp.com/ko-kr/cloud-manager-cloud-volumes-ontap/task-set-up-azure-encryption.html</loc>
       
-      <lastmod>2022-04-14T17:30:59+00:00</lastmod>
+      <lastmod>2022-05-16T17:05:15+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/ko-kr/cloud-manager-cloud-volumes-ontap/task-set-up-licensing-aws.html</loc>
+      
+      <lastmod>2022-05-16T17:05:15+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/ko-kr/cloud-manager-cloud-volumes-ontap/task-set-up-licensing-azure.html</loc>
+      
+      <lastmod>2022-05-16T17:05:15+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/ko-kr/cloud-manager-cloud-volumes-ontap/task-set-up-licensing-google.html</loc>
+      
+      <lastmod>2022-05-16T17:05:15+00:00</lastmod>
       
     </url>
   
