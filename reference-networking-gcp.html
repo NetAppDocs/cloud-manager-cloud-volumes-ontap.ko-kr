@@ -1455,7 +1455,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-05-03 00:03:41 +0000">05/03/2022</time>
+    <time datetime="2022-05-19 13:00:48 +0000">05/19/2022</time>
     
   
 
@@ -2217,46 +2217,47 @@ HA 쌍을 사용하는 경우 HA 중재자가 아웃바운드 인터넷 액세�
 <td class="tableblock halign-left valign-top"><p class="tableblock">인터클러스터 통신(Cloud Volumes ONTAP HA에만 해당)</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DHCP를 선택합니다</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">UDP입니다</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">68</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">노드 관리 LIF</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">DHCP를 선택합니다</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">처음으로 설정하는 DHCP 클라이언트</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">DHCPS</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DHCPS</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">UDP입니다</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">67</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">노드 관리 LIF</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">DHCP를 선택합니다</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">DHCP 서버</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">DNS</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DNS</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">UDP입니다</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">53</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">노드 관리 LIF 및 데이터 LIF(NFS, CIFS)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">DNS</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">DNS</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">NDMP</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NDMP</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">TCP</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">18600–18699</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">노드 관리 LIF</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">대상 서버</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">NDMP 복제</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">SMTP</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SMTP</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">TCP</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">25</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">노드 관리 LIF</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">메일 서버</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">AutoSupport에 사용할 수 있는 SMTP 경고</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top" rowspan="4"><p class="tableblock">SNMP를 선택합니다</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">TCP</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">161</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">노드 관리 LIF</p></td>
@@ -2283,9 +2284,9 @@ HA 쌍을 사용하는 경우 HA 중재자가 아웃바운드 인터넷 액세�
 <td class="tableblock halign-left valign-top"><p class="tableblock">노드 관리 LIF</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">서버 모니터링</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">SNMP 트랩으로 모니터링</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock">SnapMirror를 참조하십시오</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">TCP</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">11104</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">인터클러스터 LIF</p></td>
@@ -2298,7 +2299,14 @@ HA 쌍을 사용하는 경우 HA 중재자가 아웃바운드 인터넷 액세�
 <td class="tableblock halign-left valign-top"><p class="tableblock">인터클러스터 LIF</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ONTAP 인터클러스터 LIF</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">SnapMirror 데이터 전송</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Syslog를 클릭합니다</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">UDP입니다</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">514</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">노드 관리 LIF</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Syslog 서버</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Syslog 메시지를 전달합니다</p></td>
 </tr>
 </tbody>
 </table>
