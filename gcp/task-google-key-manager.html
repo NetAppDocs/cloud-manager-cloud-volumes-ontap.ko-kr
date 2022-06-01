@@ -187,7 +187,7 @@
   <ul class="custom-dropdown-menu">
     
     
-    <li data-value="aws" data-url="/ko-kr/cloud-manager-cloud-volumes-ontap/aws/task-google-key-manager.html">
+    <li data-value="aws" data-url="/ko-kr/cloud-manager-cloud-volumes-ontap/aws">
       <img alt="" src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/aws-ico.svg" onerror="this.src='/ko-kr/cloud-manager-cloud-volumes-ontap/images/blank-ico.png'" class="custom-icon" />Amazon Web Services에서 직접 지원합니다
     </li>
     
@@ -199,7 +199,7 @@
     
     
     
-    <li data-value="azure" data-url="/ko-kr/cloud-manager-cloud-volumes-ontap/azure/task-google-key-manager.html">
+    <li data-value="azure" data-url="/ko-kr/cloud-manager-cloud-volumes-ontap/azure">
       <img alt="" src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/azure-ico.svg" onerror="this.src='/ko-kr/cloud-manager-cloud-volumes-ontap/images/blank-ico.png'" class="custom-icon" />Microsoft Azure를 참조하십시오
     </li>
     
@@ -767,6 +767,19 @@
 
 
 
+    <ul class="subfolders" style="display:none;"><li class="active pdf-hide">
+  <a target="_blank" href="/ko-kr/cloud-manager-cloud-volumes-ontap/pdfs/pages/task-google-key-manager.pdf" >
+    <img src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/pdf.png" width="16" height="16"/>
+    PDF of this page
+  </a>
+</li>
+
+</ul>
+  
+
+
+
+
 
 
     <ul class="subfolders" style="display:none;"><li class="active pdf-hide">
@@ -1242,6 +1255,8 @@
       </a>
       <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/gcp/task-encrypting-volumes.html">
         NetApp 암호화로 볼륨 암호화
+      </a></li><li class="  active "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/gcp/task-google-key-manager.html">
+        Google Cloud Key Manager Service로 키를 관리합니다
       </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/gcp/task-protecting-ransomware.html">
         랜섬웨어 보호 향상
       </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/gcp/task-azure-key-vault.html">
@@ -1403,7 +1418,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-06-01 15:34:24 +0000">06/01/2022</time>
+    <time datetime="2022-06-01 16:19:58 +0000">06/01/2022</time>
     
   
 
@@ -1416,7 +1431,7 @@
 <p>을 사용할 수 있습니다 <a href="https://cloud.google.com/kms/docs" target="_blank" rel="noopener">"Google Cloud Platform의 키 관리 서비스(Cloud KMS)"</a> Google Cloud Platform에서 구축한 응용 프로그램에서 ONTAP 암호화 키를 보호합니다.</p>
 </div>
 <div class="paragraph">
-<p>키 관리 Cloud KMS는 CLI 또는 ONTAP REST API를 통해 활성화할 수 있습니다. Cloud Volumes ONTAP용 Cloud KMS를 구성하려면 먼저 을(를) 구성해야 합니다</p>
+<p>Cloud KMS를 사용한 키 관리는 CLI 또는 ONTAP REST API를 통해 활성화할 수 있습니다.</p>
 </div>
 <div class="paragraph">
 <p>Cloud KMS를 사용할 때는 기본적으로 데이터 SVM LIF가 클라우드 키 관리 엔드포인트와 통신하는 데 사용됩니다. 노드 관리 네트워크는 클라우드 공급자의 인증 서비스(oauth2.googleapis.com 통신하는 데 사용됩니다. 클러스터 네트워크가 올바르게 구성되지 않은 경우 클러스터는 키 관리 서비스를 제대로 사용하지 않습니다.</p>
@@ -1425,7 +1440,7 @@
 <div class="title">필수 구성 요소</div>
 <ul>
 <li>
-<p>Cloud Volumes ONTAP 클러스터 노드는 NVE를 지원해야 합니다</p>
+<p>Cloud Volumes ONTAP에서 버전 9.10.1 이상을 실행해야 합니다</p>
 </li>
 <li>
 <p>VE(Volume Encryption) 라이센스가 설치되었습니다</p>
@@ -1436,59 +1451,62 @@
 <li>
 <p>클러스터 또는 SVM 관리자여야 합니다</p>
 </li>
+<li>
+<p>Google Cloud Platform의 활성 서브스크립션입니다</p>
+</li>
 </ul>
 </div>
 <div class="ulist">
 <div class="title">제한 사항</div>
 <ul>
 <li>
-<p>Cloud Volumes ONTAP에서 버전 9.10.1 이상을 실행해야 합니다</p>
-</li>
-<li>
-<p>NSE 및 NAE는 클라우드 KMS를 사용할 수 없습니다.</p>
-</li>
-<li>
-<p>Cloud KMS는 MetroCluster 구성에 사용할 수 없습니다.</p>
-</li>
-<li>
 <p>클라우드 KMS는 데이터 SVM에서만 구성할 수 있습니다</p>
-</li>
-<li>
-<p>Google Cloud Platform의 활성 서브스크립션입니다</p>
 </li>
 </ul>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="구성">구성</h2>
+<div class="sectionbody">
 <div class="olist arabic">
-<div class="title">활성화</div>
+<div class="title">Google 클라우드</div>
 <ol class="arabic">
 <li>
-<p>Google Cloud 환경:</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>대칭 GCP 키 링 및 키 생성:</p>
+<p>Google Cloud 환경에서는 <a href="https://cloud.google.com/kms/docs/creating-keys" target="_blank" rel="noopener">"대칭 GCP 키 링 및 키를 생성합니다"</a>.</p>
 </li>
 <li>
-<p>Cloud Volumes ONTAP 서비스 계정에 대한 사용자 지정 역할 만들기: "gcloud iam role create kmsCustomRole&#8212;&#8203;project=<em>project_id</em>- title=<em>kms_custom_role_name</em>--description=<em>custom_role_description</em>--permissions=cloudkms.cryptoKeyVersions.get, cloudkms.cryptokms.list, cloudkms.cryptoKeyVersions.useToDecrypt,cloudkms.cryptoKeyVersions.useToEncrypt,cloudkms.cryptoKeys.get,cloudkms.keyRings.get,cloudkms.locations.get,cloudkms.locations.list,resourcemanager.projects.get&#8201;&#8212;&#8201;stage= GA/GA가 있습니까?</p>
+<p>Cloud Volumes ONTAP 서비스 계정에 대한 사용자 지정 역할을 만듭니다.</p>
+<div class="listingblock">
+<div class="content">
+<pre>gcloud iam roles create kmsCustomRole
+    --project=&lt;project_id&gt;
+    --title=&lt;kms_custom_role_name&gt;
+    --description=&lt;custom_role_description&gt;
+    --permissions=cloudkms.cryptoKeyVersions.get,cloudkms.cryptoKeyVersions.list,cloudkms.cryptoKeyVersions.useToDecrypt,cloudkms.cryptoKeyVersions.useToEncrypt,cloudkms.cryptoKeys.get,cloudkms.keyRings.get,cloudkms.locations.get,cloudkms.locations.list,resourcemanager.projects.get
+    --stage=GA</pre>
+</div>
+</div>
 </li>
 <li>
-<p>사용자 지정 역할을 클라우드 KMS 키 및 Cloud Volumes ONTAP 서비스 계정에 할당합니다. "gcloud kms keys add-iam-policy-binding${<em>key_name</em>}--keyring${<em>key_ring_name</em>}--location ${<em>key_location</em>}- 멤버 ServiceAccount:${<em>service_account_Name</em>}-- 역할 프로젝트/_Role_Customprojects</p>
+<p>사용자 지정 역할을 클라우드 KMS 키 및 Cloud Volumes ONTAP 서비스 계정에 할당합니다. "gcloud kms keys add-iam-policy-binding_key_name_&#8212;&#8203;keyring_key_ring_name_&#8212;&#8203;location_location_member ServiceAccount:_service_account_Name_&#8212;&#8203;role projects/<em>customer_id</em>/kCustomRole"</p>
 </li>
 <li>
 <p>서비스 계정 JSON 키 다운로드:'gcloud iam service-accounts key create key-file --iam-account=<em>sa-name</em>@<em>project-id</em>.iam.gserviceaccount.com</p>
 </li>
 </ol>
 </div>
-</li>
+<div class="olist arabic">
+<div class="title">Cloud Volumes ONTAP</div>
+<ol class="arabic">
 <li>
-<p>Cloud Volumes ONTAP 환경으로 전환:</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
+<p>기본 SSH 클라이언트를 사용하여 클러스터 관리 LIF에 연결합니다.</p>
+</li>
 <li>
 <p>고급 권한 수준 설정 고급 으로 전환합니다</p>
 </li>
 <li>
-<p>데이터 SVM을 위한 DNS를 생성합니다. dns create-domain C. <em><a href="#project">[project]</a></em>.internal -name-servers_server_address_-vserver_SVM_name_'입니다</p>
+<p>데이터 SVM을 위한 DNS를 생성합니다. dns create-domain c.<em>&lt;project&gt;</em>.internal -name-servers_server_address_-vserver_SVM_name_'을 선택합니다</p>
 </li>
 <li>
 <p>CMEK 항목 생성:'Security key-manager external GCP enable-vserver_SVM_name_-project-id_project_-key-ring-name_key_ring_name_-key-ring-location_location_-key-name_key_key_key_key_name_'입니다</p>
@@ -1500,10 +1518,7 @@
 <p>활성화된 프로세스가 성공했는지 확인합니다. '보안 키 - 관리자 외부 GCP 검사 - vserver_svm_name_'</p>
 </li>
 <li>
-<p>선택 사항: 암호화 'vol create_volume_name_&gt;-aggregate_aggregate_-vserver_vserver_name_-size 10G&#8217;를 테스트할 볼륨을 생성합니다</p>
-</li>
-</ol>
-</div>
+<p>선택 사항: 암호화 'vol create_volume_name_-aggregate_aggregate_-vserver_vserver_name_-size 10G&#8217;를 테스트할 볼륨을 생성합니다</p>
 </li>
 </ol>
 </div>
