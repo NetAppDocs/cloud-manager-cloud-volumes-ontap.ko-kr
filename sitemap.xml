@@ -211,7 +211,7 @@
     <url>
       <loc>https://docs.netapp.com/ko-kr/cloud-manager-cloud-volumes-ontap//search.html</loc>
       
-      <lastmod>2022-05-19T13:01:07+00:00</lastmod>
+      <lastmod>2022-06-01T15:34:49+00:00</lastmod>
       
     </url>
   
@@ -226,6 +226,13 @@
       <loc>https://docs.netapp.com/ko-kr/cloud-manager-cloud-volumes-ontap/task-adding-systems.html</loc>
       
       <lastmod>2022-04-14T17:30:59+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/ko-kr/cloud-manager-cloud-volumes-ontap/task-azure-key-vault.html</loc>
+      
+      <lastmod>2022-06-01T15:34:24+00:00</lastmod>
       
     </url>
   
@@ -380,6 +387,13 @@
       <loc>https://docs.netapp.com/ko-kr/cloud-manager-cloud-volumes-ontap/task-getting-started-gcp.html</loc>
       
       <lastmod>2022-04-14T17:30:59+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/ko-kr/cloud-manager-cloud-volumes-ontap/task-google-key-manager.html</loc>
+      
+      <lastmod>2022-06-01T15:34:24+00:00</lastmod>
       
     </url>
   
