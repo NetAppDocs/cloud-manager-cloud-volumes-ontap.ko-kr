@@ -775,19 +775,6 @@
 
 
 
-    <ul class="subfolders" style="display:none;"><li class="active pdf-hide">
-  <a target="_blank" href="/ko-kr/cloud-manager-cloud-volumes-ontap/pdfs/pages/task-azure-key-vault.pdf" >
-    <img src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/pdf.png" width="16" height="16"/>
-    PDF of this page
-  </a>
-</li>
-
-</ul>
-  
-
-
-
-
 
           
         </li>
@@ -1296,13 +1283,9 @@
       </a></li><li class="  active "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/task-azure-key-vault.html">
         Azure Key Vault를 사용하여 키를 관리합니다
       </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/task-google-key-manager.html">
-        Google Cloud Key Manager Service로 키를 관리합니다
+        Google Cloud KMS로 키 관리
       </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/task-protecting-ransomware.html">
         랜섬웨어 보호 향상
-      </a></li><li class="  active "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/task-azure-key-vault.html">
-        Azure 키 저장소를 활성화합니다
-      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/task-google-key-manager.html">
-        Google Cloud Key Manager 서비스를 활성화합니다
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> 시스템 관리</div>
       </a>
@@ -1480,7 +1463,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-06-01 16:19:58 +0000">06/01/2022</time>
+    <time datetime="2022-06-01 17:07:21 +0000">06/01/2022</time>
     
   
 
@@ -1508,7 +1491,7 @@
 <p>Cloud Volumes ONTAP에서 버전 9.10.1 이상을 실행해야 합니다</p>
 </li>
 <li>
-<p>설치된 VE(Volume Encryption) 라이센스(NetApp Volume Encryption 라이센스는 NetApp 지원에 등록된 각 Cloud Volumes ONTAP 시스템에 자동으로 설치됩니다.)</p>
+<p>설치된 볼륨 암호화(VE) 라이센스(NetApp 볼륨 암호화 라이센스는 NetApp Support에 등록된 각 Cloud Volumes ONTAP 시스템에 자동으로 설치됨)</p>
 </li>
 <li>
 <p>MTEKM(멀티 테넌트 암호화 키 관리) 라이센스가 설치되었습니다</p>
@@ -1535,7 +1518,29 @@
 <h2 id="구성-프로세스">구성 프로세스</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>이 단계에서는 Azure에 Cloud Volumes ONTAP 구성을 등록하는 방법과 Azure 키 저장소 및 키를 생성하는 방법을 설명합니다. 이 단계를 이미 완료한 경우, 특히 에서 올바른 구성 설정이 있는지 확인하십시오 <a href="#create-akv">Azure Key Vault를 작성합니다</a>을 클릭한 다음 로 진행합니다 <a href="#ontap">Cloud Volumes ONTAP 구성</a>. * <a href="#azure-app">Azure 애플리케이션 등록</a>* <a href="#secret">Azure 클라이언트 암호를 생성합니다</a>* <a href="#create-akv">Azure Key Vault를 작성합니다</a>* <a href="#key">암호화 키를 생성합니다</a>* <a href="#AAD">Azure Active Directory 끝점 생성(HA만 해당)</a>* <a href="#ontap">Cloud Volumes ONTAP 구성</a></p>
+<p>이 단계에서는 Azure에 Cloud Volumes ONTAP 구성을 등록하는 방법과 Azure 키 저장소 및 키를 생성하는 방법을 설명합니다. 이 단계를 이미 완료한 경우, 특히 에서 올바른 구성 설정이 있는지 확인하십시오 <a href="#create-akv">Azure Key Vault를 작성합니다</a>을 클릭한 다음 로 진행합니다 <a href="#ontap">Cloud Volumes ONTAP 구성</a>.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#azure-app">Azure 애플리케이션 등록</a></p>
+</li>
+<li>
+<p><a href="#secret">Azure 클라이언트 암호를 생성합니다</a></p>
+</li>
+<li>
+<p><a href="#create-akv">Azure Key Vault를 작성합니다</a></p>
+</li>
+<li>
+<p><a href="#key">암호화 키를 생성합니다</a></p>
+</li>
+<li>
+<p><a href="#AAD">Azure Active Directory 끝점 생성(HA만 해당)</a></p>
+</li>
+<li>
+<p><a href="#ontap">Cloud Volumes ONTAP 구성</a></p>
+</li>
+</ul>
 </div>
 <div id="azure-app" class="olist arabic">
 <div class="title">Azure 애플리케이션 등록</div>
@@ -1746,14 +1751,10 @@ Category: kms_wrapped_key_status
 </li>
 <li>
 <p>선택 사항: 테스트 볼륨을 생성하여 AKV의 기능을 확인합니다. 'vol create-vserver_SVM_name_-volume_volume_name_-aggregate_aggr_-size_size_-state online-policy default'</p>
-</li>
-</ol>
-</div>
 <div class="paragraph">
 <p>올바르게 구성된 경우 Cloud Volumes ONTAP는 자동으로 볼륨을 생성하고 볼륨 암호화를 활성화합니다.</p>
 </div>
-<div class="olist arabic">
-<ol class="arabic">
+</li>
 <li>
 <p>볼륨이 올바르게 생성되고 암호화되었는지 확인합니다. 이 경우 암호화된 매개 변수는 true로 표시됩니다. 'vol show-vserver_SVM_name_-fields is-encrypted'</p>
 </li>

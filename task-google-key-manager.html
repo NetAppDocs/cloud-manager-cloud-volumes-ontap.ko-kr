@@ -776,19 +776,6 @@
 
 
 
-
-    <ul class="subfolders" style="display:none;"><li class="active pdf-hide">
-  <a target="_blank" href="/ko-kr/cloud-manager-cloud-volumes-ontap/pdfs/pages/task-google-key-manager.pdf" >
-    <img src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/pdf.png" width="16" height="16"/>
-    PDF of this page
-  </a>
-</li>
-
-</ul>
-  
-
-
-
           
         </li>
       </ul>
@@ -1296,13 +1283,9 @@
       </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/task-azure-key-vault.html">
         Azure Key Vault를 사용하여 키를 관리합니다
       </a></li><li class="  active "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/task-google-key-manager.html">
-        Google Cloud Key Manager Service로 키를 관리합니다
+        Google Cloud KMS로 키 관리
       </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/task-protecting-ransomware.html">
         랜섬웨어 보호 향상
-      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/task-azure-key-vault.html">
-        Azure 키 저장소를 활성화합니다
-      </a></li><li class="  active "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/task-google-key-manager.html">
-        Google Cloud Key Manager 서비스를 활성화합니다
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> 시스템 관리</div>
       </a>
@@ -1480,7 +1463,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-06-01 16:19:58 +0000">06/01/2022</time>
+    <time datetime="2022-06-01 17:07:21 +0000">06/01/2022</time>
     
   
 
@@ -1590,7 +1573,17 @@
 <h2 id="문제-해결">문제 해결</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>문제를 해결해야 하는 경우 위의 마지막 두 단계에서 원시 REST API 로그를 지정할 수 있습니다. '세트 d'. 'systemshell-node_node_-command tail -f /mroot /etc/log/mlog/kmip2_client.log'</p>
+<p>문제를 해결해야 하는 경우 위의 마지막 두 단계에서 원시 REST API 로그를 지정할 수 있습니다.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>'세트 d'</p>
+</li>
+<li>
+<p>'systemshell-node_node_-command tail -f /mroot /etc/log/mlog/kmip2_client.log'</p>
+</li>
+</ol>
 </div>
 </div>
 </div>
