@@ -314,35 +314,27 @@
     </div>
   </div>
   <div class="n-property-bar__toolbar">
-    <!-- Start Language Selector --><div id="ie-i18n" class="n-property-bar__lang-selector">
-      <div id="ie-i18n-menu">
-      <span class="ie-i18n-lang">한국어</span>
-        <button class="ie-i18n-icon-container" type="button">
+    <!-- Start Language Selector --><div id="language-dropdown" class="custom-dropdown custom-dropdown-lang">
+      <div class="custom-dropdown-select custom-dropdown-select-lang">
+      <span class="lang-name">한국어</span>
           <svg class="n-globe__icon" aria-labelledby="title">
             <title>globe</title>
             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ko-kr/cloud-manager-cloud-volumes-ontap/common/svg/sprite.svg#globe"></use>
           </svg>
         </button>
       </div>
-      <div id="n-property-navigation-bar__menu--language-selector" class="ie-i18n-results-container n-menu n-menu--v3 n-menu--is-active" style="display: none;">
-        <div class="n-language-selector-menu">
-          <ul class="n-menu__list">
-            <li class="n-menu__list-column">
-              <ul class="n-menu__list"><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/reference-limitations.html" class="n-menu__header-text"><span translate="no" class="notranslate">English</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/ja-jp/cloud-manager-cloud-volumes-ontap/reference-limitations.html" class="n-menu__header-text"><span translate="no" class="notranslate">日本語</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/ko-kr/cloud-manager-cloud-volumes-ontap/reference-limitations.html" class="n-menu__header-text"><span translate="no" class="notranslate">한국어</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/zh-cn/cloud-manager-cloud-volumes-ontap/reference-limitations.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/zh-tw/cloud-manager-cloud-volumes-ontap/reference-limitations.html" class="n-menu__header-text"><span translate="no" class="notranslate">繁體中文</span></a>
-                </li></ul>
-            </li>
-          </ul>
-        </div>
-      </div>
+
+      <ul class="custom-dropdown-menu"><li>
+          <a href="https://docs.netapp.com/ko-kr/cloud-manager-cloud-volumes-ontap/reference-limitations.html" target="_self"><span translate="no" class="notranslate">한국어</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/reference-limitations.html" target="_self"><span translate="no" class="notranslate">English</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/ja-jp/cloud-manager-cloud-volumes-ontap/reference-limitations.html" target="_self"><span translate="no" class="notranslate">日本語</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/zh-cn/cloud-manager-cloud-volumes-ontap/reference-limitations.html" target="_self"><span translate="no" class="notranslate">简体中文</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/zh-tw/cloud-manager-cloud-volumes-ontap/reference-limitations.html" target="_self"><span translate="no" class="notranslate">繁體中文</span></a>
+        </li></ul>
     </div><!-- End Language Selector -->
 
     <div class="n-property-bar__cta"></div>
@@ -397,8 +389,6 @@
         
         <a target="_blank" href="/ko-kr/cloud-manager-cloud-volumes-ontap/pdfs/gcp/fullsite-sidebar/Cloud_Volumes_ONTAP_설명서.pdf" >
           <img src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/pdf.png" width="16" height="16"/>이 문서 사이트의 PDF</a>
-
-
 
 
 
@@ -495,6 +485,8 @@
             네트워크 설정
           </a>
           
+
+
 
 
 
@@ -748,6 +740,8 @@
 
 
 
+
+
           
         </li>
       </ul>
@@ -857,11 +851,11 @@
           
           <a target="_blank" 
             
-              href="/ko-kr/cloud-manager-cloud-volumes-ontap/pdfs/gcp/sidebar/AWS에서_관리.pdf" 
+              href="/ko-kr/cloud-manager-cloud-volumes-ontap/pdfs/gcp/sidebar/설치하고.pdf" 
             
           >
             <img src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/pdf.png" width="16" height="16"/>
-            AWS에서 관리
+            설치하고
           </a>
           
 
@@ -888,11 +882,11 @@
           
           <a target="_blank" 
             
-              href="/ko-kr/cloud-manager-cloud-volumes-ontap/pdfs/gcp/sidebar/Azure에서_관리.pdf" 
+              href="/ko-kr/cloud-manager-cloud-volumes-ontap/pdfs/gcp/sidebar/Azure_관리.pdf" 
             
           >
             <img src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/pdf.png" width="16" height="16"/>
-            Azure에서 관리
+            Azure 관리
           </a>
           
 
@@ -919,11 +913,11 @@
           
           <a target="_blank" 
             
-              href="/ko-kr/cloud-manager-cloud-volumes-ontap/pdfs/gcp/sidebar/Google_Cloud에서_관리.pdf" 
+              href="/ko-kr/cloud-manager-cloud-volumes-ontap/pdfs/gcp/sidebar/Google_Cloud_관리.pdf" 
             
           >
             <img src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/pdf.png" width="16" height="16"/>
-            Google Cloud에서 관리
+            Google Cloud 관리
           </a>
           
 
@@ -935,6 +929,8 @@
     
 
   
+
+
 
 
 
@@ -1020,6 +1016,8 @@
             스토리지
           </a>
           
+
+
 
 
 
@@ -1162,10 +1160,10 @@
     $("#toggleContainerPdf").toggle('display');
     $(".n-pdf-body-container .zip-pdf-link-container").toggle('display');
   });
-</script><div class="sidebar-nav-container">
-  <ul id="mysidebar" class="nav"><li class=" "><a class="na-navbar-padding" href="gcp/https://docs.netapp.com/us-en/cloud-manager-family">
-        모든 Cloud Manager 설명서
-      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/gcp/index.html">
+</script><div class="prod-nav" id="product-nav">
+  <a target="_self" class="prod-fam-nav" href="https://docs.netapp.com/ko-kr/cloud-manager-family/"><img src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/left_arrow.png" alt=""><pre>All Cloud Manager documentation</pre></a>
+</div><div class="sidebar-nav-container" id="mysidebardiv">
+  <ul id="mysidebar" class="nav"><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/gcp/index.html">
         Cloud Volumes ONTAP 문서
       </a></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> 릴리스 정보</div>
@@ -1237,6 +1235,8 @@
       </a>
       <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/gcp/task-managing-svms.html">
         Cloud Manager에서 스토리지 VM과 작업
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/gcp/task-managing-svms-gcp.html">
+        Google Cloud에서 스토리지 VM을 생성합니다
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> 보안 및 데이터 암호화</div>
       </a>
@@ -1271,12 +1271,14 @@
       </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/gcp/task-deleting-working-env.html">
         시스템을 삭제합니다
       </a></li></ul></li><li class="subfolders "><a href="#">
-        <div class="na-navbar-padding"> Google Cloud에서 관리</div>
+        <div class="na-navbar-padding"> Google Cloud 관리</div>
       </a>
       <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/gcp/task-change-gcp-machine.html">
         기계 유형을 변경합니다
-      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/gcp/task-connecting-to-otc.html">
-        System Manager 또는 CLI에서 관리
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/gcp/task-administer-advanced-view.html">
+        System Manager에서 관리
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/gcp/task-connecting-to-otc.html">
+        CLI에서 관리
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> 시스템 상태 및 이벤트입니다</div>
       </a>
@@ -1601,4 +1603,5 @@
     </script>
     <script src='/ko-kr/cloud-manager-cloud-volumes-ontap/js/www-ntap.js'></script>
     <script src='/ko-kr/cloud-manager-cloud-volumes-ontap/js/tabbed-blocks.js'></script>
+    <script src='/ko-kr/cloud-manager-cloud-volumes-ontap/js/sidebar.js'></script>
   </body></html>

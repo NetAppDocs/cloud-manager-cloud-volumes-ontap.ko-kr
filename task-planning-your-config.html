@@ -309,35 +309,27 @@
     </div>
   </div>
   <div class="n-property-bar__toolbar">
-    <!-- Start Language Selector --><div id="ie-i18n" class="n-property-bar__lang-selector">
-      <div id="ie-i18n-menu">
-      <span class="ie-i18n-lang">한국어</span>
-        <button class="ie-i18n-icon-container" type="button">
+    <!-- Start Language Selector --><div id="language-dropdown" class="custom-dropdown custom-dropdown-lang">
+      <div class="custom-dropdown-select custom-dropdown-select-lang">
+      <span class="lang-name">한국어</span>
           <svg class="n-globe__icon" aria-labelledby="title">
             <title>globe</title>
             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ko-kr/cloud-manager-cloud-volumes-ontap/common/svg/sprite.svg#globe"></use>
           </svg>
         </button>
       </div>
-      <div id="n-property-navigation-bar__menu--language-selector" class="ie-i18n-results-container n-menu n-menu--v3 n-menu--is-active" style="display: none;">
-        <div class="n-language-selector-menu">
-          <ul class="n-menu__list">
-            <li class="n-menu__list-column">
-              <ul class="n-menu__list"><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-planning-your-config.html" class="n-menu__header-text"><span translate="no" class="notranslate">English</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/ja-jp/cloud-manager-cloud-volumes-ontap/task-planning-your-config.html" class="n-menu__header-text"><span translate="no" class="notranslate">日本語</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/ko-kr/cloud-manager-cloud-volumes-ontap/task-planning-your-config.html" class="n-menu__header-text"><span translate="no" class="notranslate">한국어</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/zh-cn/cloud-manager-cloud-volumes-ontap/task-planning-your-config.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/zh-tw/cloud-manager-cloud-volumes-ontap/task-planning-your-config.html" class="n-menu__header-text"><span translate="no" class="notranslate">繁體中文</span></a>
-                </li></ul>
-            </li>
-          </ul>
-        </div>
-      </div>
+
+      <ul class="custom-dropdown-menu"><li>
+          <a href="https://docs.netapp.com/ko-kr/cloud-manager-cloud-volumes-ontap/task-planning-your-config.html" target="_self"><span translate="no" class="notranslate">한국어</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-planning-your-config.html" target="_self"><span translate="no" class="notranslate">English</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/ja-jp/cloud-manager-cloud-volumes-ontap/task-planning-your-config.html" target="_self"><span translate="no" class="notranslate">日本語</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/zh-cn/cloud-manager-cloud-volumes-ontap/task-planning-your-config.html" target="_self"><span translate="no" class="notranslate">简体中文</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/zh-tw/cloud-manager-cloud-volumes-ontap/task-planning-your-config.html" target="_self"><span translate="no" class="notranslate">繁體中文</span></a>
+        </li></ul>
     </div><!-- End Language Selector -->
 
     <div class="n-property-bar__cta"></div>
@@ -392,8 +384,6 @@
         
         <a target="_blank" href="/ko-kr/cloud-manager-cloud-volumes-ontap/pdfs/fullsite-sidebar/Cloud_Volumes_ONTAP_설명서.pdf" >
           <img src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/pdf.png" width="16" height="16"/>이 문서 사이트의 PDF</a>
-
-
 
 
 
@@ -490,6 +480,8 @@
             네트워크 설정
           </a>
           
+
+
 
 
 
@@ -743,6 +735,8 @@
 
 
 
+
+
           
         </li>
       </ul>
@@ -852,11 +846,11 @@
           
           <a target="_blank" 
             
-              href="/ko-kr/cloud-manager-cloud-volumes-ontap/pdfs/sidebar/AWS에서_관리.pdf" 
+              href="/ko-kr/cloud-manager-cloud-volumes-ontap/pdfs/sidebar/설치하고.pdf" 
             
           >
             <img src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/pdf.png" width="16" height="16"/>
-            AWS에서 관리
+            설치하고
           </a>
           
 
@@ -883,11 +877,11 @@
           
           <a target="_blank" 
             
-              href="/ko-kr/cloud-manager-cloud-volumes-ontap/pdfs/sidebar/Azure에서_관리.pdf" 
+              href="/ko-kr/cloud-manager-cloud-volumes-ontap/pdfs/sidebar/Azure_관리.pdf" 
             
           >
             <img src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/pdf.png" width="16" height="16"/>
-            Azure에서 관리
+            Azure 관리
           </a>
           
 
@@ -914,11 +908,11 @@
           
           <a target="_blank" 
             
-              href="/ko-kr/cloud-manager-cloud-volumes-ontap/pdfs/sidebar/Google_Cloud에서_관리.pdf" 
+              href="/ko-kr/cloud-manager-cloud-volumes-ontap/pdfs/sidebar/Google_Cloud_관리.pdf" 
             
           >
             <img src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/pdf.png" width="16" height="16"/>
-            Google Cloud에서 관리
+            Google Cloud 관리
           </a>
           
 
@@ -930,6 +924,8 @@
     
 
   
+
+
 
 
 
@@ -1015,6 +1011,8 @@
             스토리지
           </a>
           
+
+
 
 
 
@@ -1157,10 +1155,10 @@
     $("#toggleContainerPdf").toggle('display');
     $(".n-pdf-body-container .zip-pdf-link-container").toggle('display');
   });
-</script><div class="sidebar-nav-container">
-  <ul id="mysidebar" class="nav"><li class=" "><a class="na-navbar-padding" href="https://docs.netapp.com/us-en/cloud-manager-family">
-        모든 Cloud Manager 설명서
-      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/index.html">
+</script><div class="prod-nav" id="product-nav">
+  <a target="_self" class="prod-fam-nav" href="https://docs.netapp.com/ko-kr/cloud-manager-family/"><img src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/left_arrow.png" alt=""><pre>All Cloud Manager documentation</pre></a>
+</div><div class="sidebar-nav-container" id="mysidebardiv">
+  <ul id="mysidebar" class="nav"><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/index.html">
         Cloud Volumes ONTAP 문서
       </a></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> 릴리스 정보</div>
@@ -1190,6 +1188,8 @@
         네트워킹 요구 사항
       </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/task-setting-up-transit-gateway.html">
         AWS 전송 게이트웨이를 설정합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/task-deploy-aws-shared-vpc.html">
+        공유 서브넷에 HA 쌍 구축
       </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/reference-security-groups.html">
         AWS의 보안 그룹 규칙
       </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/task-setting-up-kms.html">
@@ -1275,6 +1275,8 @@
         AWS에서 스토리지 VM을 생성합니다
       </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/task-managing-svms-azure.html">
         Azure에서 스토리지 VM을 생성합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/task-managing-svms-gcp.html">
+        Google Cloud에서 스토리지 VM을 생성합니다
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> 보안 및 데이터 암호화</div>
       </a>
@@ -1311,7 +1313,7 @@
       </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/task-deleting-working-env.html">
         시스템을 삭제합니다
       </a></li></ul></li><li class="subfolders "><a href="#">
-        <div class="na-navbar-padding"> AWS에서 관리</div>
+        <div class="na-navbar-padding"> 설치하고</div>
       </a>
       <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/task-change-ec2-instance.html">
         EC2 인스턴스 유형을 변경합니다
@@ -1320,7 +1322,7 @@
       </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/task-monitoring-costs.html">
         AWS 비용 모니터링
       </a></li></ul></li><li class="subfolders "><a href="#">
-        <div class="na-navbar-padding"> Azure에서 관리</div>
+        <div class="na-navbar-padding"> Azure 관리</div>
       </a>
       <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/task-change-azure-vm.html">
         Azure VM 유형을 변경합니다
@@ -1329,12 +1331,14 @@
       </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/task-enabling-private-link.html">
         Azure Private Link를 사용합니다
       </a></li></ul></li><li class="subfolders "><a href="#">
-        <div class="na-navbar-padding"> Google Cloud에서 관리</div>
+        <div class="na-navbar-padding"> Google Cloud 관리</div>
       </a>
       <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/task-change-gcp-machine.html">
         기계 유형을 변경합니다
-      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/task-connecting-to-otc.html">
-        System Manager 또는 CLI에서 관리
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/task-administer-advanced-view.html">
+        System Manager에서 관리
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/task-connecting-to-otc.html">
+        CLI에서 관리
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> 시스템 상태 및 이벤트입니다</div>
       </a>
@@ -1354,6 +1358,8 @@
         클라이언트 프로토콜
       </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/concept-storage.html">
         디스크와 애그리게이트
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/concept-aws-elastic-volumes.html">
+        AWS의 탄력적인 볼륨
       </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/concept-data-tiering.html">
         데이터 계층화
       </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/concept-storage-management.html">
@@ -1463,7 +1469,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-05-16 17:05:15 +0000">05/16/2022</time>
+    <time datetime="2022-06-07 20:59:28 +0000">06/07/2022</time>
     
   
 
@@ -1578,12 +1584,18 @@
 <div class="paragraph">
 <p>GP3 디스크를 선택하면 Cloud Manager가 기본 IOPS 및 처리량 값을 채워 선택한 디스크 크기를 기준으로 GP2 디스크와 동일한 성능을 제공합니다. 더 높은 비용으로 더 나은 성능을 얻기 위해 값을 늘릴 수 있지만 성능이 저하될 수 있으므로 더 낮은 값을 지원하지 않습니다. 즉, 기본값을 그대로 사용하거나 값을 늘립니다. 낮추지 마십시오. <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volume-types.html#gp3-ebs-volume-type" target="_blank" rel="noopener">"GP3 디스크 및 성능에 대해 자세히 알아보십시오"</a>.</p>
 </div>
+<div class="paragraph">
+<p>Cloud Volumes ONTAP는 GP3 디스크를 사용하는 Amazon EBS Elastic Volumes 기능을 지원합니다. <a href="concept-aws-elastic-volumes.html">"Elastic Volumes 지원에 대해 자세히 알아보십시오"</a>.</p>
+</div>
 </li>
 <li>
 <p>_GP2(General Purpose SSD)_디스크는 광범위한 워크로드에 대해 비용과 성능의 균형을 맞춥니다. 성능은 IOPS 측면에서 정의됩니다.</p>
 </li>
 <li>
 <p>_provisioned IOPS ssd(i1)_disk는 높은 비용으로 최고의 성능을 요구하는 중요한 응용 프로그램을 위한 것입니다.</p>
+<div class="paragraph">
+<p>Cloud Volumes ONTAP는 iio1 디스크에서 Amazon EBS Elastic Volumes 기능을 지원합니다. <a href="concept-aws-elastic-volumes.html">"Elastic Volumes 지원에 대해 자세히 알아보십시오"</a>.</p>
+</div>
 </li>
 <li>
 <p>_Throughput Optimized HDD(st1)_디스크는 낮은 가격으로 빠르고 일관된 처리량을 필요로 하는 자주 액세스되는 워크로드에 적합합니다.</p>
@@ -1607,7 +1619,7 @@
 </dd>
 <dt class="hdlist1">EBS 디스크 크기입니다</dt>
 <dd>
-<p>Cloud Volumes ONTAP 시스템을 시작할 때 초기 디스크 크기를 선택해야 합니다. 그 이후에는 가능합니다 <a href="concept-storage-management.html">"Cloud Manager로 시스템 용량을 관리할 수 있습니다"</a>하지만 원하는 경우 <a href="task-create-aggregates.html">"스스로 애그리게이트를 생성합니다"</a>다음 사항에 유의하십시오.</p>
+<p>를 지원하지 않는 구성을 선택하는 경우 <a href="concept-aws-elastic-volumes.html">"Amazon EBS Elastic Volumes 기능"</a>그런 다음 Cloud Volumes ONTAP 시스템을 시작할 때 초기 디스크 크기를 선택해야 합니다. 그 이후에는 가능합니다 <a href="concept-storage-management.html">"Cloud Manager로 시스템 용량을 관리할 수 있습니다"</a>하지만 원하는 경우 <a href="task-create-aggregates.html">"스스로 애그리게이트를 생성합니다"</a>다음 사항에 유의하십시오.</p>
 <div class="openblock">
 <div class="content">
 <div class="ulist">
@@ -1625,6 +1637,9 @@
 <p>더 큰 디스크(예: 4TiB 디스크 6개)를 선택하더라도 EC2 인스턴스가 대역폭 제한에 도달할 수 있으므로 모든 IOPS를 가져오지 못할 수 있습니다.</p>
 <div class="paragraph">
 <p>EBS 디스크 성능에 대한 자세한 내용은 을 참조하십시오 <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html" target="_blank" rel="noopener">"AWS 설명서:EBS 볼륨 유형"</a>.</p>
+</div>
+<div class="paragraph">
+<p>위에서 설명한 것처럼, Amazon EBS Elastic Volumes 기능을 지원하는 Cloud Volumes ONTAP 구성에서는 디스크 크기를 선택할 수 없습니다. <a href="concept-aws-elastic-volumes.html">"Elastic Volumes 지원에 대해 자세히 알아보십시오"</a>.</p>
 </div>
 </li>
 </ul>
@@ -1986,4 +2001,5 @@
     </script>
     <script src='/ko-kr/cloud-manager-cloud-volumes-ontap/js/www-ntap.js'></script>
     <script src='/ko-kr/cloud-manager-cloud-volumes-ontap/js/tabbed-blocks.js'></script>
+    <script src='/ko-kr/cloud-manager-cloud-volumes-ontap/js/sidebar.js'></script>
   </body></html>

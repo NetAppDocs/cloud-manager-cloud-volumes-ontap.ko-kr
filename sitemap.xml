@@ -20,6 +20,13 @@
     </url>
   
     <url>
+      <loc>https://docs.netapp.com/ko-kr/cloud-manager-cloud-volumes-ontap/concept-aws-elastic-volumes.html</loc>
+      
+      <lastmod>2022-06-07T20:59:28+00:00</lastmod>
+      
+    </url>
+  
+    <url>
       <loc>https://docs.netapp.com/ko-kr/cloud-manager-cloud-volumes-ontap/concept-client-protocols.html</loc>
       
       <lastmod>2022-05-09T15:44:41+00:00</lastmod>
@@ -113,14 +120,14 @@
     <url>
       <loc>https://docs.netapp.com/ko-kr/cloud-manager-cloud-volumes-ontap/concept-storage-management.html</loc>
       
-      <lastmod>2022-05-09T15:44:41+00:00</lastmod>
+      <lastmod>2022-06-07T20:59:28+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/ko-kr/cloud-manager-cloud-volumes-ontap/concept-storage.html</loc>
       
-      <lastmod>2022-05-09T15:44:41+00:00</lastmod>
+      <lastmod>2022-06-07T20:59:28+00:00</lastmod>
       
     </url>
   
@@ -183,7 +190,7 @@
     <url>
       <loc>https://docs.netapp.com/ko-kr/cloud-manager-cloud-volumes-ontap/reference-networking-azure.html</loc>
       
-      <lastmod>2022-05-09T15:44:41+00:00</lastmod>
+      <lastmod>2022-06-07T20:59:28+00:00</lastmod>
       
     </url>
   
@@ -211,14 +218,14 @@
     <url>
       <loc>https://docs.netapp.com/ko-kr/cloud-manager-cloud-volumes-ontap//search.html</loc>
       
-      <lastmod>2022-06-01T17:07:49+00:00</lastmod>
+      <lastmod>2022-06-07T20:59:48+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/ko-kr/cloud-manager-cloud-volumes-ontap/task-accelerate-data-access.html</loc>
       
-      <lastmod>2022-04-14T17:30:59+00:00</lastmod>
+      <lastmod>2022-06-07T20:59:28+00:00</lastmod>
       
     </url>
   
@@ -230,9 +237,16 @@
     </url>
   
     <url>
+      <loc>https://docs.netapp.com/ko-kr/cloud-manager-cloud-volumes-ontap/task-administer-advanced-view.html</loc>
+      
+      <lastmod>2022-06-07T20:59:28+00:00</lastmod>
+      
+    </url>
+  
+    <url>
       <loc>https://docs.netapp.com/ko-kr/cloud-manager-cloud-volumes-ontap/task-azure-key-vault.html</loc>
       
-      <lastmod>2022-06-01T17:07:21+00:00</lastmod>
+      <lastmod>2022-06-07T20:59:28+00:00</lastmod>
       
     </url>
   
@@ -288,21 +302,21 @@
     <url>
       <loc>https://docs.netapp.com/ko-kr/cloud-manager-cloud-volumes-ontap/task-connecting-to-otc.html</loc>
       
-      <lastmod>2022-05-09T15:44:41+00:00</lastmod>
+      <lastmod>2022-06-07T20:59:28+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/ko-kr/cloud-manager-cloud-volumes-ontap/task-create-aggregates.html</loc>
       
-      <lastmod>2022-04-14T17:30:59+00:00</lastmod>
+      <lastmod>2022-06-07T20:59:28+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/ko-kr/cloud-manager-cloud-volumes-ontap/task-create-volumes.html</loc>
       
-      <lastmod>2022-05-09T15:44:41+00:00</lastmod>
+      <lastmod>2022-06-07T20:59:28+00:00</lastmod>
       
     </url>
   
@@ -317,6 +331,13 @@
       <loc>https://docs.netapp.com/ko-kr/cloud-manager-cloud-volumes-ontap/task-deleting-working-env.html</loc>
       
       <lastmod>2022-05-09T15:44:41+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/ko-kr/cloud-manager-cloud-volumes-ontap/task-deploy-aws-shared-vpc.html</loc>
+      
+      <lastmod>2022-06-07T20:59:28+00:00</lastmod>
       
     </url>
   
@@ -344,7 +365,7 @@
     <url>
       <loc>https://docs.netapp.com/ko-kr/cloud-manager-cloud-volumes-ontap/task-enabling-private-link.html</loc>
       
-      <lastmod>2022-04-14T17:30:59+00:00</lastmod>
+      <lastmod>2022-06-07T20:59:28+00:00</lastmod>
       
     </url>
   
@@ -400,7 +421,7 @@
     <url>
       <loc>https://docs.netapp.com/ko-kr/cloud-manager-cloud-volumes-ontap/task-manage-aggregates.html</loc>
       
-      <lastmod>2022-05-03T00:03:41+00:00</lastmod>
+      <lastmod>2022-06-07T20:59:28+00:00</lastmod>
       
     </url>
   
@@ -442,14 +463,21 @@
     <url>
       <loc>https://docs.netapp.com/ko-kr/cloud-manager-cloud-volumes-ontap/task-managing-svms-aws.html</loc>
       
-      <lastmod>2022-04-28T18:13:22+00:00</lastmod>
+      <lastmod>2022-06-07T20:59:28+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/ko-kr/cloud-manager-cloud-volumes-ontap/task-managing-svms-azure.html</loc>
       
-      <lastmod>2022-04-28T18:13:22+00:00</lastmod>
+      <lastmod>2022-06-07T20:59:28+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/ko-kr/cloud-manager-cloud-volumes-ontap/task-managing-svms-gcp.html</loc>
+      
+      <lastmod>2022-06-07T20:59:28+00:00</lastmod>
       
     </url>
   
@@ -498,7 +526,7 @@
     <url>
       <loc>https://docs.netapp.com/ko-kr/cloud-manager-cloud-volumes-ontap/task-planning-your-config.html</loc>
       
-      <lastmod>2022-05-16T17:05:15+00:00</lastmod>
+      <lastmod>2022-06-07T20:59:28+00:00</lastmod>
       
     </url>
   
@@ -596,7 +624,7 @@
     <url>
       <loc>https://docs.netapp.com/ko-kr/cloud-manager-cloud-volumes-ontap/task-updating-ontap-cloud.html</loc>
       
-      <lastmod>2022-05-09T15:44:41+00:00</lastmod>
+      <lastmod>2022-06-07T20:59:28+00:00</lastmod>
       
     </url>
   
@@ -617,7 +645,7 @@
     <url>
       <loc>https://docs.netapp.com/ko-kr/cloud-manager-cloud-volumes-ontap/whats-new.html</loc>
       
-      <lastmod>2022-05-09T15:44:41+00:00</lastmod>
+      <lastmod>2022-06-07T20:59:28+00:00</lastmod>
       
     </url>
   
