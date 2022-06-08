@@ -1403,7 +1403,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-06-07 22:05:14 +0000">06/07/2022</time>
+    <time datetime="2022-06-08 19:25:02 +0000">06/08/2022</time>
     
   
 
@@ -1461,7 +1461,7 @@
 <div class="title">단계</div>
 <ol class="arabic">
 <li>
-<p>Google Cloud에서 Cloud Volumes ONTAP 인스턴스로 이동하고 각 LIF에 대한 IP 범위를 nic0으로 추가합니다.</p>
+<p>Google Cloud에서 Cloud Volumes ONTAP 인스턴스로 이동하고 각 LIF에 대한 IP 주소를 nic0에 추가합니다.</p>
 <div class="paragraph">
 <p><span class="image"><img src="./media/screenshot-gcp-add-ip-range.png" alt="IP 범위를 추가하여 Cloud Volumes ONTAP의 네트워크 인터페이스를 편집할 수 있는 Google Cloud 콘솔의 스크린샷."></span></p>
 </div>
@@ -1537,10 +1537,10 @@
 <div class="sect2">
 <h3 id="ha-쌍">HA 쌍</h3>
 <div class="paragraph">
-<p>Cloud Manager API를 사용하여 Google Cloud의 Cloud Volumes ONTAP 시스템에서 스토리지 VM을 생성해야 합니다. Cloud Manager는 아웃바운드 SMB/CIFS 통신에 필요한 HA 쌍을 위한 iSCSI LIF뿐만 아니라 필요한 LIF 서비스로 스토리지 VM을 구성하기 때문에 System Manager 또는 CLI가 아닌 API를 사용해야 합니다.</p>
+<p>Cloud Manager API를 사용하여 Google Cloud의 Cloud Volumes ONTAP 시스템에서 스토리지 VM을 생성해야 합니다. Cloud Manager는 아웃바운드 SMB/CIFS 통신에 필요한 iSCSI LIF와 필요한 LIF 서비스를 사용하여 스토리지 VM을 구성하기 때문에 System Manager 또는 CLI가 아닌 API를 사용해야 합니다.</p>
 </div>
 <div class="paragraph">
-<p>Cloud Manager는 Google Cloud에서 필요한 IP 주소를 할당합니다.</p>
+<p>Cloud Manager는 Google Cloud에서 필요한 IP 주소를 할당하고 SMB/NFS 액세스를 위한 데이터 LIF와 아웃바운드 SMB 통신을 위한 iSCSI LIF를 사용하여 스토리지 VM을 생성합니다.</p>
 </div>
 <div class="paragraph">
 <p>3.9.19 릴리즈부터 Cloud Volumes ONTAP HA 쌍에 대한 스토리지 VM을 생성하고 관리하기 위해 커넥터에는 다음 권한이 필요합니다.</p>

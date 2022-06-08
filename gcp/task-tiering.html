@@ -1403,7 +1403,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-05-09 15:44:41 +0000">05/09/2022</time>
+    <time datetime="2022-06-08 19:25:02 +0000">06/08/2022</time>
     
   
 
@@ -1522,25 +1522,21 @@
 <p>Cloud Volumes ONTAP가 상주하는 서브넷은 개인 Google 액세스용으로 구성해야 합니다. 자세한 지침은 을 참조하십시오 <a href="https://cloud.google.com/vpc/docs/configure-private-google-access" target="_blank" rel="noopener">"Google Cloud 설명서: 개인 Google Access 구성"</a>.</p>
 </li>
 <li>
-<p>다음 요구 사항을 충족하는 서비스 계정이 필요합니다.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>사전 정의된 스토리지 관리자 역할이 있어야 합니다.</p>
-</li>
-<li>
-<p>Connector 서비스 계정은 이 계층화 서비스 계정의 _ 서비스 계정 사용자 _ 여야 합니다.</p>
+<p>서비스 계정을 Cloud Volumes ONTAP에 연결해야 합니다.</p>
 <div class="paragraph">
-<p><a href="task-creating-gcp-service-account.html">"서비스 계정 설정 방법에 대해 알아보십시오"</a>.</p>
+<p><a href="task-creating-gcp-service-account.html">"이 서비스 계정을 설정하는 방법에 대해 알아보십시오"</a>.</p>
+</div>
+<div class="paragraph">
+<p>Cloud Volumes ONTAP 작업 환경을 생성할 때 이 서비스 계정을 선택하라는 메시지가 표시됩니다.</p>
+</div>
+<div class="paragraph">
+<p>배포 중에 서비스 계정을 선택하지 않으면 Cloud Volumes ONTAP를 종료하고 Google Cloud 콘솔로 이동한 다음 Cloud Volumes ONTAP 인스턴스에 서비스 계정을 연결해야 합니다. 그런 다음 다음 다음 섹션에 설명된 대로 데이터 계층화를 설정할 수 있습니다.</p>
 </div>
 </li>
 <li>
 <p>고객이 관리하는 암호화 키로 버킷을 암호화하려면 Google Cloud 스토리지 버킷에서 키를 사용할 수 있습니다.</p>
 <div class="paragraph">
 <p><a href="task-setting-up-gcp-encryption.html">"Cloud Volumes ONTAP에서 고객이 관리하는 암호화 키를 사용하는 방법에 대해 알아보십시오"</a>.</p>
-</div>
-</li>
-</ul>
 </div>
 </li>
 </ul>
@@ -1565,17 +1561,11 @@
 <div class="paragraph">
 <p><span class="image"><img src="./media/screenshot_enable_capacity_tiering.gif" alt="Cloud Manager에서 데이터 계층화를 설정하려고 할 때 문제가 발생한 경우 작업 환경 메뉴에서 사용 가능한 용량 계층화 옵션 스크린샷"></span></p>
 </div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<img src="/us-en/cloud-manager-cloud-volumes-ontap/images/note.svg" alt="참고">
-</td>
-<td class="content">
-Cloud Manager에서 시스템을 생성할 때 데이터 계층화를 설정할 수 없는 경우에만 이 옵션이 표시됩니다.
-</td>
-</tr>
-</table>
+<div class="paragraph">
+<p>Cloud Manager에서 시스템을 생성할 때 데이터 계층화를 설정할 수 없는 경우에만 이 옵션이 표시됩니다.</p>
+</div>
+<div class="paragraph">
+<p>Google Cloud에서는 이 옵션이 나타나기 전에 서비스 계정을 Cloud Volumes ONTAP에 연결해야 합니다. <a href="#Requirements">모든 요구 사항을 충족하는지 확인합니다</a>.</p>
 </div>
 </li>
 <li>
