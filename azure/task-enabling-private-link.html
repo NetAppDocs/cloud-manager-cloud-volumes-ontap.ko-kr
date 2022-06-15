@@ -9,14 +9,14 @@
   <meta property="og:title" content="Azure Private Link 또는 서비스 끝점을 사용합니다 | NetApp Documentation" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://docs.netapp.com/ko-kr/cloud-manager-cloud-volumes-ontap/task-enabling-private-link.html" />
-	<meta property="og:description" content="기본적으로 Cloud Manager는 Cloud Volumes ONTAP 리소스와 Azure 리소스 간의 연결을 위해 Azure 프라이빗 링크를 활성화합니다. 필요한 경우 Azure Private Links를 비활성화하고 서비스 끝점을 대신 사용할 수 있습니다." />
+	<meta property="og:description" content="Cloud Volumes ONTAP는 Azure 프라이빗 링크를 사용하여 연결된 저장소 계정에 연결합니다. 필요한 경우 Azure Private Links를 비활성화하고 서비스 끝점을 대신 사용할 수 있습니다." />
   <meta property="og:image" content="https://docs.netapp.com/ko-kr/cloud-manager-cloud-volumes-ontap/images/logo-tophat-social.png" />
   <meta property="og:image:alt" content="NetApp Logo" />
   <meta name="format-detection" content="telephone=no">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
-  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="기본적으로 Cloud Manager는 Cloud Volumes ONTAP 리소스와 Azure 리소스 간의 연결을 위해 Azure 프라이빗 링크를 활성화합니다. 필요한 경우 Azure Private Links를 비활성화하고 서비스 끝점을 대신 사용할 수 있습니다.">
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="Cloud Volumes ONTAP는 Azure 프라이빗 링크를 사용하여 연결된 저장소 계정에 연결합니다. 필요한 경우 Azure Private Links를 비활성화하고 서비스 끝점을 대신 사용할 수 있습니다.">
   <meta name="keywords" content=" azure private link, private link connection, private link to storage, service endpoints, enable service endpoint, disable private link"><!-- Icons -->
   <link rel="icon" href="/ko-kr/cloud-manager-cloud-volumes-ontap/images/favicon.ico" type="image/x-icon">
 
@@ -1403,7 +1403,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-06-14 21:10:45 +0000">06/14/2022</time>
+    <time datetime="2022-06-15 15:48:24 +0000">06/15/2022</time>
     
   
 
@@ -1413,7 +1413,7 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph lead">
-<p>기본적으로 Cloud Manager는 Cloud Volumes ONTAP 리소스와 Azure 리소스 간의 연결을 위해 Azure 프라이빗 링크를 활성화합니다. 필요한 경우 Azure Private Links를 비활성화하고 서비스 끝점을 대신 사용할 수 있습니다.</p>
+<p>Cloud Volumes ONTAP는 Azure 프라이빗 링크를 사용하여 연결된 저장소 계정에 연결합니다. 필요한 경우 Azure Private Links를 비활성화하고 서비스 끝점을 대신 사용할 수 있습니다.</p>
 </div>
 </div>
 </div>
@@ -1421,20 +1421,7 @@
 <h2 id="개요">개요</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Cloud Manager를 사용하면 Cloud Volumes ONTAP 노드와 다음 Azure 리소스 간의 연결을 위해 Azure 프라이빗 링크를 사용할 수 있습니다.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Cloud Volumes ONTAP 및 관련 스토리지 계정 간의 접속</p>
-</li>
-<li>
-<p>백업 및 데이터 계층화를 위한 Cloud Volumes ONTAP 및 Azure Blob 스토리지 간 연결</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Azure Private Link는 Azure의 엔드포인트 간 연결을 보호하고 성능상의 이점을 제공합니다.</p>
+<p>기본적으로 Cloud Manager는 Cloud Volumes ONTAP와 연결된 스토리지 계정 간의 연결을 위해 Azure 프라이빗 링크를 활성화합니다. Azure Private Link는 Azure의 엔드포인트 간 연결을 보호하고 성능상의 이점을 제공합니다.</p>
 </div>
 <div class="paragraph">
 <p>필요한 경우 Azure 프라이빗 링크 대신 서비스 끝점을 사용하도록 Cloud Volumes ONTAP를 구성할 수 있습니다.</p>
@@ -1476,7 +1463,7 @@
 <p>대부분의 경우 Cloud Volumes ONTAP를 사용하여 Azure 개인 링크를 설정하는 데 필요한 작업은 없습니다. Cloud Manager는 Azure 프라이빗 링크를 관리합니다. 그러나 Azure Private DNS를 사용하는 경우에는 구성 파일을 편집해야 합니다. Azure의 커넥터 위치에 대한 요구 사항도 알고 있어야 합니다.</p>
 </div>
 <div class="sect2">
-<h3 id="cloud-volumes-ontap-스토리지-계정에서-전용-링크-연결이-작동하는-방식">Cloud Volumes ONTAP 스토리지 계정에서 전용 링크 연결이 작동하는 방식</h3>
+<h3 id="개별-링크-연결의-작동-방식">개별 링크 연결의 작동 방식</h3>
 <div class="paragraph">
 <p>Cloud Manager는 Azure에 Cloud Volumes ONTAP를 구축할 때 리소스 그룹에 프라이빗 엔드포인트를 생성합니다. 프라이빗 엔드포인트는 Cloud Volumes ONTAP의 스토리지 계정과 연결되어 있습니다. 따라서 Cloud Volumes ONTAP 스토리지에 대한 액세스는 Microsoft 백본 네트워크를 통해 이루어집니다.</p>
 </div>

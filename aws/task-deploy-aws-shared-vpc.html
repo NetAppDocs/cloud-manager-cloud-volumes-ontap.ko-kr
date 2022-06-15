@@ -1414,7 +1414,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-06-07 22:05:14 +0000">06/07/2022</time>
+    <time datetime="2022-06-15 15:48:24 +0000">06/15/2022</time>
     
   
 
@@ -1464,11 +1464,30 @@
 <p>다른 AWS 계정 * 을 선택하고 VPC 소유자 계정의 ID를 입력합니다.</p>
 </li>
 <li>
-<p>Cloud Manager IAM 정책을 사용하여 정책을 생성합니다. 이 정책은 에서 사용할 수 있습니다 <a href="https://mysupport.netapp.com/site/info/cloud-manager-policies" target="_blank" rel="noopener">"Cloud Manager 정책 페이지"</a>.</p>
+<p>"STS:AssumeRole" 권한이 포함된 IAM 역할에 정책을 첨부합니다.</p>
+<div class="paragraph">
+<p>예를 들면 다음과 같습니다.</p>
+</div>
 </li>
 </ul>
 </div>
 </li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-json" data-lang="json">{
+  "Version": "2012-10-17",
+  "Statement": {
+    "Effect": "Allow",
+    "Action": "sts:AssumeRole",
+    "Resource": "arn:aws:iam::account-id:role/Test*"
+  }
+}</code></pre>
+</div>
+</div>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
 <li>
 <p>HA Pair를 배포할 때 API 요청에 붙여넣을 수 있도록 IAM 역할의 Role ARN을 복사합니다.</p>
 </li>
@@ -1495,7 +1514,7 @@
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-json" data-lang="json">"haParams": {
-     “assumeRoleArn”: “arn:aws:iam::642991768967:role/mediator_role_assume_fromdev”
+     "assumeRoleArn": "arn:aws:iam::642991768967:role/mediator_role_assume_fromdev"
 }</code></pre>
 </div>
 </div>
