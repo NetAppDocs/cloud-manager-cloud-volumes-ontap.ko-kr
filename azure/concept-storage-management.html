@@ -700,6 +700,8 @@
 
 
 
+
+
           
         </li>
       </ul>
@@ -1226,6 +1228,8 @@
         애그리게이트 생성
       </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/azure/task-manage-aggregates.html">
         기존 애그리게이트를 관리합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/azure/task-manage-capacity-settings.html">
+        용량 설정을 관리합니다
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> 스토리지 VM 관리</div>
       </a>
@@ -1403,7 +1407,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-06-07 20:59:28 +0000">06/07/2022</time>
+    <time datetime="2022-06-17 21:24:08 +0000">06/17/2022</time>
     
   
 
@@ -1484,7 +1488,10 @@
 <h2 id="용량-관리">용량 관리</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>계정 관리자는 Cloud Manager에서 스토리지 용량 결정에 대해 통지할지 또는 Cloud Manager가 자동으로 용량 요구사항을 관리할지 여부를 선택할 수 있습니다. 이러한 모드의 작동 방식을 이해하는 데 도움이 될 수 있습니다.</p>
+<p>계정 관리자는 Cloud Manager에서 스토리지 용량 결정에 대해 통지할지 또는 Cloud Manager가 자동으로 용량 요구사항을 관리할지 여부를 선택할 수 있습니다.</p>
+</div>
+<div class="paragraph">
+<p>이 동작은 커넥터의 _용량 관리 모드_에 의해 결정됩니다. 용량 관리 모드는 해당 커넥터가 관리하는 모든 Cloud Volumes ONTAP 시스템에 영향을 줍니다. 다른 커넥터가 있는 경우 다르게 구성할 수 있습니다.</p>
 </div>
 <div class="sect2">
 <h3 id="자동-용량-관리">자동 용량 관리</h3>
@@ -1527,6 +1534,12 @@
 <h3 id="수동-용량-관리">수동 용량 관리</h3>
 <div class="paragraph">
 <p>계정 관리자가 용량 관리 모드를 수동으로 설정한 경우, 용량 결정을 내려야 할 때 Cloud Manager에 작업 필요 메시지가 표시됩니다. 자동 모드에서 설명한 것과 동일한 예가 수동 모드에 적용되지만 사용자는 이 작업을 수락할 수 있습니다.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="자세한-정보">자세한 정보</h3>
+<div class="paragraph">
+<p><a href="task-manage-capacity-settings.html">"용량 관리 모드를 수정하는 방법을 알아보십시오"</a>.</p>
 </div>
 </div>
 </div>
