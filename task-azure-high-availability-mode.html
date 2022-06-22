@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html lang="ko">
   <head class="at-element-marker">
-  <title>AWS에서 Cloud Volumes ONTAP를 빠르게 시작합니다 | NetApp Documentation</title>
+  <title>Azure에서 고가용성 모드를 활성화합니다 | NetApp Documentation</title>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
   <meta http-equiv="language" content="en">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta property="og:title" content="AWS에서 Cloud Volumes ONTAP를 빠르게 시작합니다 | NetApp Documentation" />
+  <meta property="og:title" content="Azure에서 고가용성 모드를 활성화합니다 | NetApp Documentation" />
 	<meta property="og:type" content="website" />
-	<meta property="og:url" content="https://docs.netapp.com/ko-kr/cloud-manager-cloud-volumes-ontap/task-getting-started-aws.html" />
-	<meta property="og:description" content="몇 가지 단계로 Cloud Volumes ONTAP for AWS를 시작하십시오." />
+	<meta property="og:url" content="https://docs.netapp.com/ko-kr/cloud-manager-cloud-volumes-ontap/task-azure-high-availability-mode.html" />
+	<meta property="og:description" content="계획되지 않은 페일오버 시간을 줄이고 Cloud Volumes ONTAP에 대한 NFSv4 지원을 활성화하려면 Microsoft Azure의 고가용성 모드를 활성화해야 합니다." />
   <meta property="og:image" content="https://docs.netapp.com/ko-kr/cloud-manager-cloud-volumes-ontap/images/logo-tophat-social.png" />
   <meta property="og:image:alt" content="NetApp Logo" />
   <meta name="format-detection" content="telephone=no">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
-  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="몇 가지 단계로 Cloud Volumes ONTAP for AWS를 시작하십시오.">
-  <meta name="keywords" content=" amazon web services, aws, netapp, data fabric, hybrid cloud, cloud, public cloud, networking, vpc, quick, getting started, install, installing, deploy, deploying, setup, setting up, launching, requirements, prerequisites, cloud central, get started, network, vpn, multi-cloud, tier, tiering, storage tier, data tier, vpc endpoint, endpoint, S3, subscribe, subscribing, marketplace, granting, permissions, policy, iam policy, ec2 console, ami, mediator, connectivity, internet, outbound, endpoint, connection, networks, replicating, ec2 service, policies, attach, iam user, access key, secret key, keys, sign up, cloud manager, cloud volumes ontap, cloud ontap, create"><!-- Icons -->
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="계획되지 않은 페일오버 시간을 줄이고 Cloud Volumes ONTAP에 대한 NFSv4 지원을 활성화하려면 Microsoft Azure의 고가용성 모드를 활성화해야 합니다.">
+  <meta name="keywords" content=" high availability mode, EnableHighAvailabilityMode, action required, nfsv4"><!-- Icons -->
   <link rel="icon" href="/ko-kr/cloud-manager-cloud-volumes-ontap/images/favicon.ico" type="image/x-icon">
 
   <!-- RSS Feed --><link rel="alternate" type="application/rss+xml" title="NetApp Documentation" href="/ko-kr/cloud-manager-cloud-volumes-ontap/feed.xml"><!-- CSS Definitions: NetApp CSS should be defined after generic css -->
@@ -52,9 +52,6 @@
   <link rel="stylesheet" href="/ko-kr/cloud-manager-cloud-volumes-ontap/css/landing-page.css" type="text/css">
   <link rel="stylesheet" href="/ko-kr/cloud-manager-cloud-volumes-ontap/css/tabbed-blocks.css" type="text/css">
   <!-- Canonical url -->
-  
-    
-    <link rel="canonical" href="https://docs.netapp.com/ko-kr/cloud-manager-cloud-volumes-ontap/task-getting-started-aws.html" />
   <link rel='stylesheet' href='/ko-kr/cloud-manager-cloud-volumes-ontap/css/na-feature.css' type='text/css'><!-- Top level site integrations --><script>
     if (document.location.hostname === "docs.netapp.com") {
       var head = document.getElementsByTagName('head')[0];
@@ -164,7 +161,7 @@
 </head>
 
 
-  <body class role="document" data-flavor="aws">
+  <body class role="document" data-flavor="">
     <div id="page" class="n-off-canvas-menu">
       <div class="n-off-canvas-menu__menu"><!--TODO: Add offcanvas code --></div>
       <div class="n-off-canvas-menu__content-wrap">
@@ -173,21 +170,19 @@
   <!-- Start Page Toolbar -->
   
   <div class="page-nav-toolbar">
-<div id="flavor-dropdown" class="custom-dropdown" data-url="/ko-kr/cloud-manager-cloud-volumes-ontap/task-getting-started-aws.html">
+<div id="flavor-dropdown" class="custom-dropdown" data-url="/ko-kr/cloud-manager-cloud-volumes-ontap/task-azure-high-availability-mode.html">
   
-  
-  <div class="custom-dropdown-select selected" title="설치하고">
+  <div class="custom-dropdown-select unselected" title="모든 클라우드 공급자">
     <label>클라우드 공급자</label>
-    <div>설치하고</div>  
-    <img src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/filter.svg" class="custom-icon selected" alt="" />
-    <img src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/dismiss.svg" class="custom-icon selected" id="remove-flavor" alt="" />
+    <span>모든 클라우드 공급자</span>
+    <img src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/filter.svg" class="custom-icon" alt="" />
   </div>
   
 
   <ul class="custom-dropdown-menu">
     
     
-    <li data-value="aws" data-url="/ko-kr/cloud-manager-cloud-volumes-ontap/aws/task-getting-started-aws.html">
+    <li data-value="aws" data-url="/ko-kr/cloud-manager-cloud-volumes-ontap/aws">
       <img alt="" src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/aws-ico.svg" onerror="this.src='/ko-kr/cloud-manager-cloud-volumes-ontap/images/blank-ico.png'" class="custom-icon" />Amazon Web Services에서 직접 지원합니다
     </li>
     
@@ -199,14 +194,14 @@
     
     
     
-    <li data-value="azure" data-url="/ko-kr/cloud-manager-cloud-volumes-ontap/azure">
+    <li data-value="azure" data-url="/ko-kr/cloud-manager-cloud-volumes-ontap/azure/task-azure-high-availability-mode.html">
       <img alt="" src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/azure-ico.svg" onerror="this.src='/ko-kr/cloud-manager-cloud-volumes-ontap/images/blank-ico.png'" class="custom-icon" />Microsoft Azure를 참조하십시오
     </li>
     
     
   </ul>
 </div>
-<div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/issues/new?body=Page%3A%20[AWS에서 Cloud Volumes ONTAP를 빠르게 시작합니다](https://docs.netapp.com/ko-kr/cloud-manager-cloud-volumes-ontap/task-getting-started-aws.html)" class="page-nav-contribute-link" role="button"><img src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/discuss-sm.svg" class="github-icon" />문서 변경 요청</a><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/blob/main/task-getting-started-aws.adoc" class="page-nav-contribute-link" role="button"><img src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/edit-sm.svg" class="github-icon" />이 페이지 편집</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/article-sm.svg" class="github-icon" />기여하는 방법 자세히 알아보기</a></div>
+<div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/issues/new?body=Page%3A%20[Azure에서 고가용성 모드를 활성화합니다](https://docs.netapp.com/ko-kr/cloud-manager-cloud-volumes-ontap/task-azure-high-availability-mode.html)" class="page-nav-contribute-link" role="button"><img src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/discuss-sm.svg" class="github-icon" />문서 변경 요청</a><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/blob/main/task-azure-high-availability-mode.adoc" class="page-nav-contribute-link" role="button"><img src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/edit-sm.svg" class="github-icon" />이 페이지 편집</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/article-sm.svg" class="github-icon" />기여하는 방법 자세히 알아보기</a></div>
     <div class="page-nav-container">
       <nav class="page-nav-fixed">
         <div class="page-nav-title">이 페이지의 내용</div>
@@ -301,7 +296,7 @@
           data-no-results-found-did-you-mean="{query}에 대한 결과를 찾을 수 없습니다. {suggestion}을(를) 검색하려 하셨습니까?" 
           data-results-found="{hitCount}개의 결과를 찾음"  
           data-sk-es-pf-indexes=""
-          data-flavor="aws"></div>
+          data-flavor=""></div>
           <button class="n-property-bar__search-toggle-button" type="button">
             <svg class="n-icon-search n-property-bar__search-toggle-button-icon" aria-labelledby="title">
               <title>search</title>
@@ -325,15 +320,15 @@
       </div>
 
       <ul class="custom-dropdown-menu"><li>
-          <a href="https://docs.netapp.com/ko-kr/cloud-manager-cloud-volumes-ontap/task-getting-started-aws.html" target="_self"><span translate="no" class="notranslate">한국어</span></a>
+          <a href="https://docs.netapp.com/ko-kr/cloud-manager-cloud-volumes-ontap/task-azure-high-availability-mode.html" target="_self"><span translate="no" class="notranslate">한국어</span></a>
         </li><li>
-          <a href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-aws.html" target="_self"><span translate="no" class="notranslate">English</span></a>
+          <a href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-azure-high-availability-mode.html" target="_self"><span translate="no" class="notranslate">English</span></a>
         </li><li>
-          <a href="https://docs.netapp.com/ja-jp/cloud-manager-cloud-volumes-ontap/task-getting-started-aws.html" target="_self"><span translate="no" class="notranslate">日本語</span></a>
+          <a href="https://docs.netapp.com/ja-jp/cloud-manager-cloud-volumes-ontap/task-azure-high-availability-mode.html" target="_self"><span translate="no" class="notranslate">日本語</span></a>
         </li><li>
-          <a href="https://docs.netapp.com/zh-cn/cloud-manager-cloud-volumes-ontap/task-getting-started-aws.html" target="_self"><span translate="no" class="notranslate">简体中文</span></a>
+          <a href="https://docs.netapp.com/zh-cn/cloud-manager-cloud-volumes-ontap/task-azure-high-availability-mode.html" target="_self"><span translate="no" class="notranslate">简体中文</span></a>
         </li><li>
-          <a href="https://docs.netapp.com/zh-tw/cloud-manager-cloud-volumes-ontap/task-getting-started-aws.html" target="_self"><span translate="no" class="notranslate">繁體中文</span></a>
+          <a href="https://docs.netapp.com/zh-tw/cloud-manager-cloud-volumes-ontap/task-azure-high-availability-mode.html" target="_self"><span translate="no" class="notranslate">繁體中文</span></a>
         </li></ul>
     </div><!-- End Language Selector -->
 
@@ -387,7 +382,7 @@
         
         
         
-        <a target="_blank" href="/ko-kr/cloud-manager-cloud-volumes-ontap/pdfs/aws/fullsite-sidebar/Cloud_Volumes_ONTAP_설명서.pdf" >
+        <a target="_blank" href="/ko-kr/cloud-manager-cloud-volumes-ontap/pdfs/fullsite-sidebar/Cloud_Volumes_ONTAP_설명서.pdf" >
           <img src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/pdf.png" width="16" height="16"/>이 문서 사이트의 PDF</a>
 
 
@@ -400,7 +395,7 @@
           
           <a target="_blank" 
             
-              href="/ko-kr/cloud-manager-cloud-volumes-ontap/pdfs/aws/sidebar/릴리스_정보.pdf" 
+              href="/ko-kr/cloud-manager-cloud-volumes-ontap/pdfs/sidebar/릴리스_정보.pdf" 
             
           >
             <img src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/pdf.png" width="16" height="16"/>
@@ -431,7 +426,7 @@
           
           <a target="_blank" 
             
-              href="/ko-kr/cloud-manager-cloud-volumes-ontap/pdfs/aws/sidebar/시작하십시오.pdf" 
+              href="/ko-kr/cloud-manager-cloud-volumes-ontap/pdfs/sidebar/시작하십시오.pdf" 
             
           >
             <img src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/pdf.png" width="16" height="16"/>
@@ -449,22 +444,13 @@
           
           <a target="_blank" 
             
-              href="/ko-kr/cloud-manager-cloud-volumes-ontap/pdfs/aws/sidebar/Amazon_Web_Services에서_시작하십시오.pdf" 
+              href="/ko-kr/cloud-manager-cloud-volumes-ontap/pdfs/sidebar/Amazon_Web_Services에서_시작하십시오.pdf" 
             
           >
             <img src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/pdf.png" width="16" height="16"/>
             Amazon Web Services에서 시작하십시오
           </a>
           
-    <ul class="subfolders" style="display:none;"><li class="active pdf-hide">
-  <a target="_blank" href="/ko-kr/cloud-manager-cloud-volumes-ontap/pdfs/pages/task-getting-started-aws.pdf" >
-    <img src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/pdf.png" width="16" height="16"/>
-    PDF of this page
-  </a>
-</li>
-
-</ul>
-  
 
 
 
@@ -478,7 +464,7 @@
           
           <a target="_blank" 
             
-              href="/ko-kr/cloud-manager-cloud-volumes-ontap/pdfs/aws/sidebar/네트워크_설정.pdf" 
+              href="/ko-kr/cloud-manager-cloud-volumes-ontap/pdfs/sidebar/네트워크_설정.pdf" 
             
           >
             <img src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/pdf.png" width="16" height="16"/>
@@ -528,7 +514,7 @@
           
           <a target="_blank" 
             
-              href="/ko-kr/cloud-manager-cloud-volumes-ontap/pdfs/aws/sidebar/Microsoft_Azure에서_시작하십시오.pdf" 
+              href="/ko-kr/cloud-manager-cloud-volumes-ontap/pdfs/sidebar/Microsoft_Azure에서_시작하십시오.pdf" 
             
           >
             <img src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/pdf.png" width="16" height="16"/>
@@ -545,6 +531,15 @@
 
 
 
+    <ul class="subfolders" style="display:none;"><li class="active pdf-hide">
+  <a target="_blank" href="/ko-kr/cloud-manager-cloud-volumes-ontap/pdfs/pages/task-azure-high-availability-mode.pdf" >
+    <img src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/pdf.png" width="16" height="16"/>
+    PDF of this page
+  </a>
+</li>
+
+</ul>
+  
 
 
 
@@ -567,7 +562,7 @@
           
           <a target="_blank" 
             
-              href="/ko-kr/cloud-manager-cloud-volumes-ontap/pdfs/aws/sidebar/Google_Cloud에서_시작하십시오.pdf" 
+              href="/ko-kr/cloud-manager-cloud-volumes-ontap/pdfs/sidebar/Google_Cloud에서_시작하십시오.pdf" 
             
           >
             <img src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/pdf.png" width="16" height="16"/>
@@ -617,7 +612,7 @@
           
           <a target="_blank" 
             
-              href="/ko-kr/cloud-manager-cloud-volumes-ontap/pdfs/aws/sidebar/Cloud_Volumes_ONTAP를_사용합니다.pdf" 
+              href="/ko-kr/cloud-manager-cloud-volumes-ontap/pdfs/sidebar/Cloud_Volumes_ONTAP를_사용합니다.pdf" 
             
           >
             <img src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/pdf.png" width="16" height="16"/>
@@ -633,7 +628,7 @@
           
           <a target="_blank" 
             
-              href="/ko-kr/cloud-manager-cloud-volumes-ontap/pdfs/aws/sidebar/라이센스_관리.pdf" 
+              href="/ko-kr/cloud-manager-cloud-volumes-ontap/pdfs/sidebar/라이센스_관리.pdf" 
             
           >
             <img src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/pdf.png" width="16" height="16"/>
@@ -664,7 +659,7 @@
           
           <a target="_blank" 
             
-              href="/ko-kr/cloud-manager-cloud-volumes-ontap/pdfs/aws/sidebar/볼륨_및_LUN_관리.pdf" 
+              href="/ko-kr/cloud-manager-cloud-volumes-ontap/pdfs/sidebar/볼륨_및_LUN_관리.pdf" 
             
           >
             <img src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/pdf.png" width="16" height="16"/>
@@ -699,7 +694,7 @@
           
           <a target="_blank" 
             
-              href="/ko-kr/cloud-manager-cloud-volumes-ontap/pdfs/aws/sidebar/통합_관리.pdf" 
+              href="/ko-kr/cloud-manager-cloud-volumes-ontap/pdfs/sidebar/통합_관리.pdf" 
             
           >
             <img src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/pdf.png" width="16" height="16"/>
@@ -730,7 +725,7 @@
           
           <a target="_blank" 
             
-              href="/ko-kr/cloud-manager-cloud-volumes-ontap/pdfs/aws/sidebar/스토리지_VM_관리.pdf" 
+              href="/ko-kr/cloud-manager-cloud-volumes-ontap/pdfs/sidebar/스토리지_VM_관리.pdf" 
             
           >
             <img src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/pdf.png" width="16" height="16"/>
@@ -763,7 +758,7 @@
           
           <a target="_blank" 
             
-              href="/ko-kr/cloud-manager-cloud-volumes-ontap/pdfs/aws/sidebar/보안_및_데이터_암호화.pdf" 
+              href="/ko-kr/cloud-manager-cloud-volumes-ontap/pdfs/sidebar/보안_및_데이터_암호화.pdf" 
             
           >
             <img src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/pdf.png" width="16" height="16"/>
@@ -796,7 +791,7 @@
           
           <a target="_blank" 
             
-              href="/ko-kr/cloud-manager-cloud-volumes-ontap/pdfs/aws/sidebar/시스템_관리.pdf" 
+              href="/ko-kr/cloud-manager-cloud-volumes-ontap/pdfs/sidebar/시스템_관리.pdf" 
             
           >
             <img src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/pdf.png" width="16" height="16"/>
@@ -824,7 +819,7 @@
           
           <a target="_blank" 
             
-              href="/ko-kr/cloud-manager-cloud-volumes-ontap/pdfs/aws/sidebar/시스템을_추가__제거_또는_삭제합니다.pdf" 
+              href="/ko-kr/cloud-manager-cloud-volumes-ontap/pdfs/sidebar/시스템을_추가__제거_또는_삭제합니다.pdf" 
             
           >
             <img src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/pdf.png" width="16" height="16"/>
@@ -855,7 +850,7 @@
           
           <a target="_blank" 
             
-              href="/ko-kr/cloud-manager-cloud-volumes-ontap/pdfs/aws/sidebar/설치하고.pdf" 
+              href="/ko-kr/cloud-manager-cloud-volumes-ontap/pdfs/sidebar/설치하고.pdf" 
             
           >
             <img src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/pdf.png" width="16" height="16"/>
@@ -886,7 +881,7 @@
           
           <a target="_blank" 
             
-              href="/ko-kr/cloud-manager-cloud-volumes-ontap/pdfs/aws/sidebar/Azure_관리.pdf" 
+              href="/ko-kr/cloud-manager-cloud-volumes-ontap/pdfs/sidebar/Azure_관리.pdf" 
             
           >
             <img src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/pdf.png" width="16" height="16"/>
@@ -917,7 +912,7 @@
           
           <a target="_blank" 
             
-              href="/ko-kr/cloud-manager-cloud-volumes-ontap/pdfs/aws/sidebar/Google_Cloud_관리.pdf" 
+              href="/ko-kr/cloud-manager-cloud-volumes-ontap/pdfs/sidebar/Google_Cloud_관리.pdf" 
             
           >
             <img src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/pdf.png" width="16" height="16"/>
@@ -957,7 +952,7 @@
           
           <a target="_blank" 
             
-              href="/ko-kr/cloud-manager-cloud-volumes-ontap/pdfs/aws/sidebar/시스템_상태_및_이벤트입니다.pdf" 
+              href="/ko-kr/cloud-manager-cloud-volumes-ontap/pdfs/sidebar/시스템_상태_및_이벤트입니다.pdf" 
             
           >
             <img src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/pdf.png" width="16" height="16"/>
@@ -995,7 +990,7 @@
           
           <a target="_blank" 
             
-              href="/ko-kr/cloud-manager-cloud-volumes-ontap/pdfs/aws/sidebar/개념.pdf" 
+              href="/ko-kr/cloud-manager-cloud-volumes-ontap/pdfs/sidebar/개념.pdf" 
             
           >
             <img src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/pdf.png" width="16" height="16"/>
@@ -1013,7 +1008,7 @@
           
           <a target="_blank" 
             
-              href="/ko-kr/cloud-manager-cloud-volumes-ontap/pdfs/aws/sidebar/스토리지.pdf" 
+              href="/ko-kr/cloud-manager-cloud-volumes-ontap/pdfs/sidebar/스토리지.pdf" 
             
           >
             <img src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/pdf.png" width="16" height="16"/>
@@ -1054,7 +1049,7 @@
           
           <a target="_blank" 
             
-              href="/ko-kr/cloud-manager-cloud-volumes-ontap/pdfs/aws/sidebar/고가용성_쌍.pdf" 
+              href="/ko-kr/cloud-manager-cloud-volumes-ontap/pdfs/sidebar/고가용성_쌍.pdf" 
             
           >
             <img src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/pdf.png" width="16" height="16"/>
@@ -1106,7 +1101,7 @@
           
           <a target="_blank" 
             
-              href="/ko-kr/cloud-manager-cloud-volumes-ontap/pdfs/aws/sidebar/지식_및_지원.pdf" 
+              href="/ko-kr/cloud-manager-cloud-volumes-ontap/pdfs/sidebar/지식_및_지원.pdf" 
             
           >
             <img src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/pdf.png" width="16" height="16"/>
@@ -1167,189 +1162,251 @@
 </script><div class="prod-nav" id="product-nav">
   <a target="_self" class="prod-fam-nav" href="https://docs.netapp.com/ko-kr/cloud-manager-family/"><img src="/ko-kr/cloud-manager-cloud-volumes-ontap/images/left_arrow.png" alt=""><pre>All Cloud Manager documentation</pre></a>
 </div><div class="sidebar-nav-container" id="mysidebardiv">
-  <ul id="mysidebar" class="nav"><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/aws/index.html">
+  <ul id="mysidebar" class="nav"><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/index.html">
         Cloud Volumes ONTAP 문서
       </a></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> 릴리스 정보</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/aws/whats-new.html">
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/whats-new.html">
         새로운 소식
-      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/aws/reference-limitations.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/reference-limitations.html">
         알려진 제한 사항
-      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/aws/whats-new-ontap.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/whats-new-ontap.html">
         Cloud Volumes ONTAP 릴리즈 노트
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> 시작하십시오</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/aws/concept-overview-cvo.html">
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/concept-overview-cvo.html">
         Cloud Volumes ONTAP에 대해 자세히 알아보십시오
       </a></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> Amazon Web Services에서 시작하십시오</div>
       </a>
-      <ul><li class="  active "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/aws/task-getting-started-aws.html">
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/task-getting-started-aws.html">
         빠른 시작
-      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/aws/task-planning-your-config.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/task-planning-your-config.html">
         구성을 계획합니다
       </a></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> 네트워크 설정</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/aws/reference-networking-aws.html">
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/reference-networking-aws.html">
         네트워킹 요구 사항
-      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/aws/task-setting-up-transit-gateway.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/task-setting-up-transit-gateway.html">
         AWS 전송 게이트웨이를 설정합니다
-      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/aws/task-deploy-aws-shared-vpc.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/task-deploy-aws-shared-vpc.html">
         공유 서브넷에 HA 쌍 구축
-      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/aws/reference-security-groups.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/reference-security-groups.html">
         AWS의 보안 그룹 규칙
-      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/aws/task-setting-up-kms.html">
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/task-setting-up-kms.html">
         AWS KMS를 설정합니다
-      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/aws/task-set-up-licensing-aws.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/task-set-up-licensing-aws.html">
         라이센스를 설정합니다
-      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/aws/task-deploying-otc-aws.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/task-deploying-otc-aws.html">
         AWS에서 Cloud Volumes ONTAP를 시작합니다
-      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/aws/task-getting-started-aws-c2s.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/task-getting-started-aws-c2s.html">
         AWS C2S에서 시작하십시오
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Microsoft Azure에서 시작하십시오</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/task-getting-started-azure.html">
+        빠른 시작
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/task-planning-your-config-azure.html">
+        구성을 계획합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/reference-networking-azure.html">
+        네트워크 설정
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/task-set-up-azure-encryption.html">
+        키를 사용하여 암호화를 설정합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/task-set-up-licensing-azure.html">
+        라이센스를 설정합니다
+      </a></li><li class="  active "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/task-azure-high-availability-mode.html">
+        고가용성 모드를 활성화합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/task-deploying-otc-azure.html">
+        Azure에서 Cloud Volumes ONTAP를 실행합니다
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Google Cloud에서 시작하십시오</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/task-getting-started-gcp.html">
+        빠른 시작
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/task-planning-your-config-gcp.html">
+        구성을 계획합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/reference-networking-gcp.html">
+        네트워크 설정
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/reference-vpc-service-controls-gcp.html">
+        VPC 서비스 제어 계획
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/task-creating-gcp-service-account.html">
+        서비스 계정을 생성합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/task-setting-up-gcp-encryption.html">
+        고객이 관리하는 암호화 키를 사용합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/task-set-up-licensing-google.html">
+        라이센스를 설정합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/task-deploying-gcp.html">
+        Google Cloud에서 Cloud Volumes ONTAP를 실행합니다
       </a></li></ul></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> Cloud Volumes ONTAP를 사용합니다</div>
       </a>
       <ul><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> 라이센스 관리</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/aws/task-manage-capacity-licenses.html">
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/task-manage-capacity-licenses.html">
         용량 기반 라이센스 관리
-      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/aws/task-manage-keystone.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/task-manage-keystone.html">
         Keystone Flex 구독 관리
-      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/aws/task-manage-node-licenses.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/task-manage-node-licenses.html">
         노드 기반 라이센스 관리
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> 볼륨 및 LUN 관리</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/aws/task-create-volumes.html">
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/task-create-volumes.html">
         볼륨 생성
-      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/aws/task-manage-volumes.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/task-manage-volumes.html">
         기존 볼륨 관리
-      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/aws/task-tiering.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/task-tiering.html">
         비활성 데이터를 오브젝트 스토리지에 계층화합니다
-      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/aws/task-connect-lun.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/task-connect-lun.html">
         LUN을 호스트에 연결합니다
-      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/aws/task-accelerate-data-access.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/task-accelerate-data-access.html">
         FlexCache을 통해 데이터에 더 빠르게 액세스
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> 통합 관리</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/aws/task-create-aggregates.html">
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/task-create-aggregates.html">
         애그리게이트 생성
-      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/aws/task-manage-aggregates.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/task-manage-aggregates.html">
         기존 애그리게이트를 관리합니다
-      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/aws/task-manage-capacity-settings.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/task-manage-capacity-settings.html">
         용량 설정을 관리합니다
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> 스토리지 VM 관리</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/aws/task-managing-svms.html">
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/task-managing-svms.html">
         Cloud Manager에서 스토리지 VM과 작업
-      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/aws/task-managing-svms-aws.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/task-managing-svms-aws.html">
         AWS에서 스토리지 VM을 생성합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/task-managing-svms-azure.html">
+        Azure에서 스토리지 VM을 생성합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/task-managing-svms-gcp.html">
+        Google Cloud에서 스토리지 VM을 생성합니다
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> 보안 및 데이터 암호화</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/aws/task-encrypting-volumes.html">
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/task-encrypting-volumes.html">
         NetApp 암호화로 볼륨 암호화
-      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/aws/task-protecting-ransomware.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/task-azure-key-vault.html">
+        Azure Key Vault를 사용하여 키를 관리합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/task-google-key-manager.html">
+        Google Cloud KMS로 키 관리
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/task-protecting-ransomware.html">
         랜섬웨어 보호 향상
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> 시스템 관리</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/aws/task-updating-ontap-cloud.html">
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/task-updating-ontap-cloud.html">
         Cloud Volumes ONTAP를 업그레이드합니다
-      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/aws/task-registering.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/task-registering.html">
         선불 종량제 시스템을 등록합니다
-      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/aws/task-managing-state.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/task-managing-state.html">
         시스템을 중지하고 시작합니다
-      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/aws/task-sync-time.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/task-sync-time.html">
         시스템 시간을 동기화합니다
-      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/aws/task-modify-write-speed.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/task-modify-write-speed.html">
         시스템 쓰기 속도를 수정합니다
-      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/aws/task-change-password.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/task-change-password.html">
         시스템 암호를 변경합니다
       </a></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> 시스템을 추가, 제거 또는 삭제합니다</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/aws/task-adding-systems.html">
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/task-adding-systems.html">
         기존 시스템을 추가합니다
-      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/aws/task-removing.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/task-removing.html">
         작업 환경을 제거합니다
-      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/aws/task-deleting-working-env.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/task-deleting-working-env.html">
         시스템을 삭제합니다
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> 설치하고</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/aws/task-change-ec2-instance.html">
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/task-change-ec2-instance.html">
         EC2 인스턴스 유형을 변경합니다
-      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/aws/task-change-route-tables.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/task-change-route-tables.html">
         HA 쌍의 경로 테이블을 변경합니다
-      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/aws/task-monitoring-costs.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/task-monitoring-costs.html">
         AWS 비용 모니터링
-      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/aws/task-administer-advanced-view.html">
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Azure 관리</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/task-change-azure-vm.html">
+        Azure VM 유형을 변경합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/task-overriding-cifs-locks.html">
+        CIFS 잠금을 재정의합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/task-enabling-private-link.html">
+        Azure Private Link 또는 서비스 끝점을 사용합니다
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Google Cloud 관리</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/task-change-gcp-machine.html">
+        기계 유형을 변경합니다
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/task-administer-advanced-view.html">
         System Manager에서 관리
-      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/aws/task-connecting-to-otc.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/task-connecting-to-otc.html">
         CLI에서 관리
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> 시스템 상태 및 이벤트입니다</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/aws/task-verify-autosupport.html">
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/task-verify-autosupport.html">
         AutoSupport 설정을 확인합니다
-      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/aws/task-configure-ems.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/task-configure-ems.html">
         EMS를 설정한다
       </a></li></ul></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> 개념</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/aws/concept-licensing.html">
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/concept-licensing.html">
         라이센싱
       </a></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> 스토리지</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/aws/concept-client-protocols.html">
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/concept-client-protocols.html">
         클라이언트 프로토콜
-      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/aws/concept-storage.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/concept-storage.html">
         디스크와 애그리게이트
-      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/aws/concept-aws-elastic-volumes.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/concept-aws-elastic-volumes.html">
         AWS의 탄력적인 볼륨
-      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/aws/concept-data-tiering.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/concept-data-tiering.html">
         데이터 계층화
-      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/aws/concept-storage-management.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/concept-storage-management.html">
         스토리지 관리
-      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/aws/concept-write-speed.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/concept-write-speed.html">
         쓰기 속도
-      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/aws/concept-flash-cache.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/concept-flash-cache.html">
         Flash Cache를 참조하십시오
-      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/aws/concept-worm.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/concept-worm.html">
         WORM 스토리지
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> 고가용성 쌍</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/aws/concept-ha.html">
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/concept-ha.html">
         AWS의 HA 쌍
-      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/aws/concept-degraded-ha-pair.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/concept-ha-azure.html">
+        Azure의 HA 쌍
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/concept-ha-google-cloud.html">
+        GCP의 HA 쌍
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/concept-degraded-ha-pair.html">
         스토리지 테이크오버 중 동작
-      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/aws/concept-security.html">
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/concept-security.html">
         보안
-      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/aws/concept-performance.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/concept-performance.html">
         성능
-      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/aws/concept-license-management.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/concept-license-management.html">
         노드 기반 BYOL 관리
-      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/aws/concept-active-iq.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/concept-active-iq.html">
         AutoSupport 및 Active IQ 디지털 자문업체
-      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/aws/reference-default-configs.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/reference-default-configs.html">
         기본 설정
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> 지식 및 지원</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/aws/task-support-registration.html">
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/task-support-registration.html">
         지원을 위해 등록하십시오
-      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/aws/task-get-help.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/task-get-help.html">
         도움을 받으십시오
-      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/aws/legal-notices.html">
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/legal-notices.html">
         법적 고지
       </a></li></ul>
 </div>
@@ -1413,14 +1470,14 @@
     </div>
   </span>
 </div><div class="n-doc__component-detail-heading-wrap">
-  <h1 class="n-doc__component-detail-heading">AWS에서 Cloud Volumes ONTAP를 빠르게 시작합니다</h1>
+  <h1 class="n-doc__component-detail-heading">Azure에서 고가용성 모드를 활성화합니다</h1>
 </div>
 
 
 <p class="page-details">
   
     
-    <time datetime="2022-04-14 17:30:59 +0000">04/14/2022</time>
+    <time datetime="2022-06-22 18:18:35 +0000">06/22/2022</time>
     
   
 
@@ -1428,62 +1485,73 @@
 </p>
 
 <div class="paragraph lead">
-<p>몇 가지 단계를 통해 AWS에서 Cloud Volumes ONTAP를 시작하십시오.</p>
+<p>계획되지 않은 페일오버 시간을 줄이고 Cloud Volumes ONTAP에 대한 NFSv4 지원을 활성화하려면 Microsoft Azure의 고가용성 모드를 활성화해야 합니다.</p>
 </div>
-<div class="paragraph quick-margin-para">
-<p>가 없는 경우 <a href="https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html" target="_blank" rel="noopener">"커넥터"</a> 그러나 계정 관리자는 계정을 만들어야 합니다. <a href="https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-aws.html" target="_blank" rel="noopener">"AWS에서 커넥터를 생성하는 방법에 대해 알아보십시오"</a>.</p>
+<div class="paragraph">
+<p>Cloud Volumes ONTAP 9.10.1 릴리즈부터 Microsoft Azure에서 실행되는 Cloud Volumes ONTAP HA 쌍의 계획되지 않은 페일오버 시간을 줄이고 NFSv4에 대한 지원을 추가했습니다. Cloud Volumes ONTAP에서 이러한 향상된 기능을 사용하려면 Azure 구독에서 고가용성 기능을 활성화해야 합니다.</p>
 </div>
-<div class="paragraph quick-margin-para">
-<p>첫 번째 Cloud Volumes ONTAP 작업 환경을 생성할 때 아직 커넥터가 없는 경우 Cloud Manager에서 커넥터를 배포할지 묻는 메시지를 표시합니다.</p>
+<div class="paragraph">
+<p>Azure 구독에서 이 기능을 활성화해야 할 경우 Cloud Manager에서 작업 필요 메시지에 이러한 세부 정보를 표시합니다.</p>
 </div>
-<div class="paragraph quick-margin-para">
-<p>Cloud Manager는 워크로드 요구사항에 맞게 사전 구성된 패키지를 제공하거나 자체 구성을 생성할 수 있습니다. 자신의 구성을 선택하는 경우 사용 가능한 옵션을 이해해야 합니다. <a href="task-planning-your-config.html">"자세한 정보"</a>.</p>
+<div class="paragraph">
+<p>다음 사항에 유의하십시오.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Cloud Volumes ONTAP HA 쌍의 고가용성에는 문제가 없습니다. 이 Azure 기능은 ONTAP와 함께 작동하여 계획되지 않은 페일오버 이벤트로 인해 NFS 프로토콜에 대해 클라이언트에서 관측된 애플리케이션 중단 시간을 줄입니다.</p>
+</li>
+<li>
+<p>이 기능을 사용하도록 설정하는 것은 Cloud Volumes ONTAP HA 쌍의 무중단 기능입니다.</p>
+</li>
+<li>
+<p>Azure 구독에서 이 기능을 활성화해도 다른 VM에 문제가 발생하지 않습니다.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>"소유자" 권한이 있는 Azure 사용자는 Azure CLI에서 이 기능을 활성화할 수 있습니다.</p>
 </div>
 <div class="olist arabic">
-<div class="title">span class="image"&gt;&lt;img src="<a href="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png"" class="bare">https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png"</a> Alt="3"&gt;&lt;/span&gt;네트워크 설정</div>
+<div class="title">단계</div>
 <ol class="arabic">
 <li>
-<p>VPC와 서브넷이 커넥터와 Cloud Volumes ONTAP 간의 연결을 지원하는지 확인합니다.</p>
+<p><a href="https://docs.microsoft.com/en-us/azure/cloud-shell/quickstart" target="_blank" rel="noopener">"Azure Portal에서 Azure Cloud Shell에 액세스합니다"</a></p>
 </li>
 <li>
-<p>커넥터 및 Cloud Volumes ONTAP가 여러 엔드포인트에 연결할 수 있도록 타겟 VPC에서 아웃바운드 인터넷 액세스를 활성화합니다.</p>
-<div class="paragraph">
-<p>이 단계는 커넥터가 아웃바운드 인터넷 액세스 없이 Cloud Volumes ONTAP를 관리할 수 없기 때문에 중요합니다. 아웃바운드 연결을 제한해야 하는 경우 의 끝점 목록을 참조하십시오 <a href="reference-networking-aws.html">"커넥터 및 Cloud Volumes ONTAP"</a>.</p>
+<p>고가용성 모드 기능 등록:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-azurecli" data-lang="azurecli">az account set -s AZURE_SUBSCRIPTION_NAME_OR_ID
+az feature register --name EnableHighAvailabilityMode --namespace Microsoft.Network
+az provider register -n Microsoft.Network</code></pre>
+</div>
 </div>
 </li>
 <li>
-<p>VPC 엔드포인트를 S3 서비스로 설정합니다.</p>
+<p>필요한 경우 기능이 지금 등록되었는지 확인합니다.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-azurecli" data-lang="azurecli">az feature show --name EnableHighAvailabilityMode --namespace Microsoft.Network</code></pre>
+</div>
+</div>
 <div class="paragraph">
-<p>Cloud Volumes ONTAP의 콜드 데이터를 저비용 오브젝트 스토리지로 계층화하려는 경우 VPC 엔드포인트가 필요합니다.</p>
+<p>Azure CLI는 다음과 유사한 결과를 반환해야 합니다.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>{
+  "id": "/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/providers/Microsoft.Features/providers/Microsoft.Network/features/EnableHighAvailabilityMode",
+  "name": "Microsoft.Network/EnableHighAvailabilityMode",
+  "properties": {
+    "state": "Registered"
+  },
+  "type": "Microsoft.Features/providers/features"
+}</pre>
+</div>
 </div>
 </li>
 </ol>
-</div>
-<div class="paragraph quick-margin-para">
-<p><a href="reference-networking-aws.html">"네트워킹 요구 사항에 대해 자세히 알아보십시오"</a>.</p>
-</div>
-<div class="paragraph quick-margin-para">
-<p>Cloud Volumes ONTAP에서 아마존 암호화를 사용하려면 활성 CMK(고객 마스터 키)가 있는지 확인해야 합니다. 또한 Connector에 대한 권한을 제공하는 IAM 역할을 _KEY USER_로 추가하여 각 CMK에 대한 키 정책을 수정해야 합니다. <a href="task-setting-up-kms.html">"자세한 정보"</a>.</p>
-</div>
-<div class="paragraph quick-margin-para">
-<p>작업 환경 추가 * 를 클릭하고 배포할 시스템 유형을 선택한 다음 마법사의 단계를 완료합니다. <a href="task-deploying-otc-aws.html">"단계별 지침을 읽습니다"</a>.</p>
-</div>
-<div class="ulist">
-<div class="title">관련 링크</div>
-<ul>
-<li>
-<p><a href="https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-aws.html" target="_blank" rel="noopener">"Cloud Manager에서 커넥터 생성"</a></p>
-</li>
-<li>
-<p><a href="https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-launching-aws-mktp.html" target="_blank" rel="noopener">"AWS Marketplace에서 커넥터 실행"</a></p>
-</li>
-<li>
-<p><a href="https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-installing-linux.html" target="_blank" rel="noopener">"Linux 호스트에 Connector 소프트웨어 설치"</a></p>
-</li>
-<li>
-<p><a href="https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-aws.html" target="_blank" rel="noopener">"Cloud Manager에서 AWS 권한을 통해 수행하는 것"</a></p>
-</li>
-</ul>
 </div>
 
     </article>
