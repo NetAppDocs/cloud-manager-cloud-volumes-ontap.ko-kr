@@ -1357,7 +1357,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-06-08 19:25:02 +0000">06/08/2022</time>
+    <time datetime="2022-07-11 18:29:19 +0000">07/11/2022</time>
     
   
 
@@ -1470,7 +1470,7 @@
 <p>선택 사항: Google Cloud에 추가한 IP 주소를 지정하여 스토리지 VM 관리 LIF를 생성합니다.</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-cli" data-lang="cli">network interface create -vserver &lt;svm-name&gt; -lif &lt;lif-name&gt; -role data -data-protocol none -address &lt;svm-mgmt-ip-address&gt; -netmask-length &lt;length&gt; -home-node node1 -status-admin up -failover-policy system-defined -firewall-policy mgmt -home-port e0a -auto-revert false -failover-group Default</code></pre>
+<pre class="highlight"><code class="language-cli" data-lang="cli">network interface create -vserver &lt;svm-name&gt; -lif &lt;lif-name&gt; -role data -data-protocol none -address &lt;svm-mgmt-ip-address&gt; -netmask-length &lt;length&gt; -home-node &lt;name-of-node1&gt; -status-admin up -failover-policy system-defined -firewall-policy mgmt -home-port e0a -auto-revert false -failover-group Default</code></pre>
 </div>
 </div>
 </li>
