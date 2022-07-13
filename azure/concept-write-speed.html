@@ -295,11 +295,13 @@
           <div id="react-search" 
           data-search-html="/ko-kr/cloud-manager-cloud-volumes-ontap/search.html"
           data-type="widget" 
-          data-placeholder="설명서 검색" 
-          data-no-results-found="{query}에 대한 결과를 찾을 수 없음" 
-          data-did-you-mean="{suggestion}을(를) 검색해보십시오." 
-          data-no-results-found-did-you-mean="{query}에 대한 결과를 찾을 수 없습니다. {suggestion}을(를) 검색하려 하셨습니까?" 
-          data-results-found="{hitCount}개의 결과를 찾음"  
+          data-placeholder="설명서 검색"
+          data-no-results-found="{query}에 대한 결과를 찾을 수 없음"
+          data-did-you-mean="{suggestion}을(를) 검색해보십시오."
+          data-no-results-found-did-you-mean="{query}에 대한 결과를 찾을 수 없습니다. {suggestion}을(를) 검색하려 하셨습니까?"
+          data-results-found="{hitCount}개의 결과를 찾음"
+          data-error-message="We're sorry, an issue occurred when fetching your results. Please try again."
+          data-error-reset="Reset Search"
           data-sk-es-pf-indexes=""
           data-flavor="azure"></div>
           <button class="n-property-bar__search-toggle-button" type="button">
@@ -1359,7 +1361,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-05-09 15:44:41 +0000">05/09/2022</time>
+    <time datetime="2022-07-13 16:56:08 +0000">07/13/2022</time>
     
   
 
@@ -1434,7 +1436,38 @@
 <h2 id="데이터-손실이-발생할-경우-예상되는-상황">데이터 손실이 발생할 경우 예상되는 상황</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>빠른 쓰기 속도를 선택하면 데이터 손실이 발생하면 시스템을 부팅하여 사용자 개입 없이 데이터를 계속 제공할 수 있습니다. 노드가 데이터 손실로 실행되면 두 개의 EMS 메시지가 보고됩니다. 한 가지 방법은 wafl.root.content.changed 이고, 다른 하나는 디버그 심각도 수준 이벤트가 있는 nv.check.failed 입니다. 두 메시지 모두 데이터 손실을 나타내는 것으로 표시되어야 합니다.</p>
+<p>빠른 쓰기 속도로 인해 데이터가 손실되면 EMS(Event Management System)에서 다음 두 이벤트를 보고합니다.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Cloud Volumes ONTAP 9.11.0 이상</p>
+<div class="literalblock">
+<div class="content">
+<pre>DEBUG nv.check.failed: NVRAM check failed with error "NVRAM disabled due to dirty shutdown with High Write Speed mode"</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre> ERROR wafl.root.content.changed: Contents of the root volume '' might have changed. Verify that all recent configuration changes are still in effect.
+* Cloud Volumes ONTAP 9.8 ~ 9.10.1</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>DEBUG nv.check.failed: NVRAM check failed with error "NVRAM disabled due to dirty shutdown"</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>ERROR wafl.root.content.changed: Contents of the root volume '' might have changed. Verify that all recent configuration changes are still in effect.</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>이 경우 Cloud Volumes ONTAP는 사용자 개입 없이 부팅하여 데이터를 계속 제공할 수 있어야 합니다.</p>
 </div>
 </div>
 </div>
