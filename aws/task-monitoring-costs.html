@@ -499,6 +499,8 @@
 
 
 
+
+
         </li>
       </ul>
     
@@ -1153,6 +1155,8 @@
         AWS의 보안 그룹 규칙
       </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/aws/task-setting-up-kms.html">
         AWS KMS를 설정합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/aws/task-set-up-iam-roles.html">
+        IAM 역할을 설정합니다
       </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/aws/task-set-up-licensing-aws.html">
         라이센스를 설정합니다
       </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-cloud-volumes-ontap/aws/task-deploying-otc-aws.html">
@@ -1370,7 +1374,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-04-14 17:30:59 +0000">04/14/2022</time>
+    <time datetime="2022-07-13 19:53:38 +0000">07/13/2022</time>
     
   
 
@@ -1391,17 +1395,9 @@
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Cloud Manager에 권한을 제공하는 IAM 정책에 다음 작업이 포함되어 있는지 확인합니다.</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-json" data-lang="json">"ce:GetReservationUtilization",
-"ce:GetDimensionValues",
-"ce:GetCostAndUsage",
-"ce:GetTags"</code></pre>
-</div>
-</div>
+<p>Cloud Manager에 권한을 제공하는 IAM 정책에 필요한 권한이 포함되어 있는지 확인합니다.</p>
 <div class="paragraph">
-<p>이러한 작업은 최신 에 포함되어 있습니다 <a href="https://mysupport.netapp.com/site/info/cloud-manager-policies" target="_blank" rel="noopener">"Cloud Manager 정책"</a>. NetApp Cloud Central에서 구축한 새 시스템에 이러한 사용 권한이 자동으로 포함됩니다.</p>
+<p><a href="https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-aws.html" target="_blank" rel="noopener">"필요한 권한을 봅니다"</a></p>
 </div>
 </li>
 <li>
